@@ -2998,7 +2998,7 @@ University of Washington, Seattle
 
 \section*{Introduction}
 
-Comprehensive two-dimensional gas chromatography coupled with time-of-flight mass spectrometry (GC×GC–TOFMS) produces dense 2-D chromatograms in which chemical compounds appear as local intensity peaks.\cite{Mondello2025, Marriott2012} Accurate, well-calibrated peak detection is a prerequisite for downstream identification and quantification.\cite{Huang2022, Nieer2024} We propose a statistically principled pipeline that (i) robustly preprocesses GC×GC data, (ii) produces peak estimates with uncertainty, (iii) quantifies detector performance with novel metrics, and (iv) supplies human-interpretable summaries via VLMs. Our contributions are: a practical local Bayesian peak estimator (cheap posterior approximation via prior sampling + likelihood scoring), robust preprocessing (ALS baseline + MAD noise scale), novel metrics (PFS and SNIR with bootstrap CIs), and a simple PAC–Bayes motivated bound that links reconstruction risk and model complexity.
+Comprehensive two-dimensional gas chromatography coupled with time-of-flight mass spectrometry (GC×GC –TOFMS) produces dense 2-D chromatograms in which chemical compounds appear as local intensity peaks.\cite{Mondello2025, Marriott2012} Accurate, well-calibrated peak detection is a prerequisite for downstream identification and quantification.\cite{Huang2022, Nieer2024} We propose a statistically principled pipeline that (i) robustly preprocesses GC×GC data, (ii) produces peak estimates with uncertainty, (iii) quantifies detector performance with novel metrics, and (iv) supplies human-interpretable summaries via VLMs. Our contributions are: a practical local Bayesian peak estimator (cheap posterior approximation via prior sampling + likelihood scoring), robust preprocessing (ALS baseline + MAD noise scale), novel metrics (PFS and SNIR with bootstrap CIs), and a simple PAC–Bayes motivated bound that links reconstruction risk and model complexity.
 
 \section*{Methodology}
 
@@ -4995,7 +4995,7 @@ The workflow begins by generating a synthetic dataset of 20 plots—line, scatte
     \captionsetup{justification=justified, singlelinecheck=false}
     \includegraphics[width=0.7\linewidth]{figures/YOLO_vs_multimodal.png}
     \caption{Table 1 — Method comparison (synthetic test set).}
-    \label{fig:ExpAlign_Workflow_final_results}
+    \label{fig:YOLO_vs_multimodal}
 \end{figure}
 YOLO and the LLM baseline show comparable accuracy on this synthetic benchmark, while YOLO is substantially faster (0.302 s vs. 8.169 s per plot, $\approx$27.0×) and incurs no API cost.
 
@@ -5098,7 +5098,7 @@ The secondary LLM (Gemini 2.5 Flash, temperature=0.0) performs deterministic ext
     \centering
     \includegraphics[width=\linewidth]{figures/materease_architecture_perfect.png}
     \caption{\textbf{The MaterEase Framework Architecture.} The complete workflow from natural language query to materials discovery and visualization.}
-    \label{fig:pipeline}
+    \label{fig:materease_architecture_perfect}
 \end{figure}
 
 % (a) Main pipeline: User query is processed through local sentence-transformers embeddings, FAISS vector database retrieval (Top-K=500), dual LLM reasoning (Gemini 2.0 Flash for answer synthesis, Gemini 2.5 Flash for structured extraction), backend data filtering, and automated Plotly visualizations. The system operates entirely locally for embeddings, ensuring privacy and eliminating external API dependencies. (b) Semantic search detail: Local embedding generation using all-MiniLM-L6-v2 (384-dimensional) with FAISS indexing for efficient similarity search. (c) Dual LLM cascade: Primary LLM (temperature=0.2) generates comprehensive answers, secondary LLM (temperature=0.0) performs deterministic JSON extraction of HEA formulas and processing methods. (d) Visualization output: Interactive charts showing hardness distributions, processing method comparisons, microstructure analysis, and property relationships.
@@ -5146,7 +5146,7 @@ Code generation has accelerated rapidly in recent years, with frontier models po
     \centering
     \includegraphics[width=\linewidth]{figures/matsciagent-workflow.png}
     \caption{The end-to-end workflow of MatSciAgent for scientific code generation.}
-    \label{fig:pipeline}
+    \label{fig:matsciagent-workflow}
 \end{figure}
 
 
@@ -5159,17 +5159,17 @@ As can be seen in Figure 102, MatSciAgent averages 62.5\% across seven benchmark
         \centering
         \includegraphics[width=\linewidth]{figures/per benchmark.png}
         \caption{Comparison of Average benchmark scores between MatSciAgent and other models.}
-        \label{fig:md_results_eff}
+        \label{fig:sciforge_benchmark}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{figures/overall.png}
         \caption{Accuracy of different LLMs and our agent per specific tasks covered through our benchmark.}
-        \label{fig:md_results_acc}
+        \label{fig:sciforge_benchmark_per_task}
     \end{subfigure}
     \caption{Comparison of efficiency and accuracy across different LLM systems against our proposed coding agent.}
-    \label{fig:md_results_combined}
+    \label{fig:sciforge_benchmark_combined}
 \end{figure}
 
 \section*{Future Work}
