@@ -1,0 +1,188 @@
+%%% DON'T MODIFY THE PACKAGE IMPORTS & CUSTOMIZATIONS UNLESS YOU REALLY NEED TO ADD ANY PACKAGE %%%
+%--------------------------------------------------
+% PACKAGES %
+%--------------------------------------------------
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{fontawesome5}
+\usepackage{csquotes}
+\usepackage{comment}
+\usepackage{enumitem}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{listings}
+\usepackage{authblk}
+\usepackage{lipsum}
+\usepackage{minitoc}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[justification=justified]{caption}
+\captionsetup{width=\textwidth}
+\usepackage{orcidlink}
+\usepackage{placeins}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{tocloft}
+\usepackage{wrapfig}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{tcolorbox}
+
+\usepackage[version=3]{mhchem}
+
+%--------------------------------------------------
+% COLORS & CODE STYLE
+%--------------------------------------------------
+\definecolor{myblue}{rgb}{0.1, 0.2, 0.6}
+\definecolor{mygray}{gray}{0.35}
+\definecolor{mygreen}{RGB}{0,120,0}
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{keywordcolor}{RGB}{0,0,180}
+\definecolor{stringcolor}{RGB}{153,0,0}
+\definecolor{commentcolor}{RGB}{0,128,0}
+
+\lstdefinestyle{bandgap}{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{keywordcolor}\bfseries,
+  stringstyle=\color{stringcolor},
+  commentstyle=\color{commentcolor}\itshape,
+  showstringspaces=false,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+  rulecolor=\color{mygray},
+  breaklines=true,
+  postbreak=\mbox{\textcolor{mygray}{$\hookrightarrow$}\space},
+  language=Python
+}
+
+%--------------------------------------------------
+% HYPERREF
+%--------------------------------------------------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=[RGB]{0,51,153},
+    urlcolor=[RGB]{0,51,153},
+    citecolor=[RGB]{0,51,153},
+    filecolor=[RGB]{0,51,153},
+    allcolors=[RGB]{0,51,153}
+}
+
+%--------------------------------------------------
+% SECTION NUMBERING
+%--------------------------------------------------
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
+
+\renewcommand\thepart{}
+\renewcommand\partname{}
+\renewcommand\ptctitle{Table of Contents\\}
+
+%--------------------------------------------------
+% ICON SHORTCUTS
+%--------------------------------------------------
+\newcommand{\github}[1]{\href{#1}{\faGithubSquare}}
+\newcommand{\youtube}[1]{\href{#1}{\faYoutubeSquare}}
+\newcommand{\database}[1]{\href{#1}{\faDatabase}}
+
+%--------------------------------------------------
+% TEAM SUBMISSION ENVIRONMENT
+%--------------------------------------------------
+\newcounter{teamcount}
+
+\newenvironment{teamsubmission}[2]{
+    \clearpage
+    \refstepcounter{section}
+    \stepcounter{teamcount}
+    \addcontentsline{toc}{section}{\theteamcount. #1}
+    \begin{center}
+        {\LARGE \bfseries #2 \par}
+        \vspace{0.25em}
+        {\large \textbf{Team:} #1 \par}
+    \end{center}
+}{
+    \FloatBarrier
+    \clearpage
+}
+
+%--------------------------------------------------
+% AUTHORS & AFFILIATIONS
+%--------------------------------------------------
+\newcommand{\authorsblock}[1]{%
+    \begin{center}
+        {\normalsize \textbf{#1}\par}
+    \end{center}
+}
+
+\newcommand{\affiliationsblock}[1]{%
+    \begin{center}
+        {\textit{#1}\par}
+    \end{center}
+    \vspace{0.5em}
+}
+
+%--------------------------------------------------
+% Roman numeral helper (I, II, III, ..., X, L, C, ...)
+%--------------------------------------------------
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+
+\begin{document}
+
+%--------------------------------------------------
+% TITLE
+%--------------------------------------------------
+\begin{center}
+{\LARGE \textbf{LLM Hackathon 2025 Title}}
+\end{center}
+
+\vspace{1em}
+
+
+% ---------- Global Authors ----------
+\input{authors}
+
+%--------------------------------------------------
+% MAIN PAPER CONTENT
+%--------------------------------------------------
+\section*{Introduction}
+This is the main paper \textbf{Introduction} content.
+
+\section*{Overview}
+This is the main paper \textbf{Overview} content.
+
+\section*{Conclusion}
+This is the main paper \textbf{Conclusion} content.
+
+%--------------------------------------------------
+% TABLE OF CONTENTS (AFTER MAIN PAPER)
+%--------------------------------------------------
+\clearpage
+\tableofcontents
+\newpage
+
+%--------------------------------------------------
+% TEAM SUBMISSIONS (ALL IN ONE FILE)
+%--------------------------------------------------
+\input{teamsubmissions}
+
+\FloatBarrier
+\bibliographystyle{ieeetr}
+\bibliography{ref}
+
+\end{document}
