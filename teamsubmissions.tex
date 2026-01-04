@@ -36,7 +36,7 @@ Across recent models, few models generated PySCF code that both \emph{runs} and 
 We plan to broaden molecule diversity, include additional electronic-structure methods beyond DFT, and evaluate more models (including longer reasoning budgets). 
 
 \section*{Open-Source Materials}
-Code and data: \url{https://github.com/hansgundlach/ChemCodeBench}
+Code and data: \github{https://github.com/hansgundlach/ChemCodeBench}\,; Demo video: \youtube{https://youtu.be/cLGeocfd8VM}
 
 \section*{Author Contributions}
 Conceptualization, methodology, software, experiments, analysis, and writing: Hans Gundlach.
@@ -50,7 +50,7 @@ Conceptualization, methodology, software, experiments, analysis, and writing: Ha
 
 \begin{teamsubmission}{CafChem}{UMADock: Docking molecules in protein binding sites using Meta's UMA MLIP}
 \authorsblock{
-    Mauricio Cafiero\textsuperscript{1}\orcidlink{0000-0002-4895-1783},
+    Mauricio Cafiero\textsuperscript{1}\orcidlink{0000-0002-4895-1783}
 }
 \affiliationsblock{
     \textsuperscript{1}Department of Chemistry, University of Reading, Reading, UK\\
@@ -76,8 +76,7 @@ As mentioned, dynamics was added to the code after the hackathon. This code take
 The Agent is being expanded to perform other drug design tasks commonly performed before and after docking calculations. 
 
 \section*{Open-source Materials}
-Code available on GitHub: \github{https://github.com/MauricioCafiero/UMADock/tree/main}
-Prototypes of the Agent can be found on \href{https://huggingface.co/cafierom}{HuggingFace}.
+Code available on GitHub: \github{https://github.com/MauricioCafiero/UMADock/tree/main}\,; Prototypes of the Agent can be found on \href{https://huggingface.co/cafierom}{HuggingFace}\,; Demo video: \youtube{https://www.linkedin.com/posts/mauricio-cafiero-5481259b_llm-uma-activity-7372341201200369664-mx6p?utm_source=share&utm_medium=member_ios&rcm=ACoAABUygsgB1ocjqc_UIBRFQJEZ3QMcuNRWSas}
 
 \section*{Author Contributions}
 M.C: Design, coding and testing.
@@ -114,11 +113,11 @@ M.C: Design, coding and testing.
 \section*{Introduction}
 %The application of AIML frameworks have played a major role in accelerating discoveries in material science. However, the scarcity of high-quality, as well as sufficiently large and diverse datasets still remain an important bottle-neck in utilizing the full potential of ML in the discovery of advanced materials. A relevant domain that can unlock unprecedented combinations of material properties but faces significant data scarcity is high-entropy materials, where the hypothesis space is virtually infinite and the available data are minimal~\cite{Zhang2023}. AI Agents implementing Retrieval-Augmented Generation (RAG) architecture directly address this critical data bottleneck by leveraging LLMs, to efficiently extract and structure information from diverse, unstructured material science literature. By following this methodology, we developed Forja de Mat\'{e}ria AI, a GUI solution to explore LLMs for dataset generation, along with a workflow for training and generating machine learning models aimed at studying advanced materials.
 %The main challenge for applying machine learning to the discovery of advanced materials is the scarcity of high-quality and sufficiently large datasets — for example, in the case of high-entropy materials, where the hypothesis space is virtually infinite and the available data are minimal~\cite{Zhang2023}. AI Agents implementing Retrieval-Augmented Generation (RAG) architecture directly address this critical data bottleneck by leveraging LLMs to efficiently extract and structure information from diverse, unstructured material science literature. In this way, we developed Forja de Materia AI, a GUI solution to explore LLMs for dataset generation, along with a workflow for training and generating machine learning models aimed at studying advanced materials.
-The implementation of AIML frameworks have accelerated discoveries in materials science, but progress is still limited by the lack of large, high-quality, and diverse datasets. This challenge is especially acute in high-entropy materials, where the design space is vast and available data are minimal~\cite{Zhang2023}. Retrieval-Augmented Generation (RAG) based AI agents help overcome this bottleneck by using LLMs to extract and structure information from unstructured scientific literature. Following this approach, we developed Forja de Mat\'{e}ria AI, a GUI tool for LLM-driven dataset generation and a workflow for training and generating machine-learning models for advanced materials research. A schematic of the workflow, starting from database generation using Forja de Mat\'{e}ria AI and its subsequent utilization and validation using Machine learning frameworks is shown in Figure~\ref{fig:BT_Workflow}.
+The implementation of AIML frameworks have accelerated discoveries in materials science, but progress is still limited by the lack of large, high-quality, and diverse datasets. This challenge is especially acute in high-entropy materials, where the design space is vast and available data are minimal~\cite{Zhang2023}. Retrieval-Augmented Generation (RAG)-based AI agents help overcome this bottleneck by using LLMs to extract and structure information from unstructured scientific literature. Following this approach, we developed Forja de Mat\'{e}ria AI, a GUI tool for LLM-driven dataset generation and a workflow for training and generating machine-learning models for advanced materials research. A schematic of the workflow, starting from database generation using Forja de Mat\'{e}ria AI and its subsequent utilization and validation using Machine learning frameworks is shown in Figure~\ref{fig:BT_Workflow}.
 \section*{Material Database Generation and Initial Model Validation}
-The robustness of Forja de Mat\'{e}ria AI was tested by generating a database on high-entropy oxides. 1{,}773 scientific article abstracts were retrieved from the \textit{Web of Science}~\cite{webofscience} using advanced search queries specifically designed to filter and collect studies focused on high-entropy oxides. Subsequently, two distinct models (both integrable into Forja de Mat\'{e}ria AI for small-scale executions) --- \textsf{mistral-large:123b-instruct-2407-q4\_0}~\cite{mistral_large_123b_instruct_2407_q4_0} and \textsf{gpt-oss:120b}~\cite{gpt_oss_120b} --- were employed to process the abstracts and extract pairs of compositions and crystal structures of high-entropy oxides. 
+The robustness of Forja de Mat\'{e}ria AI was tested by generating a database on high-entropy oxides. 1{,}773 scientific article abstracts were retrieved from the \textit{Web of Science}~\cite{webofscience} using advanced search queries specifically designed to filter and collect studies focused on high-entropy oxides. Subsequently, two distinct models (both integrable into Forja de Mat\'{e}ria AI for small-scale executions) --- \textsf{mistral-large:123b-instruct-2407-q4\_0}~\cite{mistral_large_123b_instruct_2407_q4_0} and \textsf{gpt-oss:120b}~\cite{gpt_oss_120b} --- were employed to process the abstracts and extract pairs of compositions and crystal structures of high-entropy oxides. \\
 
-In addition to high-entropy oxides, the same LLM-driven pipeline was extended to carbon-based materials, particularly those studied in adsorption and gas-separation experiments. Using RAG-enabled agents within Forja de Mat\'{e}ria AI, the models were prompted to extract adsorption capacities, textural properties (BET surface area, pore volume, pore-size distributions), synthesis routes, and adsorption conditions from unstructured literature. 
+\noindent In addition to high-entropy oxides, the same LLM-driven pipeline was extended to carbon-based materials, particularly those studied in adsorption and gas-separation experiments. Using RAG-enabled agents within Forja de Mat\'{e}ria AI, the models were prompted to extract adsorption capacities, textural properties (BET surface area, pore volume, pore-size distributions), synthesis routes, and adsorption conditions from unstructured literature. 
 %This demonstrated that the workflow generalizes beyond crystalline multicomponent systems and can be applied to porous materials and structure–property datasets commonly used in energy storage, \ce{CO2} capture, and gas purification research. 
 %The inclusion of carbon-based adsorption data highlights the capability of LLMs not only to retrieve compositions but also to structure experimental results and performance metrics, enabling database creation for classes of materials where standardized datasets are scarce or non-existent.
 This also demonstrated the model's capability to generate structured datasets for multiple research areas.
@@ -134,21 +133,21 @@ Next, feature calculation was performed and the task was formulated as a classif
 The Python library Mendeleev~\cite{mendeleev_python} and resources from the NOMAD Lab~\cite{nomad_lab} were used to derive atomic-level features, while FactSage~\cite{factsage} was employed to compute thermodynamic descriptors. The dataset generated using Mistral contained 757 samples, while the one produced with GPT comprised 369 samples. However, the data accuracy was higher in the GPT-generated dataset. A manual verification of 25 randomly selected samples from each dataset revealed accuracies of 96\% for GPT and 76\% for Mistral.
 \section*{Feature Engineering and Machine Learning for Phase Prediction}
 %The generated dataset contained diverse numerical descriptors of atomic and material properties. Feature engineering enhanced it by emphasizing property variability, boundary conditions, and synthesis–property interactions. Three statistical metrics: range (max–min), coefficient of variation (std/mean), and min/max ratio were introduced to capture distribution, scale-normalized variability, and homogeneity. Two binary indicators marked cases of zero standard deviation (perfect uniformity) and zero minimum (null or missing theoretical value). Domain knowledge guided the creation of nine synthesis–property interaction features linking specific synthesis methods to relevant thermodynamic (e.g., hydrothermal × enthalpy, solid-state × melting point), atomic-electronic (e.g., co-precipitation × electronegativity, ball-milling × atomic radius SD), and physical-mechanical properties (e.g., mechano-chemical × density SD, combustion × thermal conductivity). The new \textit{engineered} dataset combined these with remaining originally generated features to form a more informative input for modeling.
-The generated dataset included diverse numerical descriptors of atomic and material properties. Feature engineering refined it by highlighting property variability, boundary conditions, and synthesis–property interactions.Three statistical metrics: range (max–min), coefficient of variation (std/mean), and min/max ratio captured the data distribution, scale-normalized variability, and homogeneity. Two binary indicators identified cases of zero standard deviation and zero minimum. Domain knowledge added nine synthesis–property interaction features linking specific synthesis methods to relevant thermodynamic, atomic-electronic, and physical-mechanical properties. The resulting \textit{engineered} dataset combined these additions with the remaining original features to create a more informative input for modeling.
+The generated dataset included diverse numerical descriptors of atomic and material properties. Feature engineering refined it by highlighting property variability, boundary conditions, and synthesis–property interactions.Three statistical metrics: range (max–min), coefficient of variation (std/mean), and min/max ratio captured the data distribution, scale-normalized variability, and homogeneity. Two binary indicators identified cases of zero standard deviation and zero minimum. Domain knowledge added nine synthesis–property interaction features linking specific synthesis methods to relevant thermodynamic, atomic-electronic, and physical-mechanical properties. The resulting \textit{engineered} dataset combined these additions with the remaining original features to create a more informative input for modeling.\\
 
-Both, the generated and engineered datasets were used to train Random Forest, XGBoost, CatBoost, Logistic Regression, SVM (RBF), ANN and CNN models. Data were split into train, validation, and test sets, preprocessed with imputation, encoding, and standard scaling. For efficiency, the evaluation of each ML model was established through a baseline training on the training set, followed by refitting on the combined train+validation data together in order to select optimal parameters for each model. Test performance showed macro accuracy between 88.7–94.4\% and F1-macro 49.4–61.5\% (up to 52.7\% for engineered data), emphasizing the imbalance between classes in the datasets. Among the ML models, Logistic Regression best described the generated dataset, while XGBoost favored the engineered one.
+\noindent Both, the generated and engineered datasets were used to train Random Forest, XGBoost, CatBoost, Logistic Regression, SVM (RBF), ANN and CNN models. Data were split into train, validation, and test sets, preprocessed with imputation, encoding, and standard scaling. For efficiency, the evaluation of each ML model was established through a baseline training on the training set, followed by refitting on the combined train+validation data together in order to select optimal parameters for each model. Test performance showed macro accuracy between 88.7–94.4\% and F1-macro 49.4–61.5\% (up to 52.7\% for engineered data), emphasizing the imbalance between classes in the datasets. Among the ML models, Logistic Regression best described the generated dataset, while XGBoost favored the engineered one.
 
 \section*{Future Work}
 The perspective involves the training of models in a more technical and computationally intensive manner, along with the interpretation of the best-performing models to study phase formation in high-entropy oxides, as well as the carbon-based materials for adsorption applications.The Forja de Mat\'{e}ria AI can also be extended to assist in the training and interpretation phase by extracting key parameters and explanations directly from the output. 
 
 \section*{Open-source Materials}
-All datasets, models and codes developed during the hackathon are available on GitHub: \github{https://github.com/Arthurns16/hacktoon2025}
+All datasets, models and codes are available on GitHub: \github{https://github.com/Arthurns16/hacktoon2025}\,; Demo video: \youtube{https://youtu.be/wlbnUKJ7t1s}
 
 \section*{Author Contributions}
-SANTOS, A. S. S.: Problem definition, Data generation, Primary features calculation;
-RODRIGUES, L. S.: Video creation and vizualization;
+Santos, A. S. S.: Problem definition, Data generation, Primary features calculation;
+Rodrigues, L. S.: Video creation and vizualization;
 Khan M.U. \& Atta,A: Development and implementation of the Forja de Mat\'{e}ria AI;
-STOJANOVSKA, E: Feature engineering, Machine learning;
+Stojanovska, E: Feature engineering, Machine learning;
 Vasudevan, V.: Model validation;
 Kalapurakal, R.A.M.: Validation of datasets using Deep Learning, Manuscript editing
 \end{teamsubmission}
@@ -173,10 +172,10 @@ Kalapurakal, R.A.M.: Validation of datasets using Deep Learning, Manuscript edit
 \section*{Introduction}
 Superconductivity at room temperature remains one of the major unsolved challenges in condensed matter physics. While cuprate materials exhibit superconductivity up to \SI{138}{\kelvin} at ambient pressure~\cite{dai_synthesis_1995}, the underlying mechanisms driving their high critical temperatures ($T_c$) remain poorly understood, limiting progress toward higher-$T_c$ systems. Notably, certain chemical and structural motifs are common to superconducting cuprates, and certain parameters may even correlate with superconducting behavior. \\
 
-To explore the chemical and structural landscape of complex materials, crystal-structure generation tools can be integrated with machine-learning models trained on large structural databases. However, the relatively small number of known superconducting cuprates places us in a data-scarce regime, limiting this direct approach. On the other hand, decades of intense interest in this materials class have produced a vast scientific literature that richly documents the key structural motifs thought to be relevant for high-$T_c$ behavior. Here, we explore whether LLMs can identify and extract these motifs from scientific literature on cuprate superconductors and further be used to generate new candidate materials via an existing text-guided diffusion model. 
+\noindent To explore the chemical and structural landscape of complex materials, crystal-structure generation tools can be integrated with machine-learning models trained on large structural databases. However, the relatively small number of known superconducting cuprates places us in a data-scarce regime, limiting this direct approach. On the other hand, decades of intense interest in this materials class have produced a vast scientific literature that richly documents the key structural motifs thought to be relevant for high-$T_c$ behavior. Here, we explore whether LLMs can identify and extract these motifs from scientific literature on cuprate superconductors and further be used to generate new candidate materials via an existing text-guided diffusion model. 
 
 \section*{Results}
-Figure~\ref{fig:CuPirates_Workflow} details our workflow. First, a database of scientific literature (31 sources) describing cuprate superconducting structures was curated and used as the basis for this work. Utilizing the NotebookLM AI-powered research and writing tool, this database was then used to fine-tune an LLM, namely the Gemini~\cite{Gemini} multimodal model, to create targeted, chemist-informed prompts describing key structural features. The generated prompts were then input into a text-guided diffusion model for crystal structure generation, namely Chemeleon~\cite{ParkNC25_Chemeleon}, to propose new potential high-$T_c$ cuprate superconductors. The generated materials were finally screened manually for chemical feasibility.
+Figure~\ref{fig:CuPirates_Workflow} summarises our workflow in four simple steps. First, a database of scientific literature (31 sources) describing cuprate superconducting structures was curated and used as the basis for this work. Utilizing the NotebookLM AI-powered research and writing tool, this database was then used to fine-tune an LLM, namely the Gemini~\cite{Gemini} multimodal model, to create targeted, chemist-informed prompts describing key structural features. The generated prompts were then input into a text-guided diffusion model for crystal structure generation, namely Chemeleon~\cite{ParkNC25_Chemeleon}, to propose new potential high-$T_c$ cuprate superconductors. The generated materials were finally screened manually for chemical feasibility.
 
 \begin{figure}[H]
     \centering
@@ -200,7 +199,7 @@ Two candidate materials, generated by Chemeleon using prompts produced by the fi
 Future work will focus on automating the screening of generated structures, including computational checks of whether outputs satisfy the prompt-defined cuprate motifs and basic chemical feasibility. Scaling the workflow to larger sets of generated structures will enable systematic cross-checking against existing crystallographic databases to verify reproduction of known superconductors and identify any novel candidates. Promising materials identified through this pipeline can then be studied using advanced electronic structure and many-body methods to assess their stability and potential for superconducting behavior.
 
 \section*{Open-source Materials}
-Resources used are available on GitHub: \github{https://github.com/kinzani/Inzani-Group/tree/main/LLM_Hackathon_2025}
+Resources used are available on GitHub: \github{https://github.com/kinzani/Inzani-Group/tree/main/LLM_Hackathon_2025}\,; Demo video: \youtube{https://www.linkedin.com/feed/update/urn:li:activity:7372299525052448768/}
 
 \section*{Author Contributions}
 S.C., V.N.R., S.L.: Software, Visualization, Methodology; K.I.: Software, Visualization, Supervision, Conceptualization. All authors: Writing \& Editing. The authors thank John Vinson and Aeron Tynes Hammack for useful discussions.
@@ -246,7 +245,7 @@ The Neurosymbolic Hypothesis Engine (NSHE) unifies large language models (LLMs),
 Future work will focus on expanding NSHE’s scientific utility through several key directions. An \textbf{experimental validation pipeline} will test and refine hypotheses in collaboration with laboratories, while the \textbf{QE-CHS framework} will gain quantitative grounding and theoretical rigor. Efforts toward \textbf{simplification and explainability} will provide intuitive interfaces and transparent reasoning tools. \textbf{Cross-domain adaptation} and \textbf{multi-modal integration} will extend NSHE to diverse feild and data types, linking simulations with experiments. \textbf{Dynamic ontology learning} will ensure continual knowledge updates, and coupling with \textbf{automated experimentation} will enable closed-loop discovery. Finally, \textbf{long-term impact assessment} will track NSHE’s real-world influence. Together, these directions position NSHE as a rigorous, interpretable, and collaborative AI system for accelerating scientific discovery.
 
 \section*{Open-source Materials}
-Code and pretrained weights available on GitHub: \github{https://github.com/dreamboat26/hackathon}
+Code and pretrained weights are available on GitHub: \github{https://github.com/dreamboat26/hackathon}\,; Video demo: \youtube{https://www.youtube.com/watch?v=lKxwF3fFfkM}
 
 \section*{Author Contributions}
 M.R.: Conceptualization, Code writing, Visualization; S.R.: Data Curation, Guidance.
@@ -293,7 +292,7 @@ Our evaluation on 149 synthesis-property relationships across 85 distinct materi
 We plan to expand \textbf{ARIA}'s knowledge graph to encompass broader materials classes and integrate real-time experimental feedback loops for continuous learning. Additionally, we aim to develop domain-specific reasoning modules for specialized applications like energy storage and catalysis.
 
 \section*{Open-source Materials}
-Code and pretrained weights available on GitHub: \github{https://github.com/yicao-elina/LLM4Chem-Explainable-synthesis.git}
+Code and pretrained weights are available on GitHub: \github{https://github.com/yicao-elina/LLM4Chem-Explainable-synthesis.git}
 
 \section*{Author Contributions}
 Y.C.: Conceptualization, Methodology, Writing – original draft, Project administration, Visualization, Investigation; L.W.: Software, Methodology, Writing – review \& editing, Data curation; T.Y.L.: Data curation, Formal analysis, Writing – review \& editing; Y.H.: Formal analysis; J.C.: Supervision, Writing – review \& editing, Resources.
@@ -343,9 +342,9 @@ Preparing and validating scientific workflows to run on High Performance Computi
 It leverages two key components developed within our group: \textbf{PyBigDFT}~\cite{ratcliff2020, pybigdft} for electronic structure calculations and \textbf{remotemanager}~\cite{Dawson2024, remotemanager} for job submission and monitoring on HPC systems.
 The assistant employs a RAG pipeline that dynamically queries PyBigDFT’s documentation to synthesize executable Python functions from natural language queries. These functions are validated through a dedicated tool that checks syntactic and scientific consistency before remote submission via remotemanager.
 
-As a use case, we asked the system to compute the atomization energy of a molecule. The LLM-generated code was corrected, validated, and executed on a remote ``virtual'' HPC system (a locally networked container), with successful completion confirmed through CPU monitoring and job logs. This case study highlights how \textbf{documentation quality directly impacts the reliability of LLM-driven HPC workflows} and offers practical insights into how scientific codes can be made more ``LLM-friendly''. Importantly, the system also handles laboratory-specific resources -  such as the PyBigDFT tutorials — which are not included in public LLM training corpus but are essential for running accurate electronic-structure workflows on HPC architectures.
+As a use case, we asked the system to compute the atomization energy of a molecule. The LLM-generated code was corrected, validated, and executed on a remote ``virtual'' HPC system (a locally networked container), with successful completion confirmed through CPU monitoring and job logs. This case study highlights how \textbf{documentation quality directly impacts the reliability of LLM-driven HPC workflows} and offers practical insights into how scientific codes can be made more ``LLM-friendly''. Importantly, the system also handles laboratory-specific resources -  such as the PyBigDFT tutorials — which are not included in public LLM training corpus but are essential for running accurate electronic-structure workflows on HPC architectures.\\
 
-The impact of this work is significant: It demonstrates a path toward democratizing access to HPC resources by lowering the barrier to entry for materials scientists who may lack extensive technical scripting expertise. By automating workflow generation and validation, \textbf{LARA-HPC} dramatically reduces the time and effort required to design and perform complex simulations, accelerating the pace of computational materials research.
+\noindent The impact of this work is significant: It demonstrates a path toward democratizing access to HPC resources by lowering the barrier to entry for materials scientists who may lack extensive technical scripting expertise. By automating workflow generation and validation, \textbf{LARA-HPC} dramatically reduces the time and effort required to design and perform complex simulations, accelerating the pace of computational materials research.
 
 \begin{figure}[h!]
 \centering
@@ -358,14 +357,12 @@ If the dry run succeeds, the Execution Agent notifies the human operator, who pr
 Upon approval, the validated job is dispatched via \textbf{remotemanager} to the designated HPC system for execution and monitoring. If the dry run or human review identifies issues, the workflow is redirected to the Generator Agent for refinement and further \textbf{HITL} feedback, forming a closed, self-correcting loop.}
     \label{fig:lara_hpc_architecture}
 \end{figure}
-
-
 \section*{Future Work}
 Future developments will focus on making \textbf{LARA-HPC} LLM agnostic, with various multi-agent orchestration, and evaluating their performance across diverse documentation styles. This benchmarking effort aims to establish concrete guidelines for designing AI-interpretable scientific codes, documentation, and tutorials, ultimately enhancing the reliability and accessibility of LLM-assisted HPC workflows.
 
 \section*{Open-source Materials} 
 Code and demo available on GitLab: 
-\href{https://gitlab.com/l_sim/lara-hpc}{\faGitlab}
+\gitlab{https://gitlab.com/l_sim/lara-hpc}\,; Demo video: \youtube{https://youtu.be/JnzZdvAyA9A}
 
 \section*{Author Contributions}
 Supervision: L.G., G.F.; 
@@ -424,14 +421,14 @@ The automated characterization of reaction outcomes is a longstanding bottleneck
     \label{fig:mixsense_workflow}
 \end{figure}
 
-\textbf{Demo and Interface.} We demonstrated our tool on its three capabilities with an interactive Gradio interface \cite{gradio}: mixture identification and quantification, time-series quantification and property prediction. For parsing the query and for generating output text, we used a DeepSeek model (V3:together) \cite{deepseek}. For demonstrating the identification and quantification of a typical mixture, we gave the interface a language query such as ``Analyze my anisole reaction.'' In this case we upload a reaction mixture NMR spectra for the chlorination of Anisole. The model elucidates possible predicted components as well as their mole fraction and retrieves the NMR spectra of the individual components from the spectral database. We used the sample query ``Track the conversion of anisole during conversion to p-bromoanisole.'' and uploaded multiple CSV files acquired during the bromination of anisole to p-bromoanisole. The analysis quantified component evolution over time along with an accompanying statistical summary. For demonstrating property prediction, we input two SMILES strings: one for ethanol and one for sucrose. The results showed a table with predicted flavor, confidence, with corresponding probabilities for other flavors like bitter, sour, sweet, umami and undefined.
+\noindent \textbf{Demo and Interface.} We demonstrated our tool on its three capabilities with an interactive Gradio interface \cite{gradio}: mixture identification and quantification, time-series quantification and property prediction. For parsing the query and for generating output text, we used a DeepSeek model (V3:together) \cite{deepseek}. For demonstrating the identification and quantification of a typical mixture, we gave the interface a language query such as ``Analyze my anisole reaction.'' In this case we upload a reaction mixture NMR spectra for the chlorination of Anisole. The model elucidates possible predicted components as well as their mole fraction and retrieves the NMR spectra of the individual components from the spectral database. We used the sample query ``Track the conversion of anisole during conversion to p-bromoanisole.'' and uploaded multiple CSV files acquired during the bromination of anisole to p-bromoanisole. The analysis quantified component evolution over time along with an accompanying statistical summary. For demonstrating property prediction, we input two SMILES strings: one for ethanol and one for sucrose. The results showed a table with predicted flavor, confidence, with corresponding probabilities for other flavors like bitter, sour, sweet, umami and undefined.
 
 \section*{Future Work}
 We plan to broaden spectral coverage by introducing support for 2D NMR. We also plan to expand the toolkit's capabilities to additional analytical modalities such as IR and Raman.
 
 \section*{Open-source Materials}
 Our public repository hosts the agent, an app with the interface, deconvolution files, property predictor for flavors and NMR datasets and example mixture data: 
-\href{https://github.com/jdsanc/MixSense.git}{MixSense \faGithubSquare}
+\github{https://github.com/jdsanc/MixSense.git}\,; Demo video: \youtube{https://drive.google.com/file/d/1qLt48Yh7qlWbZ0pMRnlUzLZP4Wmqsjaw/view}
 
 \section*{Author Contributions}
  J.D.S. and M.M. led writing efforts. M.L. led presentation and ideation. K.P.G. led the development of the property predictor. The LLM agent framework was led by S.E., L.V.L., and M.M. NMR mixture tool was led by S.E., L.V.L., T.R., M.M. and J.D.S.  Data curation and evaluation were led by J.D.S., K.J. and M.L. UI was led by S.E., L.V.L. and T.R. 
@@ -449,7 +446,7 @@ Our public repository hosts the agent, an app with the interface, deconvolution 
 
 \begin{teamsubmission}{AgentLearn}{AgentLearn: Accelerating Active Learning with LLM agents}
 \authorsblock{
-    Chengyan Liu\textsuperscript{1},%,
+    Chengyan Liu\textsuperscript{1},%, 
     Shehtab Zaman\textsuperscript{1}%
 }
 \affiliationsblock{
@@ -459,9 +456,9 @@ Our public repository hosts the agent, an app with the interface, deconvolution 
 In recent years, machine learning has been of great help to scientific research, accelerating research advancements in diverse areas. However, training a good machine learning model usually requires the collection of a large, accurate, and diverse dataset, which for many applications is expensive and time-consuming. \cite{8862913} We propose AgentLearn, a novel framework that employs an LLM agent within a supercharged active learning loop. The system is designed to intelligently expand datasets, continuously improve a target model, and adapt its strategy based on performance feedback.
 
 \section*{Result}
-AgentLearn is a versatile framework engineered for integration with a wide range of models, requiring only minimal modification. To ensure maximal compatibility with a variety of tools for knowledge retrieval, validation, and even experiment automation, we adopted MCP protocols to provide the LLM model with a unified, automatic entry point. As shown in Figure \ref{fig:AL-diagram}, the AgentLearn workflow begins by retrieving knowledge from available data, which may include known datasets, a knowledge base, or internet search queries. It then leverages this data to generate molecules it deems useful. These generated molecules are combined with the current dataset to form a new, expanded dataset. Next, AgentLearn uses this new dataset to retrain the predictor model and evaluate the results. Based on this feedback, it continues the cycle by generating new molecules.
+AgentLearn is a versatile framework engineered for integration with a wide range of models, requiring only minimal modification. To ensure maximal compatibility with a variety of tools for knowledge retrieval, validation, and even experiment automation, we adopted MCP protocols to provide the LLM model with a unified, automatic entry point. As shown in Figure~\ref{fig:AL-diagram}, the AgentLearn workflow begins by retrieving knowledge from available data, which may include known datasets, a knowledge base, or internet search queries. It then leverages this data to generate molecules it deems useful. These generated molecules are combined with the current dataset to form a new, expanded dataset. Next, AgentLearn uses this new dataset to retrain the predictor model and evaluate the results. Based on this feedback, it continues the cycle by generating new molecules.\\
 
-To demonstrate the capabilities of this system, we created a model for predicting molecular aromaticity and utilized AgentLearn to iteratively improve it. We tested it with both Gemini-2.5-Flash and Qwen-3-235b as our foundation models. In our experiments, AgentLearn successfully integrated with our training loop and was able to propose new molecules to be used for additional training.
+\noindent To demonstrate the capabilities of this system, we created a model for predicting molecular aromaticity and utilized AgentLearn to iteratively improve it. We tested it with both Gemini-2.5-Flash and Qwen-3-235b as our foundation models. In our experiments, AgentLearn successfully integrated with our training loop and was able to propose new molecules to be used for additional training.
 
 \section*{Future Work}
 We plan on integrating computational methods so properties of the generated molecules can be calculated, enabling an infinite data pool. Autonomous laboratory may even added into the consideration.
@@ -474,7 +471,7 @@ We plan on integrating computational methods so properties of the generated mole
 \end{figure}
 
 \section*{Open-source Materials}
-The source code is available on GitHub: \github{https://github.com/tonylifepix/AgentLearn}.
+The source code is available on GitHub: \github{https://github.com/tonylifepix/AgentLearn}\,; Demo video: \youtube{https://youtu.be/gkuUykswBHg}
 
 \section*{Author Contributions}
 C.L.: Conceptualization, Software, Writing; S.Z.: Conceptualization, Methodology, Software, Visualization.
@@ -509,7 +506,7 @@ C.L.: Conceptualization, Software, Writing; S.Z.: Conceptualization, Methodology
 Fullerenes' unique cage-like structure and electron-deficient nature make their functionalization an active research area due to promising medicinal and energy applications~\cite{guirado2006structural, zhang2025functionalized}. However, the vast design space arising from multiple equivalent binding sites and sequential functionalization creates thousands of potential regioisomers, presenting significant experimental and computational challenges. To address this, we introduce \textbf{The Fullerene Factory}, a novel multi-agent automated workflow that efficiently identifies promising fullerene isomer structures from natural language input.
 
 \section*{Results}
-Users can generate functionalized fullerenes with specified addends through simple natural language queries and obtain the most stable optimized structures as \textit{.xyz} files via the state-of-the-art UMA Machine Learning Interatomic Potential (MLIP) from Meta FAIR~\cite{wood2025umafamilyuniversalmodels}, with optional storage as Hugging Face datasets. \textbf{The Fullerene Factory} employs a multi-agent workflow comprising three distinct CrewAI~\cite{moura2023crewai} crews: the Initialization Crew (pink zone), Conformer Crew (blue zone), and Post-processing Crew (green zone), as illustrated in \autoref{fig:fullerene_factory}A. The Initialization and Conformer Crews each contain three agents, while the Post-processing Crew comprises four agents. All agents utilize a custom tool library incorporating PubChem search functionality, structure generation capabilities, MLIP execution tools, and additional utilities. The Conformer Crew operates iteratively based on the number of sequential reaction steps required. \autoref{fig:fullerene_factory}B presents the three most thermodynamically stable structures generated from the following user query, utilizing the DeepSeek-V3.2-Exp~\cite{deepseek} model across all agents:
+Users can generate functionalized fullerenes with specified addends through simple natural language queries and obtain the most stable optimized structures as \textit{.xyz} files via the state-of-the-art UMA Machine Learning Interatomic Potential (MLIP) from Meta FAIR~\cite{wood2025umafamilyuniversalmodels}, with optional storage as Hugging Face datasets. \textbf{The Fullerene Factory} employs a multi-agent workflow comprising three distinct CrewAI~\cite{moura2023crewai} crews: the Initialization Crew (pink zone), Conformer Crew (blue zone), and Post-processing Crew (green zone), as illustrated in Figure~\ref{fig:fullerene_factory}A. The Initialization and Conformer Crews each contain three agents, while the Post-processing Crew comprises four agents. All agents utilize a custom tool library incorporating PubChem search functionality, structure generation capabilities, MLIP execution tools, and additional utilities. The Conformer Crew operates iteratively based on the number of sequential reaction steps required. Figure~\ref{fig:fullerene_factory}B presents the three most thermodynamically stable structures generated from the following user query, utilizing the DeepSeek-V3.2-Exp~\cite{deepseek} model across all agents:
 \begin{tcolorbox}[title=\textbf{Example Query}]
 Generate a C60 fullerene structure with the addend as anthracene. Get single step addition products where the total number of angles to make conformers is 15. Also, store all the optimized structures in the database. Get the 5 best structures and return the energy report as text data.
 \end{tcolorbox}
@@ -548,7 +545,7 @@ I.R.: Conceptualization, Resources, Supervision, Writing - Review \& Editing; A.
 
 \section*{Introduction}
 
-Reasoning models such as DeepSeek-R1, Gemini-2.5-Pro, and Ether0 are emerging, and have demonstrated strong problem-solving capabilities by generating step-by-step reasoning traces.~\cite{Guo2025-kn,narayanan2025trainingscientificreasoningmodel} However, their reasoning traces, especially how models organize and apply chemical knowledge, remain underexplored. 
+Reasoning models such as DeepSeek-R1, Gemini-2.5-Pro, and Ether0 are emerging, and have demonstrated strong problem-solving capabilities by generating step-by-step reasoning traces.~\cite{Guo2025-kn,narayanan2025trainingscientificreasoningmodel} However, their reasoning traces, especially how models organize and apply chemical knowledge, remain underexplored.
 
 Inspired by Thought Anchors,~\cite{bogdan2025thoughtanchorsllmreasoning} we began exploring reasoning-trace knowledge extraction and interpretability in LLMs for chemistry problems, which is a new direction toward understanding their inner workings. This study represents an early step toward LLM interpretability. By analyzing reasoning traces as structured knowledge graphs, we aim to uncover which reasoning steps carry the greatest influence and how different models differ in reasoning structure and their inner knowledge. 
 
@@ -566,8 +563,7 @@ C(CCCCC)CCC(=O)OCCCCCC
 \end{verbatim}
 \end{quote}
 
-Ether0 is a 24B parameter model fine-tuned with supervised finetuning (SFT) and group relative policy optimization (GRPO) from Mistral-Small-24B-Instruct-2501, pretrained on DeepSeek-R1, and further refined with Gemini-2.5-Flash. The model was deployed on NERSC’s Perlmutter HPC using four A100 GPUs. DeepSeek-R1 was accessed through OpenRouter. Gemini-2.5-Prowas evaluated via Gemini API. Ether0 solved 25, DeepSeek-R1 24, and Gemini-2.5-Pro 12 of the 75 problems. Using GPT-5, we parsed the reasoning outputs, classified sentences into functional categories, and identified dependencies among them to reveal structural relationships. Each reasoning trace was then represented as a directed graph, where nodes correspond to reasoning steps and edges capture logical dependencies. We applied graph-based methods to visualize reasoning relationships. By combining sentence functions with closeness and pagerank centrality, we were able to extract key knowledge, which often in the “fact retrieval” with highest closeness or pagerank centrality (Figure 8A). 
-
+Ether0 is a 24B parameter model fine-tuned with supervised finetuning (SFT) and group relative policy optimization (GRPO) from Mistral-Small-24B-Instruct-2501, pretrained on DeepSeek-R1, and further refined with Gemini-2.5-Flash. The model was deployed on NERSC’s Perlmutter HPC using four A100 GPUs. DeepSeek-R1 was accessed through OpenRouter. Gemini-2.5-Prowas evaluated via Gemini API. Ether0 solved 25, DeepSeek-R1 24, and Gemini-2.5-Pro 12 of the 75 problems. Using GPT-5, we parsed the reasoning outputs, classified sentences into functional categories, and identified dependencies among them to reveal structural relationships. Each reasoning trace was then represented as a directed graph, where nodes correspond to reasoning steps and edges capture logical dependencies. We applied graph-based methods to visualize reasoning relationships. By combining sentence functions with closeness and pagerank centrality, we were able to extract key knowledge, which often in the “fact retrieval” with highest closeness or pagerank centrality (Figure~\ref{fig:llm-reasoning-interp}A). 
 
 \begin{figure}[h]
     \centering
@@ -582,7 +578,7 @@ We then performed cross model comparison. Gemini-2.5-Pro produced the longest re
 Future work can be focused on introducing chemistry knowledge judging and developing more efficient reasoning-trace metrics to quantify reasoning quality. Another promising direction is to locate where chemistry knowledge is represented within model structures. Such insights could guide to develop advanced reasoning LLM. 
 
 \section*{Open-source Materials}
-Code available on GitHub: \github{https://github.com/BaosenZ/mach-interp-LLM-hackathon-2025.git}
+Code available on GitHub: \github{https://github.com/BaosenZ/mach-interp-LLM-hackathon-2025.git}\,; Demo video: \youtube{https://youtu.be/tW3ArrFU4_Y}
 
 \section*{Author Contributions}
 B.Z.: Conceptualization, Code writing, Draft writing; H.L.: Code writing, Draft writing.
@@ -710,7 +706,7 @@ Accelerating materials discovery requires unifying structural, property, and app
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.75\linewidth]{figures/KG_ONTOLOGY.png}
+    \includegraphics[width=0.9\linewidth]{figures/KG_ONTOLOGY.png}
     \caption{OntoKG pipeline: seed knowledge graph (Neo4j) $\rightarrow$ LLM-guided hypothesis generation (Ollama: Llama3/Mistral) $\rightarrow$ validation (Matbench, Materials Project, rule-based constraints) $\rightarrow$ write-back with provenance and timestamps $\rightarrow$ Streamlit-based visualization and analytics.}
     \label{fig:kg_ontology_workflow}
 \end{figure}
@@ -737,9 +733,7 @@ Planned enhancements include: (i) expansion to larger-scale MatKG datasets, (ii)
 \section*{Open-source Materials}
 
 
-\noindent\textbf{Code:} \href{https://github.com/deepaksaipendyala/OntoKG}{\faGithubSquare\;GitHub Repository}\\
-\textbf{Demo Video:} \href{https://youtu.be/t9jvssU48KQ}{Project Walkthrough}\\
-\textbf{Reference Dataset:} \href{https://github.com/olivettigroup/MatKG}{MatKG – Materials Knowledge Graph Repository}
+\noindent Code: \github{https://github.com/deepaksaipendyala/OntoKG}\,; Reference Dataset: \database{https://github.com/olivettigroup/MatKG}\,; Demo Video: \youtube{https://youtu.be/t9jvssU48KQ}\,;
 
 
 \section*{Author Contributions}
@@ -778,7 +772,7 @@ Molecular dynamics (MD) simulations use Newtonian mechanics to model the time-de
 
 \section*{Results}
 
-We developed a fully functional Streamlit Cloud–hosted web application \cite{streamlit} for rapid analysis of molecular dynamics (MD) logs and trajectories. The platform comprises 5 modules: Simulation Assessment, Analysis Query, Results, and Trajectory Conversion, as illustrated in Figure \ref{fig:MintLLM} below.
+We developed a fully functional Streamlit Cloud–hosted web application \cite{streamlit} for rapid analysis of molecular dynamics (MD) logs and trajectories. The platform comprises 5 modules: Simulation Assessment, Analysis Query, Results, and Trajectory Conversion, as illustrated in Figure~\ref{fig:MintLLM} below.
 
 \begin{figure}[!ht]
   \centering
@@ -797,10 +791,8 @@ Future development of MINT LLM will focus on implementing complete functionality
 
 \section*{Open-source Materials}
 
-All source code and related materials are available on GitHub and project website.
-\github{https://github.com/ncsu-llm-hackathon-materials-2025/MINT-LLM.git}.
-
-\url{https://mint-llm.streamlit.app/}.
+All source code and related materials are available on GitHub:
+\github{https://github.com/ncsu-llm-hackathon-materials-2025/MINT-LLM.git}\,; Project website: \globe{https://mint-llm.streamlit.app/}\,; Video demo: \youtube{https://www.linkedin.com/feed/update/urn:li:activity:7372408867328274432/}\,;
 
 \section*{Author Contributions}
 C.J.B.: Conceptualization, Software, Visualization, Writing - Original Draft \& Editing; M.F.:  Conceptualization, Software, Visualization, Writing - Original Draft \& Editing, N.J.: Conceptualization, Software, Writing - Review \& Editing; L.B.:  Conceptualization, Software, Writing - Original Draft; D.I.: Software, Writing - Review \& Editing; R.V:  Conceptualization, Software.
@@ -860,7 +852,7 @@ To validate our results, we used the pre-annotated MuLMS text corpus \cite{schra
 We plan to integrate a hybrid pre‑pruning stage that leverages vector‑based lexical similarity to further reduce LLM query count, and to evaluate the approach on larger, domain‑specific ontologies such as the PMD core ontology \cite{Bayerlein2024}.
 
 \section*{Open‑source Materials}
-All code, demonstration notebooks, and the MCP‑compatible service for subtree retrieval are released under BSD3 license at \url{https://github.com/materialdigital/ontomapper}.
+All code, demonstration notebooks, and the MCP‑compatible service for subtree retrieval are released under BSD3 license at GitHub: \github{https://github.com/materialdigital/ontomapper}\,; Video demo: \youtube{https://www.youtube.com/watch?v=NuG3IHJun4M}
 
 \section*{Author Contributions}
 W.W.: Conceptualization, Project administration, Writing – review \& editing; J.S.: Conceptualization, Methodology, Software, Writing – original draft, Writing – review \& editing; S.Nag: Methodology, Software, Validation, Visualization, Writing – review \& editing; T.Frank: Data Curation, Visualization, Resources, Writing – review \& editing; E.N.: Resources, Methodology, Formal analysis; K.H.: Resources, Methodology, Formal analysis
@@ -911,7 +903,7 @@ The image path in \texttt{AtomBridge} automatically identifies figures from PDFs
 Given the difficulties in extracting real-space information from low-quality images in manuscripts, we would like to develop a more robust workflow for extracting both real-space and reciprocal-space information from images. Additionally, we would like to add further stability checks to the generated structures using density functional theory, and a more robust pipeline for foundational machine learning interatomic potentials \cite{batatia2023foundation}.
 
 \section*{Open-source Materials}
-Code available on GitHub: \github{https://github.com/dpalmer-anl/AtomBridge.git}
+Code available on GitHub: \github{https://github.com/dpalmer-anl/AtomBridge.git}\,; Demo video: \youtube{https://youtu.be/PQHEWl9STFM}\,;
 
 \section*{Author Contributions}
 %JG: , GG: , HJ: Conceived the idea and designed the workflow, experiments, extracted, and validated electron microscopy images and lattice vectors, RK: , DP: Developed RAG for ASE code,  generation and Presented Demo , TR: .
@@ -982,8 +974,10 @@ Added carbonyl (=O)                     & 19  & +0.054 & --0.168 & +19.958 \\
 
 \section*{Future Work}
 Future work will focus on leveraging pretrained molecular language models such as ChemBERTa, ChemGPT, and Tx-Gemma to enhance GAINS through domain-specific fine-tuning and property-conditioned generation \cite{Chemberta,chemgpt,txgemma}.  
+
 \section*{Open-source Materials}
-Source code available on GithHub: https://github.com/napoles-uach/GAINS
+Source code available on GitHub: \github{https://github.com/napoles-uach/GAINS}\,; Video demo: \youtube{https://youtu.be/gd6tvAtTTiQ}\,;
+
 \section*{Author Contributions:}
 J.M.N.-D.: Conceptualization, Methodology, Implementation, Analysis, Visualization, Writing.
 
@@ -1042,7 +1036,7 @@ During the LLM Hackathon, we implemented and validated the following capabilitie
   \item \textbf{End-to-end IR pipeline:} Automated geometry optimization, harmonic frequency analysis, and IR‐intensity generation, with robust fallbacks (restarts, stale‐file cleanup, and parameter retries) to improve reliability.
   \item \textbf{Calculator backends:} Integration of an ASE calculator based on AIMNet2~\cite{AIMNet2_PNASplus_2025} and dipole‐moment calculations via GFN2‐xTB~\cite{bannwarth2019gfn2}, enabling fast ML‐accelerated runs and efficient screening.
   \item \textbf{Interactive visualization:} A user interface that renders the IR spectrum (image and peak table), supports mode selection, and previews animated normal‐mode displacements in 3D to aid interpretation.
-  \item \textbf{Reproducible file artifacts:} Standardized outputs for downstream analysis, including \texttt{frequencies.csv}, per‐mode \texttt{.traj} files, and a saved spectrum image (\texttt{ir\_spectrum.png}) for reproducible workflows.
+  \item \textbf{Reproducible file artifacts:} Standardized outputs for downstream analysis, including \texttt{frequencies\\.csv}, per‐mode \texttt{.traj} files, and a saved spectrum image (\texttt{ir\_spectrum.png}) for reproducible workflows.
   \item \textbf{LLM backends:} Added Groq support end‐to‐end (dependencies, configuration, loader, and supported‐model registry) to improve portability and provider choice.
 \end{itemize}
 
@@ -1053,8 +1047,8 @@ We plan to incorporate anharmonic effects through frequency-scaling schemes alon
 We will also integrate a curated database of experimental IR spectra with solvent and temperature metadata to enable side-by-side comparison, automated peak matching, and rigorous provenance. 
 To quantify accuracy and cost–benefit trade-offs, we will benchmark ML-derived normal modes, frequencies, and intensities against the experimental database. 
 \section*{Open-source Materials}
-ChemGraph source code is available on GitHub: https://github.com/argonne-lcf/ChemGraph.
-We also provide a special release for the hackathon here: https://github.com/argonne-lcf/ChemGraph/releases/tag/v2025.09.12
+ChemGraph source code is available on GitHub: \github{https://github.com/argonne-lcf/ChemGraph}\,; 
+We also provide a special release for the hackathon here: \href{https://github.com/argonne-lcf/ChemGraph/releases/tag/v2025.09.12}{v2025.09.12}\,; Demo video: \youtube{https://youtu.be/LLz4MXTztWA}\,;
 
 \section*{Author Contributions}
 A.A.: Documentation.
@@ -1125,7 +1119,7 @@ Future directions include:
 (3) extending from single-sample (local) explanations to dataset-level analyses that assess model reliability and uncover broader structure–property trends beyond accuracy metrics.
 
 \section*{Open-source Materials}
-Code is available on GitHub: https://github.com/epatyukova/llm2025-hackathon-CLUE
+Code is available on GitHub: \github{https://github.com/epatyukova/llm2025-hackathon-CLUE}\,; Demo video: \youtube{https://x.com/ElenaPatyukova/status/1966598741105746362}\,;
 
 \section*{Author Contributions}
 E.P.: Conceptualization; E.P., ChatGPT-5: Implementation; Visualization.  ChatGPT-4-mini was used for the generation of explanations.
@@ -1171,7 +1165,7 @@ I note that I used the CLine AI coding assistant with the Claude LLM to accelera
 I plan to extend data-handling capabilities, increase active-learning model robustness, and integrate a local LLM to enable direct, privacy-preserving interaction with data.
 
 \section*{Open-source Materials}
-Code is available on GitHub: \github{https://github.com/ViktoriiaBaib/NEDD}
+Code is available on GitHub: \github{https://github.com/ViktoriiaBaib/NEDD}\,; Demo video: \youtube{https://www.linkedin.com/posts/viktoriia-baibakova_ai-materialsscience-hackathon-activity-7372296092257800192-pssH?utm_source=share&utm_medium=member_desktop&rcm=ACoAADoFARMBcTXMnjRDWSM6OoM9_ggldCivzp8}\,;
 
 \section*{Author Contributions}
 V.B.: Conceptualization, Execution, Visualization.
@@ -1252,7 +1246,7 @@ RMSE & 0.502 \AA \\
 Future work should seek to use larger LLM models, use a larger combined dataset (e.g., data from NOMAD~\cite{draxl2019nomad}), and perform a systematic comparison with state-of-the art graph neural network methods used in materials science~\cite{rhodes2025orb, bechtel2025band}.
 
 \section*{Open-source Materials}
-Code and tutorial video are available on GitHub: \github{https://github.com/anky3733/Traj}.
+Code and related resources are available on GitHub: \github{https://github.com/anky3733/Traj}\,; Video demo: \youtube{https://drive.google.com/file/d/1vn3kjPw_2SXSUMvP6i4DSSY9x9Igco8E/view}\,;
 \section*{Author Contributions}
 D.S.: conceptualization, code, writing.
 A.P.: conceptualization, code.
@@ -1298,7 +1292,7 @@ MaterialSim is an open-source Python package designed to automate computational 
 Looking ahead, we aim to advance this framework toward a fully integrated, autonomous computational workflow. Our vision is for researchers to initiate simulations, track their progress, analyze outputs, and generate predictive insights through natural-language interaction with an AI system. By enabling complex modelling tasks to be conducted through intuitive dialogue rather than specialized interfaces, this approach has the potential to broaden access to state-of-the-art computational methods and accelerate simulation-driven scientific discovery. 
 
 \section*{Open-source Materials}
-Code is available on GitHub: \github{https://github.com/Awwal41/MaterialSim.git}
+Code is available on GitHub: \github{https://github.com/Awwal41/MaterialSim.git}\,; Demo video: \youtube{https://youtu.be/1wNyPK6Py5U}\,;
 
 \section*{Author Contributions}
 A.O.: Conceptualization, Resources, Supervision, Methodology, Software, Writing - Original Draft, Writing - Review \& Editing; V.V.: Investigation, Methodology, Data Curation, Writing - Review \& Editing; A.P.: Software, Visualization; T.B.:  Formal Analysis, Writing - Review \& Editing; J.Y: Formal Analysis, Writing - Review \& Editing
@@ -1325,25 +1319,25 @@ Steel Corrosion Agent for Risk Assessment (SCARA)}
     \textsuperscript{2}University of Science and Technology of China
 }
 
-\section*{Introduction}
-Steel is the backbone of industrial infrastructure, from pipelines and refineries to marine and transportation systems. Despite its strength and cost-effectiveness, its durability is constantly threatened by corrosion, especially in aggressive environments such as (\ce{CO2} / \ce{H2S}/ HCl) mixtures. Corrosion weakens structural integrity and contributes to billions of dollars in global annual losses through maintenance, inspection, and premature failures~\cite{SCARA1}.
-Conventional corrosion assessment methods based on ASTM/NACE standards, experimental testing, and scattered databases are slow, fragmented, and reactive, limiting timely decision-making in critical industries like oil \& gas and infrastructure~\cite{SCARA2}.
-Recent advances in Large Language Models (LLMs) offer a transformative opportunity. By integrating standards, datasets, and literature, LLMs can act as digital corrosion experts, providing rapid predictions, explainable reasoning, and alloy recommendations.
-This hackathon project introduces SCARA (Steel Corrosion Agent for Risk Assessment), an LLM powered assistant designed to:
-•	Predict corrosion risk under defined conditions.
+\section*{Introduction} 
+Steel is the backbone of industrial infrastructure, yet corrosion in aggressive environments such as (\ce{CO2} / \ce{H2S}/ HCl) mixtures weakens structural integrity and contributes to billions in global annual losses~\cite{SCARA1}. Conventional corrosion assessment methods based on ASTM/NACE standards are slow, fragmented, and reactive, limiting timely decision-making~\cite{SCARA2}. Large Language Models (LLMs) offer a transformative opportunity by integrating standards, datasets, and literature to provide rapid predictions and alloy recommendations. 
 
-•	Provide standardized risk scores (low, medium, high).
-
-•	Recommend safer alloys supported by data and standards.
-SCARA consolidates scattered corrosion knowledge into a unified, intelligent platform, aiming to enhance reliability, safety, and cost efficiency across industrial applications.
-
-Scara workflow (\ref{fig:SCARA}) is a designed LLM-Based framework to predict the steel performance of industrial and urban environments. The process initiates with the user input, which describes the environment (phase types, composition, thermodynamic conditions, and a brief description of the application (geometry, methodology, and location). The steel standard used, such as AISI, API, or UNS is fed, and the system automatically links the standard to the composition of the steel through the LLM model and the MatWeb materials database extracting the composition of the given designations. The prompt information is submitted to the LLM-Agent trained in scientific papers, review papers, books, and risk assessment standards
-The agent analyzes the data provided and generates supporting evidence, estimates the corrosion risk, and recommends possible steel suggestions. A validator checks the consistency of the predictions within a defined risk scale, if the validation converges the results are approved and the final risk assessment is report with the validated evidence while the inconsistent outputs are recalculated. SCARA integrates in this form the documentation, material data and LLM-agent reasoning to deliver evidence-based corrosion evaluations. 
+This project introduces SCARA (Steel Corrosion Agent for Risk Assessment), an LLM-powered assistant designed to predict corrosion risk, provide standardized risk scores, and recommend safer alloys. SCARA workflow (\ref{fig:SCARA}) initiates with user input describing the environment and steel standard. The system links the standard to steel composition through the LLM model and MatWeb database. The LLM-Agent, trained on scientific literature and standards, analyzes data, estimates corrosion risk, and recommends alternative steels. A validator checks prediction consistency; validated results are reported with evidence, while inconsistent outputs are recalculated. SCARA integrates documentation, material data, and LLM reasoning to deliver evidence-based corrosion evaluations.
 
 \section*{Results}
-Figure \ref{fig:SCARresults} demonstrates the performance of SCARA-Agent against two different predictive methodologies, namely, OpenAI’s common model (prompted by the same text) and the supervised ML algorithms. SCARA-Agent outperforms the open AI model with a 15\% gap, however, the more specialized supervised approach proved a better performance, which is justifiable considering that SCARA-Agent is still a demo version of what can be a general corrosion scientist agent. 
-SCARA demonstrates the potential of LLM Agents to evaluate corrosion risk by integrating standards, literature, and material databases into a decision-making platform. Unlike conventional approaches that are often fragmented scope-limited, SCARA provides rapid corrosion predictions, flexible risk assessment, and alloy recommendations backed by scientific evidence.
+\begin{figure}[htbp]
+\centering
+\begin{minipage}{0.48\textwidth}
+Figure~\ref{fig:SCARresults} demonstrates the performance of SCARA-Agent against two different predictive methodologies, namely, OpenAI’s common model (prompted by the same text) and the supervised ML algorithms. SCARA-Agent outperforms the open AI model with a 15\% gap, however, the more specialized supervised approach proved a better performance, which is justifiable considering that SCARA-Agent is still a demo version of what can be a general corrosion scientist agent.
 
+SCARA demonstrates the potential of LLM Agents to evaluate corrosion risk by integrating standards, literature, and material databases into a decision-making platform. Unlike conventional approaches that are often fragmented scope-limited, SCARA provides rapid corrosion predictions, flexible risk assessment, and alloy recommendations backed by scientific evidence.
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{figures/SCARresults.png}
+    \captionof{figure}{SCARA (Steel Corrosion Agent for Risk Assessment) general workflow.}
+    \label{fig:SCARresults}
+\end{minipage}
+\end{figure}
 
 \begin{figure}[h]
     \centering
@@ -1351,17 +1345,12 @@ SCARA demonstrates the potential of LLM Agents to evaluate corrosion risk by int
     \caption{SCARA (Steel Corrosion Agent for Risk Assessment) general workflow.}
     \label{fig:SCARA}
 \end{figure}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.65\linewidth]{figures/SCARresults.png}
-    \caption{SCARA (Steel Corrosion Agent for Risk Assessment) general workflow.}
-    \label{fig:SCARresults}
-\end{figure}
+
 \section*{Future Work}
-Although still in its demo phase, SCARA outperforms general-purpose AI models and shows promise as a scalable digital corrosion expert. While specialized supervised ML methods currently deliver higher accuracy, SCARA’s strength lies in its adaptability, explainability, and integration of domain-specific knowledge. With further refinement, SCARA could evolve into a reliable and practical tool to enhance safety, reduce costs, and improve materials selection across critical industrial sectors.
+Although in demo phase, SCARA outperforms general-purpose AI models as a scalable digital corrosion expert. While specialized supervised ML methods deliver higher accuracy, SCARA's strength lies in its adaptability, explainability, and domain knowledge integration. With refinement, SCARA could become a reliable tool to enhance safety, reduce costs, and improve materials selection across critical industrial sectors.
 
 \section*{Open-source Materials}
-Code available on GitHub: \github{https://github.com/https://github.com/mo-alkubaish/SCARA}
+Code available on GitHub: \github{https://github.com/https://github.com/mo-alkubaish/SCARA}\,; Demo video: \youtube{https://www.linkedin.com/posts/chahd-rahyl-adjmi-47735a230_excited-to-share-our-project-from-the-llm-activity-7372417195986952192-Yvi5?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAADAMli0BrlltRHXvt_74QdWRHZXwBtI4wew&utm_campaign=copy_link}\,;
 
 \section*{Author Contributions}
 H.A.: Conceptualisation, Data Curation, Analysis, Software, Writing,; M.A.: Software, Data Curation; O.R.: Conceptualisation, Data Curation, Writing, Visualisation; C.A.: Data Curation, Visualisation; M.A.; Data Curation, M.A.: Software.
@@ -1399,7 +1388,7 @@ This report describes \texttt{ChromatographyMiner}, an interactive web-based pla
 \end{figure}
 
 \section*{Results}
-The developed platform provides a fast, flexible, and vendor-neutral solution for identifying chemical compounds from gas chromatography–mass spectrometry and two-dimensional gas chromatography–mass spectrometry data. By combining efficient top-ion pre-filtering with large-scale public spectral libraries such as MassBank and MassBank of North America, it achieves rapid and high-quality tentative compound identifications as shown in \textbf{Figure \ref{fig:ChromatographyMiner}}. \\
+The developed platform provides a fast, flexible, and vendor-neutral solution for identifying chemical compounds from gas chromatography–mass spectrometry and two-dimensional gas chromatography–mass spectrometry data. By combining efficient top-ion pre-filtering with large-scale public spectral libraries such as MassBank and MassBank of North America, it achieves rapid and high-quality tentative compound identifications as shown in \textbf{Figure~\ref{fig:ChromatographyMiner}}. \\
 
 The system’s curated output file, \texttt{saved\_refs.json}, links observed chromatographic peaks to definitive reference spectra from the libraries, ensuring traceability and reproducibility across different experiments. Benchmark results show:
 \begin{itemize}
@@ -1415,10 +1404,8 @@ The system’s curated output file, \texttt{saved\_refs.json}, links observed ch
 Future development will focus on expanding compatibility to additional vendor-neutral formats such as the mzML standard, implementing automated co-elution deconvolution algorithms, and integrating external chemical databases such as PubChem and ChemSpider to enrich the final identification records with chemical properties and metadata. Upcoming updates will also include a dedicated Python software development kit (SDK) and web-based application programming interface (API) for high-throughput, programmatic analysis. 
 
 \section*{Open-source Materials}
-All code, documentation, and example datasets are publicly available under the MIT open-source license at:  
-\github{https://github.com/msehabibur/gcxgc_peakcards}
-
-
+All code, documentation, and example datasets are publicly available under the MIT open-source license on GitHub:  
+\github{https://github.com/msehabibur/gcxgc_peakcards}\,; Demo video: \youtube{https://www.youtube.com/watch?v=EUzJ4XTkCG4}\,;
 
 \section*{Author Contributions}
 \textbf{M.H.R} Conceptualization, software development, data processing, validation, and manuscript preparation.  
@@ -1462,7 +1449,7 @@ In this project, we asked whether a multimodal LLM agent could be used to automa
   \label{fig:Guillemot}
 \end{figure}
 
-A provider-agnostic LLM-powered agent, \texttt{Guillemot} \github{https://github.com/datalab-org/guillemot}, was created using the Pydantic AI framework and provided with several tools. Upon receiving a diffraction pattern (optionally downloaded from a \emph{datalab} instance \cite{Evans2025a}) and rubric from the researcher, for example "I have made a sample containing Mn and Sb", \texttt{Guillemot} will first perform a unified query of the federation of $\sim$20 open crystal structure databases comprising the OPTIMADE consortium \cite{Evans2024a, Evans2021} for relevant crystal structures, prioritising those with prior experimental grounding. \texttt{Guillemot} then makes a judgement as to which trial phases to include in an initial refinement. From these phases, it can create a TOPAS \cite{Coelho2018} input file, execute a Rietveld refinement of the trial phases and then process the output into a graphical summary. \texttt{Guillemot} also is able to use a tool to replot the information and zoom into selected regions of interest, such as the dominant or impurity peaks, just as a human expert might. The agent will then assess the quality of the refinement and decide on the next steps, i.e., pick another phase from the trial set, attempt to model impurities via inclusion of additional phases, or add strain to the trial crystal structure, as well as any of the other functionality exposed via TOPAS.
+A provider-agnostic LLM-powered agent, \texttt{Guillemot}, was created using the Pydantic AI framework and provided with several tools. Upon receiving a diffraction pattern (optionally downloaded from a \emph{datalab} instance \cite{Evans2025a}) and rubric from the researcher, for example "I have made a sample containing Mn and Sb", \texttt{Guillemot} will first perform a unified query of the federation of $\sim$20 open crystal structure databases comprising the OPTIMADE consortium \cite{Evans2024a, Evans2021} for relevant crystal structures, prioritising those with prior experimental grounding. \texttt{Guillemot} then makes a judgement as to which trial phases to include in an initial refinement. From these phases, it can create a TOPAS \cite{Coelho2018} input file, execute a Rietveld refinement of the trial phases and then process the output into a graphical summary. \texttt{Guillemot} also is able to use a tool to replot the information and zoom into selected regions of interest, such as the dominant or impurity peaks, just as a human expert might. The agent will then assess the quality of the refinement and decide on the next steps, i.e., pick another phase from the trial set, attempt to model impurities via inclusion of additional phases, or add strain to the trial crystal structure, as well as any of the other functionality exposed via TOPAS.
 
 Without needing any fine-tuning, frontier models were capable of writing TOPAS input files with only a few examples, making adjustments based on any formatting or syntax errors emitted by TOPAS.
 
@@ -1473,7 +1460,7 @@ This project focused on a specific analyis task: Rietveld refinement using the T
 
 \section*{Open-source Materials}
 
-Code is available on GitHub under the terms of the MIT license at \github{https://github.com/datalab-org/guillemot} \texttt{datalab-org/guillemot}.
+Code is available on GitHub under the terms of the MIT license on GitHub: \github{https://github.com/datalab-org/guillemot}\,; Demo video: \youtube{https://www.youtube.com/watch?v=0hpQB-fnDRQ}\,;
 
 \section*{Author Contributions}
 J.B.: Conceptualization, Software, Data Curation, Writing.
@@ -1518,7 +1505,7 @@ In this work, we demonstrate this vision using the ML model developed by Chen et
 \end{figure}
 
 \section*{Results}
-We developed XAScribe, an AI-assisted platform to automate the analysis and interpretation of Ni K-edge X-ray Absorption Spectroscopy (XAS) data (\textbf{Figure \ref{fig:XAScribe workflow}}). Our work demonstrates how large language models (LLMs) and machine learning can accelerate spectroscopy workflows by generating manuscript-ready scientific analyses. The XAScribe workflow integrates a Retrieval-Augmented Generation (RAG) framework using Google Gemini \cite{lewis2020retrieval}, which performs context-aware text generation from a curated corpus of 25 peer-reviewed papers containing XAS data and its analysis. In parallel, a Random Forest Regressor, trained on public XAS datasets \cite{chen2024cdf}, predicts oxidation states and Ni–O bond lengths, with Shapley Additive Explanations (SHAP) \cite{lundberg2017shap} providing physical interpretability of spectral features (\textbf{Figure \ref{fig:XAScribe result}}). The retrieval and embedding pipeline leverages FAISS for efficient similarity search \cite{johnson2017faiss}. This entire workflow is deployed as an interactive Streamlit web application, where users can upload experimental spectra to receive quantitative predictions and manuscript-ready analysis. 
+We developed XAScribe, an AI-assisted platform to automate the analysis and interpretation of Ni K-edge X-ray Absorption Spectroscopy (XAS) data (\textbf{Figure~\ref{fig:XAScribe workflow}}). Our work demonstrates how large language models (LLMs) and machine learning can accelerate spectroscopy workflows by generating manuscript-ready scientific analyses. The XAScribe workflow integrates a Retrieval-Augmented Generation (RAG) framework using Google Gemini \cite{lewis2020retrieval}, which performs context-aware text generation from a curated corpus of 25 peer-reviewed papers containing XAS data and its analysis. In parallel, a Random Forest Regressor, trained on public XAS datasets \cite{chen2024cdf}, predicts oxidation states and Ni–O bond lengths, with Shapley Additive Explanations (SHAP) \cite{lundberg2017shap} providing physical interpretability of spectral features (\textbf{Figure~\ref{fig:XAScribe result}}). The retrieval and embedding pipeline leverages FAISS for efficient similarity search \cite{johnson2017faiss}. This entire workflow is deployed as an interactive Streamlit web application, where users can upload experimental spectra to receive quantitative predictions and manuscript-ready analysis. 
 
 \begin{figure}[H]
     \centering
@@ -1556,9 +1543,9 @@ Y.B.Z.: Conceptualization, Software, Writing, M.M: Software, Data Curation, Writ
 The \textit{LLM Hackathon for Applications in Materials Science \& Chemistry} illustrates the potential of domain-specialized agentic research assistants in accelerating scientific workflows or serving as a component within general-purpose models. As noted by Hu \textit{et.al.}~\cite{hu2025automateddesignagenticsystems}, "the history of machine learning teaches us that hand-designed solutions are eventually replaced by learned solutions", suggesting that automated generation of also the research agents is a natural next step. Furthermore, our recent work~\cite{akke2025bayesian} indicates that agents often benefit significantly from a limited toolset and context, further motivating the automated development of minimal, task-specific agents. 
 
 \section*{Results}
-We propose BAKER, a fully automated framework for spawning specialized research assistants. The user begins by answering questions about the experiment or project they need support with to guarantee BAKER \textbf{understands} the task (Figure \ref{fig:baker-descr}, \textbf{Builder}). BAKER then constructs a multi-agent assistant in four steps. First, a strategist–critic loop forms a \textbf{high-level design} for the assistant, distributing tasks across nodes and assigning appropriate tools to each. Next, any number of \textbf{specialist} node-cards are implemented in parallel, each defining data permissions, available tools, and guidelines for inter-node compatibility. In the third stage, all required \textbf{tools} are implemented within a coder–critic loop to ensure compliance with database schemas, naming conventions, and cross-tool compatibility. Finally, a \textbf{review} phase analyses the completed assistant to identify potential bottlenecks and integration issues and if so, ensures they are corrected.
+We propose BAKER, a fully automated framework for spawning specialized research assistants. The user begins by answering questions about the experiment or project they need support with to guarantee BAKER \textbf{understands} the task (Figure~\ref{fig:baker-descr}, \textbf{Builder}). BAKER then constructs a multi-agent assistant in four steps. First, a strategist–critic loop forms a \textbf{high-level design} for the assistant, distributing tasks across nodes and assigning appropriate tools to each. Next, any number of \textbf{specialist} node-cards are implemented in parallel, each defining data permissions, available tools, and guidelines for inter-node compatibility. In the third stage, all required \textbf{tools} are implemented within a coder–critic loop to ensure compliance with database schemas, naming conventions, and cross-tool compatibility. Finally, a \textbf{review} phase analyses the completed assistant to identify potential bottlenecks and integration issues and if so, ensures they are corrected.
 
-Once complete, the user is prompted by their fresh-out-of-the-oven \textbf{assistant} (Figure \ref{fig:baker-descr}) to proceed with their work. The only pre-defined node is a \textit{Data Manager} with superuser access, responsible for purging, and pruning datasets in the database. All agents share a common vector database accessible to every tool maintaining a unified information environment. Each node is also initialized with a minimal default toolset for database interaction.
+Once complete, the user is prompted by their fresh-out-of-the-oven \textbf{assistant} (Figure~\ref{fig:baker-descr}) to proceed with their work. The only pre-defined node is a \textit{Data Manager} with superuser access, responsible for purging, and pruning datasets in the database. All agents share a common vector database accessible to every tool maintaining a unified information environment. Each node is also initialized with a minimal default toolset for database interaction.
 
 Using BAKER, we successfully generated a simple agentic workflow for LLM-assisted Bayesian Optimization in under 5 min -- a process that would typically require a a skilled LLM builder several hours to days -- demonstrating BAKER's potential to accelerate discovery and democratizing the design of agentic research assistants. 
 
@@ -1601,7 +1588,7 @@ All code is on GitHub: \github{https://github.com/mattiasutancykeln/Baker}.
 Polymers are inherently multi-order in nature with their end properties dictated by multiple factors across dimensions such as the chemical structure, the crystalline order, chain length and stoichiometry, phase behaviour and orientation \cite{D3PY00395G}. The current state of the art utilizes 1D PSMILES for the representation of these complex structures which may not capture the chain level and microstructure properties of the polymer. Our approach explores the possibility of using multimodal embeddings created using large language models. The workflow creates three types of embedding from the provided PSMILES input, and the embeddings are then fused into continuous multimodal embedding provided as input to the GNN. The model is trained on predicting the Glass transition temperature (Tg) of the polymer, as this property can vary significantly based on chemical structure, crystallinity, and conformation. The model is trained on a synthetic dataset of 10000 polymers and validated on validation set of 7000 polymers whose Tg values were validated experimentally.
 
 \section*{Results}
-The workflow of the Polypredictor platform is provided in image (Figure \ref{fig:ppred-descr}).
+The workflow of the Polypredictor platform is provided in image (Figure~\ref{fig:ppred-descr}).
 
 \begin{figure}[h!]
     \centering
@@ -1690,7 +1677,7 @@ Future efforts will focus on scripting workflows from scratch and incorporating 
 
 \section*{Open-source Materials} 
 Code is available on GitLab: 
-\href{https://gitlab.com/heingroup/llm-hackathon-2025}{\faGitlab}
+\gitlab{https://gitlab.com/heingroup/llm-hackathon-2025}
 
 \section*{Author Contributions} 
 W.Z.: Conceptualization; Software; Writing – Original Draft. M.P.: Conceptualization; Software; Writing – Editing. M.Z.: Software; Writing – Editing.
@@ -2087,7 +2074,7 @@ ThinFilm.ai is a multimodal AI framework for predicting thin film quality, desig
 The final Streamlit-hosted platform synthesizes these quantitative predictions and qualitative insights, delivering a unified analysis for materials researchers.
 
 \section*{Results}
-Figure \ref{fig:thinfilm} demonstrates the workflow. This project aims to address a critical challenge in experimental materials science: predicting thin film quality from deposition recipes before exhaustive lab experiments are performed. The final results are synthesized in our Streamlit app, which provides instant predictions of crystallinity, roughness, impurity composition, and interface quality.
+Figure~\ref{fig:thinfilm} demonstrates the workflow. This project aims to address a critical challenge in experimental materials science: predicting thin film quality from deposition recipes before exhaustive lab experiments are performed. The final results are synthesized in our Streamlit app, which provides instant predictions of crystallinity, roughness, impurity composition, and interface quality.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth, height=0.4\textheight, keepaspectratio]{figures/thinfilm.jpg}
@@ -2398,10 +2385,10 @@ Here, we present some preliminary experiments evaluating LLMs' ability to constr
 \vspace{-1\baselineskip}
 \end{figure}
 
-We tested three categories of prompts in a commercial LLM (GPT-5-mini). The ``no data'' prompt simply asked for a material's properties. The ``baseline'' and ``analogical'' prompts provided the dataset of structural analogues as context for in-context learning and reasoning. Any method of prediction was allowed for the ``baseline'' prompt, while the ``analogical'' prompt instructed the LLM to form an A : B :: C : D analogy. For example, one LLM's response was based on ``exchanging the B-site cation ... while keeping the A-site cation analogous'', and thus constructed the analogy Sb$_2$SnO$_6$ : Sb$_2$PbO$_6$ :: As$_2$SnO$_6$ : As$_2$PbO$_6$. Much of the time, the LLM failed to follow the instructions, using selected exemplars in various forms of interpolation instead. Answers varied widely across materials and properties (Figure \ref{fig:umbc_cluster_plots_all_properties}). Providing data clearly improved prediction performance, though the effect of analogical prompting was less clear (especially since the LLM frequently failed to follow instructions).
+We tested three categories of prompts in a commercial LLM (GPT-5-mini). The ``no data'' prompt simply asked for a material's properties. The ``baseline'' and ``analogical'' prompts provided the dataset of structural analogues as context for in-context learning and reasoning. Any method of prediction was allowed for the ``baseline'' prompt, while the ``analogical'' prompt instructed the LLM to form an A : B :: C : D analogy. For example, one LLM's response was based on ``exchanging the B-site cation ... while keeping the A-site cation analogous'', and thus constructed the analogy Sb$_2$SnO$_6$ : Sb$_2$PbO$_6$ :: As$_2$SnO$_6$ : As$_2$PbO$_6$. Much of the time, the LLM failed to follow the instructions, using selected exemplars in various forms of interpolation instead. Answers varied widely across materials and properties (Figure~\ref{fig:umbc_cluster_plots_all_properties}). Providing data clearly improved prediction performance, though the effect of analogical prompting was less clear (especially since the LLM frequently failed to follow instructions).
 
 \vspace{0.3\baselineskip}
-We originally asked the LLM to predict all properties at once, and we realized it may perform better if allowed to construct different analogies for different properties. Initial results are consistent with this hypothesis; the distribution of predictions is more favorable for single-property prediction than for multiple properties at once (Figure \ref{fig:umbc_As2PbO6_distributions}).
+We originally asked the LLM to predict all properties at once, and we realized it may perform better if allowed to construct different analogies for different properties. Initial results are consistent with this hypothesis; the distribution of predictions is more favorable for single-property prediction than for multiple properties at once (Figure~\ref{fig:umbc_As2PbO6_distributions}).
 
 \begin{figure}[ht]
     \centering
@@ -2616,7 +2603,7 @@ Catalyze employs a modular agent-based architecture with five specialized AI age
 
 The system is built with Python 3.12+, Flask 3.1+, LangChain, and LangGraph, with a lightweight HTML/CSS/JS frontend. It connects to the ChEMBL MCP Server for chemical data and features platform-specific code generators with built-in validation. For example, when asked to “Generate code for serial dilution,” the Automation Agent prompts for a platform and outputs a complete, executable script with appropriate imports and metadata.
 
-The interface offers a responsive dark/light theme, real-time contextual processing, and seamless handling of text and PDFs. Figure \ref{fig:catalyze_workflow} depicts the full workflow from query routing through agent processing, MCP integration, validation, and response delivery. This scalable design enables rapid expansion to new agents and automation platforms.
+The interface offers a responsive dark/light theme, real-time contextual processing, and seamless handling of text and PDFs. Figure~\ref{fig:catalyze_workflow} depicts the full workflow from query routing through agent processing, MCP integration, validation, and response delivery. This scalable design enables rapid expansion to new agents and automation platforms.
 
 \section*{Future Work}
 Future development will focus on expanding multi-PDF support for simultaneous document analysis, implementing advanced molecular structure visualization with interactive 3D viewers, and enabling real-time collaborative protocol editing. We plan to develop direct hardware integration for closed-loop experimental feedback and expand automation platform support beyond OpenTrons and Lynx to include Hamilton STAR and SPT Labtech systems. Additional priorities include implementing persistent user data storage with Redis-based caching, developing a public API for third-party integrations, and containerizing the system as microservices with automated CI/CD pipelines for improved deployment and scalability.
@@ -3137,7 +3124,7 @@ SS and HNR jointly conceived the research idea. SS served as the primary contrib
 
 Sol–gel synthesis is a widely used solution-based method for a broad range of inorganic material preparation, including metal oxides, metal complexes, and hybrid composites. The ability of sol-gel synthesis to precisely control composition, homogeneity, and nanostructure makes it indispensable for applications in catalysis, especially for oxygen evolution reaction (OER) catalysis. However, the vast and scattered nature of sol–gel literature indicates significant challenges for systematically extracting and organizing synthesis knowledge, especially regarding the specific synthesis routes for material structure, composition and properties.
 
-Here, we developed an sol-gel synthesis agent to extract and summarize synthesis recipes from available literatures, and construct a knowledge base. As illustrated in Figure \ref{fig:two_images_simple_SOLGEL}, detailed procedures from published literature are extracted, cleaned, normalized, and segmented into semantically meaningful text chunks. These  chunks are then embedded using the LLaMA 3.1 model (8 billion parameters), fine-tuned via the Hugging Face and Unsloth ecosystem for efficient domain adaptation. The resulting context-based embeddings are indexed and stored in a FAISS (Facebook AI Similarity Search) database, enabling rapid similarity-based retrieval and contextual linking across diverse synthesis reports.\\
+Here, we developed an sol-gel synthesis agent to extract and summarize synthesis recipes from available literatures, and construct a knowledge base. As illustrated in Figure~\ref{fig:two_images_simple_SOLGEL}, detailed procedures from published literature are extracted, cleaned, normalized, and segmented into semantically meaningful text chunks. These  chunks are then embedded using the LLaMA 3.1 model (8 billion parameters), fine-tuned via the Hugging Face and Unsloth ecosystem for efficient domain adaptation. The resulting context-based embeddings are indexed and stored in a FAISS (Facebook AI Similarity Search) database, enabling rapid similarity-based retrieval and contextual linking across diverse synthesis reports.\\
 This pipeline provides an intelligent interface for identifying synthesis patterns, parameter trends, and knowledge gaps in sol–gel research, thereby accelerating materials discovery and data-driven synthesis optimization.
 
 \section*{Results}
@@ -3149,7 +3136,7 @@ This pipeline provides an intelligent interface for identifying synthesis patter
 \label{fig:two_images_simple_SOLGEL}
 \end{figure*}
 
-To accelerate knowledge extraction for materials synthesis, we developed a streamlined LLM-based pipeline that processes sol–gel literature—specifically references \cite{SolGelPaper1,SolGelPaper2,SolGelPaper3,SolGelPaper4,SolGelPaper5,SolGelPaper6,SolGelPaper7,SolGelPaper8}—selected for their broad coverage of materials. These documents are transformed into a searchable vector database designed to support efficient retrieval and automated reasoning. As shown in Figure \ref{fig:two_images_simple_SOLGEL}, text is first extracted, cleaned, and segmented into chunks, which are then embedded using the LLaMA 3.1 (8B) model via HuggingFace and Unsloth. The resulting contextual embeddings are indexed with FAISS (Facebook AI Similarity Search), enabling rapid semantic retrieval. This approach allows efficient identification of synthesis-relevant information and supports downstream tasks such as inverse synthesis design and autonomous literature triage, demonstrating a scalable method for mining domain-specific insights from unstructured text.
+To accelerate knowledge extraction for materials synthesis, we developed a streamlined LLM-based pipeline that processes sol–gel literature—specifically references \cite{SolGelPaper1,SolGelPaper2,SolGelPaper3,SolGelPaper4,SolGelPaper5,SolGelPaper6,SolGelPaper7,SolGelPaper8}—selected for their broad coverage of materials. These documents are transformed into a searchable vector database designed to support efficient retrieval and automated reasoning. As shown in Figure~\ref{fig:two_images_simple_SOLGEL}, text is first extracted, cleaned, and segmented into chunks, which are then embedded using the LLaMA 3.1 (8B) model via HuggingFace and Unsloth. The resulting contextual embeddings are indexed with FAISS (Facebook AI Similarity Search), enabling rapid semantic retrieval. This approach allows efficient identification of synthesis-relevant information and supports downstream tasks such as inverse synthesis design and autonomous literature triage, demonstrating a scalable method for mining domain-specific insights from unstructured text.
 
 Moreover, to enable context-aware question answering from sol-gel synthesis literature, we implemented a retrieval-augmented generation (RAG) workflow built on top of a vector database and LLaMA 3.1. When a user query is submitted, it is embedded using the same model as the literature corpus, and cosine similarity is computed via FAISS to retrieve the most relevant text chunks. These retrieved passages are combined with a system prompt that defines the assistant role as a domain-specific synthesis expert, guiding it to generate accurate, concise responses grounded in the provided literature. The final output is produced by the LLaMA 3.1 model, ensuring synthesis-specific answers while minimizing hallucination. In Table~\ref{tab:table_SolAgent}, we present two example queries submitted to Sol-Agent. In both cases, the responses are coherent, clearly articulated, and scientifically accurate. Additional queries regarding sol–gel synthesis, along with further evaluations of Sol-Agent, can be conducted through our publicly available open-source code.
 \begin{table}[h!]
@@ -3292,7 +3279,7 @@ Here, we propose AutoFeaSci, an agentic system that aims to automate this workfl
     Evaluation feedback is fed back into the system, enabling continuous refinement of feature hypotheses and driving convergence toward an optimized feature space aligned with the prediction objective.
 \end{enumerate}
 \section*{Results}
-Figure \ref{fig:featurizer} illustrates the iterative AutoFeaSci workflow. The system takes three primary inputs—literature, research metadata, and tabular datasets—which are first processed by a Summarizer agent specialized in extracting mechanistic insights from multi-modal scientific sources. These distilled insights are then passed to a Feature-Proposal agent, which formulates candidate feature hypotheses and outlines transformation strategies (e.g., combining, normalizing, or deriving interactions among existing variables). Once a proposal is generated, it is handed to the Feature-Constructor agent, which functions as a Python code generator and executor, translating the proposal into concrete feature-engineering operations and augmenting the dataset accordingly. The enriched dataset is subsequently evaluated using a tree-based gradient-boosting model implemented with the H2O package \cite{H2OAutoML20}. AutoFeaSci collects performance metrics—MSE, RMSE, and \(R^2\) —and reports them back to the Feature-Proposal agent as feedback, guiding future iterations. This loop continues until the user determines that the train/test performance meets the desired criteria.
+Figure~\ref{fig:featurizer} illustrates the iterative AutoFeaSci workflow. The system takes three primary inputs—literature, research metadata, and tabular datasets—which are first processed by a Summarizer agent specialized in extracting mechanistic insights from multi-modal scientific sources. These distilled insights are then passed to a Feature-Proposal agent, which formulates candidate feature hypotheses and outlines transformation strategies (e.g., combining, normalizing, or deriving interactions among existing variables). Once a proposal is generated, it is handed to the Feature-Constructor agent, which functions as a Python code generator and executor, translating the proposal into concrete feature-engineering operations and augmenting the dataset accordingly. The enriched dataset is subsequently evaluated using a tree-based gradient-boosting model implemented with the H2O package \cite{H2OAutoML20}. AutoFeaSci collects performance metrics—MSE, RMSE, and \(R^2\) —and reports them back to the Feature-Proposal agent as feedback, guiding future iterations. This loop continues until the user determines that the train/test performance meets the desired criteria.
 
 At the current stage, our team has successfully built and executed the full AutoFeaSci pipeline, with several initial passes demonstrating that the workflow runs smoothly end-to-end. However, we have not yet fully validated its robustness. After only three iterations, we observed a degradation in both training and test accuracy. Upon examining the reasoning generated by the Feature-Proposal agent, we identified instances of severe hallucination—for example, proposing a “porosity fraction” defined as the ratio between experimentally measured alloy density and simulated alloy density, which is not a meaningful descriptor for predicting an alloy’s yield strength in this context. These findings highlight the need for an additional mechanism to review, filter, or correct feature proposals before they are passed downstream. While this safeguard could not be implemented within the two-day hackathon timeframe, it represents an essential direction for future development. Despite these limitations, we have established a functional workflow capable of extracting relevant domain information, guiding the feature-engineering process, and iteratively refining proposals with the aim of improving model performance. This work represents an early proof-of-concept, and substantial enhancements will be required before the pipeline can consistently deliver reliable and high-quality results.
 
@@ -3332,7 +3319,7 @@ The discovery and design of new materials with specific functional properties re
 
 \section*{Results}
 
-Figure \ref{fig:mage_1} illustrates the MAGE workflow, which combines an intelligent agent with a fine-tuned large language model (LLM) for unified forward and inverse materials design \cite{choudhary2024atomgpt}.  MAGE is built using Google ADK framework for agent orchestration and streamlit framework for the user interface. User submits queries through an interactive interface, where an AI agent (Gemini-2.0-flash) dynamically takes decision whether each query corresponds to a forward (composition to property or structure to property) or inverse design (desired property to structure) task and routes it to the appropriate function. For inverse design, the system generates a crystal structure corresponding to the targeted property and subsequently evaluates its thermodynamic stability by predicting its formation energy using the materials graph neural network model \cite{chen2022universal}.
+Figure~\ref{fig:mage_1} illustrates the MAGE workflow, which combines an intelligent agent with a fine-tuned large language model (LLM) for unified forward and inverse materials design \cite{choudhary2024atomgpt}.  MAGE is built using Google ADK framework for agent orchestration and streamlit framework for the user interface. User submits queries through an interactive interface, where an AI agent (Gemini-2.0-flash) dynamically takes decision whether each query corresponds to a forward (composition to property or structure to property) or inverse design (desired property to structure) task and routes it to the appropriate function. For inverse design, the system generates a crystal structure corresponding to the targeted property and subsequently evaluates its thermodynamic stability by predicting its formation energy using the materials graph neural network model \cite{chen2022universal}.
 
 \vspace{0.3cm}
 
@@ -3817,7 +3804,7 @@ SyntheSeek presents an agentic LLM workflow that can help researchers retrieve s
     \label{fig:syntheseek_workflow}
 \end{figure}
 
-Depicted in Figure \ref{fig:syntheseek_workflow}, we implemented a two-stage workflow for retrieving and customizing synthesis procedures for a user-specified target material. In Stage 1, the agent identifies 5-10 relevant publications, converts their PDF files to text, and extracts the synthesis protocols into a consistent structured format. The agent then consolidates and outputs these procedures back to the user.
+Depicted in Figure~\ref{fig:syntheseek_workflow}, we implemented a two-stage workflow for retrieving and customizing synthesis procedures for a user-specified target material. In Stage 1, the agent identifies 5-10 relevant publications, converts their PDF files to text, and extracts the synthesis protocols into a consistent structured format. The agent then consolidates and outputs these procedures back to the user.
 
 In Stage 2, the system generated a user-tailored synthesis plan by combining the curated reference recipes with user-specified constraints and goals. First, a template “skeleton” procedure is produced based on available equipment and the general methodological patterns from Stage 1. Then, parameters within each step - such as reagent ratios, processing conditions, and optional variations - are adjusted to align with user's objectives, resulting in a customized, actionable synthesis outline.
 
@@ -3990,11 +3977,11 @@ Structure-based drug design (SBDD) design has emerged as a cornerstone of modern
     \label{fig:concept}
 \end{figure}
 
-We introduce MIDAS (Molecular Intelligence \& Design Articulated by Semantics; Figure \ref{fig:concept}), a LLM-based agentic framework using tool-calling, that leverages a language-conditioned extension of equivariant diffusion models~\cite{schneuing2024structurebaseddrugdesignequivariant, hoogeboom2022equivariantdiffusionmoleculegeneration} for structure-based drug design. Existing substructure conditional generation methods use domain-specific encodings and can be rigid and hard to interpret for non-experts~\cite{fischer2025flowrflowingsparsedense, cremer2025flowrflowmatchingstructureaware}. Conditioning on natural language instead enables direct use of chemical intuition, interpretable control over molecular properties, and iterative refinement through textual feedback. MIDAS also integrates existing cheminformatics tools for the analysis of generated molecules, such as molecular docking, or retrosynthesis.
+We introduce MIDAS (Molecular Intelligence \& Design Articulated by Semantics; Figure~\ref{fig:concept}), a LLM-based agentic framework using tool-calling, that leverages a language-conditioned extension of equivariant diffusion models~\cite{schneuing2024structurebaseddrugdesignequivariant, hoogeboom2022equivariantdiffusionmoleculegeneration} for structure-based drug design. Existing substructure conditional generation methods use domain-specific encodings and can be rigid and hard to interpret for non-experts~\cite{fischer2025flowrflowingsparsedense, cremer2025flowrflowmatchingstructureaware}. Conditioning on natural language instead enables direct use of chemical intuition, interpretable control over molecular properties, and iterative refinement through textual feedback. MIDAS also integrates existing cheminformatics tools for the analysis of generated molecules, such as molecular docking, or retrosynthesis.
 
 
 \section*{Results}
-At the heart of MIDAS lies an equivariant diffusion model, conditioned on protein pocket geometries,~\cite{hoogeboom2022equivariantdiffusionmoleculegeneration,satorras2022enequivariantgraphneural} and extends it with natural-language-guided conditioning via FiLM-conditioning~\cite{perez2017filmvisualreasoninggeneral}. Natural language instructions are either encoded using a pretrained T5-base~\cite{christofidellis2023unifyingmoleculartextualrepresentations, JMLR:v21:20-074} or a tinyllama encoder (compare Figure \ref{fig:training_data}b). Pocket geometry information and natural language instructions thus simultaneously guide the 3D molecular generation.
+At the heart of MIDAS lies an equivariant diffusion model, conditioned on protein pocket geometries,~\cite{hoogeboom2022equivariantdiffusionmoleculegeneration,satorras2022enequivariantgraphneural} and extends it with natural-language-guided conditioning via FiLM-conditioning~\cite{perez2017filmvisualreasoninggeneral}. Natural language instructions are either encoded using a pretrained T5-base~\cite{christofidellis2023unifyingmoleculartextualrepresentations, JMLR:v21:20-074} or a tinyllama encoder (compare Figure~\ref{fig:training_data}b). Pocket geometry information and natural language instructions thus simultaneously guide the 3D molecular generation.
 
 \begin{figure}[h]
     \centering
@@ -4005,7 +3992,7 @@ At the heart of MIDAS lies an equivariant diffusion model, conditioned on protei
 
 Language descriptions of small molecules, were created using GPT3.5 for the molecules contained in the CrossDocked dataset. For each molecules a description of its functional groups, molecular properties, pharmacophores, and unguided 'medicinal-chemist-like' descriptions were generated. The final dataset contains approximately 1M molecule-text descriptions pairs. The diffusion models was then trained on the joint text-descriptions -- protein pocket geometry.
 
-The trained diffusion model is then available as a tool for MIDAS in a user-interface integrating a chat interface with a molecular viewer via py3Dmol\cite{rego20153dmoljs}. MIDAS is implemented as ChatAgent using LangChain and was tested using gpt4o-mini as the base model. Additional tools were implemented for subsequent anlysis of the designed molecules including  pose and property analysis, structure similarity search, retro synthesis, and iterative refinement through natural-language feedback (compare Figure \ref{fig:training_data}c).
+The trained diffusion model is then available as a tool for MIDAS in a user-interface integrating a chat interface with a molecular viewer via py3Dmol\cite{rego20153dmoljs}. MIDAS is implemented as ChatAgent using LangChain and was tested using gpt4o-mini as the base model. Additional tools were implemented for subsequent anlysis of the designed molecules including  pose and property analysis, structure similarity search, retro synthesis, and iterative refinement through natural-language feedback (compare Figure~\ref{fig:training_data}c).
 
 \section*{Future Work}
 
@@ -4110,7 +4097,7 @@ Writing -- review and editing: XN, ZZ, RK, BR, EF \& PS.
 \section*{Introduction}
 Identifying optimal experimental protocols for peptide self-assembly is a significant bottleneck in materials discovery, often requiring extensive and time-consuming manual literature review. 
 We developed AssemblAI, an LLM-powered agent, to automate and accelerate this process.
-As described in Figure \ref{fig:assemblai_workflow}, AssemblAI will generate a complete experimental procedure based on a target peptide sequence and desired morphology (e.g., "fiber" or "sphere").
+As described in Figure~\ref{fig:assemblai_workflow}, AssemblAI will generate a complete experimental procedure based on a target peptide sequence and desired morphology (e.g., "fiber" or "sphere").
 The agent employs a Retrieval-Augmented Generation (RAG) workflow \cite{lewis2020retrieval}, retrieving context from a curated vector store of 989 experimental examples~\cite{MATHUR2021104391, doi:10.1126/sciadv.adv1971, doi:10.1021/acsnano.5c00670, Jankovic2023} to inform the LLM's protocol generation.
 
 \begin{figure}[htbp]
@@ -4122,8 +4109,8 @@ The agent employs a Retrieval-Augmented Generation (RAG) workflow \cite{lewis202
 
 
 \section*{Results}
- As a proof-of-concept, we tested AssemblAI on the peptide `KFKFQF', which is known to form spheres at low concentrations and fibers at high concentrations (Figure \ref{fig:kfkfqf_morphology}). 
- Without prior knowledge of this specific system, the agent correctly identified concentration as the key experimental parameter controlling the morphological outcome, as seen in Figure \ref{fig:assemblai_agentoutput}
+ As a proof-of-concept, we tested AssemblAI on the peptide `KFKFQF', which is known to form spheres at low concentrations and fibers at high concentrations (Figure~\ref{fig:kfkfqf_morphology}). 
+ Without prior knowledge of this specific system, the agent correctly identified concentration as the key experimental parameter controlling the morphological outcome, as seen in Figure~\ref{fig:assemblai_agentoutput}
 
 \begin{figure}[htbp]
      \centering
@@ -4181,7 +4168,7 @@ The agent employs a Retrieval-Augmented Generation (RAG) workflow \cite{lewis202
 \end{figure}
 
  
- To quantify performance, we benchmarked the agent on a withheld test set of 198 examples. The agent demonstrated strong predictive power, with 69\% of test cases having at least four of the five key experimental conditions (pH, concentration, temperature, time, solvent) correctly predicted (Figure \ref{fig:assemblai_upset}).
+ To quantify performance, we benchmarked the agent on a withheld test set of 198 examples. The agent demonstrated strong predictive power, with 69\% of test cases having at least four of the five key experimental conditions (pH, concentration, temperature, time, solvent) correctly predicted (Figure~\ref{fig:assemblai_upset}).
 
 
 \begin{figure}[htbp]
@@ -4603,7 +4590,7 @@ M.J.R.: Design, coding, and testing.
 
 Autonomous laboratories aim to connect molecular design, simulation, and experiment in a single closed loop. In this  project, we built a small prototype of such a system focused on molecular discovery for  critical materials extraction using electrochemical methods.\cite{shukla2025alizarin}
 
-Our workflow (shown in Figure \ref{fig:wf_acme} combines several AI and simulation components in one agentic framework. Reasoning LLMs interpret a user prompt, retrieve domain knowledge, and define chemically meaningful design rules. Generative models use these rules to propose candidate molecules, while predictive AI models and quantum chemical tools evaluate their properties. Experimental procedures enter the loop through modular plug-ins that translate the agent’s plans into stepwise protocols and measurements.
+Our workflow (shown in Figure~\ref{fig:wf_acme} combines several AI and simulation components in one agentic framework. Reasoning LLMs interpret a user prompt, retrieve domain knowledge, and define chemically meaningful design rules. Generative models use these rules to propose candidate molecules, while predictive AI models and quantum chemical tools evaluate their properties. Experimental procedures enter the loop through modular plug-ins that translate the agent’s plans into stepwise protocols and measurements.
 
 The full system operates as a feedback loop with multiple iterations. Computational and experimental results are analyzed by the reasoning agent, which updates the design rules, refines the search space, and proposes improved candidates. This structure illustrates how autonomous laboratories can couple generative, pre
 dictive, and experimental modules to accelerate molecular discovery.
@@ -4637,7 +4624,7 @@ This QM calculation stack is linked to the agent through a Model Context Protoco
     \label{fig:exp_Workflow}
 \end{figure}
 
-As shown schematically in Figure \ref{fig:exp_Workflow}, this phase comprises an agentic workflow that integrates a suite of relevant synthesis and structure–property characterization techniques to further down‑select viable molecules for the application through a series of experiments. In this setup, we envision a series of automated, co-located bench top experimental platforms for comprehensive characterization of selected molecules. Instructions for experiments are built on domain-expert designed system prompts and SoPs, whereas knowledge gained from the experiments will be passed downstream the pipeline for final verdicts. 
+As shown schematically in Figure~\ref{fig:exp_Workflow}, this phase comprises an agentic workflow that integrates a suite of relevant synthesis and structure–property characterization techniques to further down‑select viable molecules for the application through a series of experiments. In this setup, we envision a series of automated, co-located bench top experimental platforms for comprehensive characterization of selected molecules. Instructions for experiments are built on domain-expert designed system prompts and SoPs, whereas knowledge gained from the experiments will be passed downstream the pipeline for final verdicts. 
 
 After the molecule options are made available to the automated instrumentation facility, the series of experiments will begin. The LLM, supported by a system prompt as the experiment pipeline designer, will have access to step‑by‑step instructions and decision‑making guidelines in standard operating procedures (SOPs) for each technique and will generate an application‑specific workflow based on the user's initial inputs. In this case, we envision coating the computationally down‑selected molecules onto an electrode surface using automated spin coating, followed by characterization via X‑ray fluorescence (XRF) and inductively coupled plasma mass spectrometry (ICP‑MS), where the electrolyte is analyzed for initial and spent metal‑ion concentrations. Each molecule placed for the experiment will be given a unique ID for identification throughout the experiment. 
 
@@ -5047,7 +5034,7 @@ The workflow enables users to upload lab results in CSV or XLSX format, where VE
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\linewidth]{figures/vera_workflow.png}
+    \includegraphics[width=0.9\linewidth]{figures/vera_workflow.png}
     \caption{VERA workflow: from lab data upload to compliance validation and PDF report export.}
     \label{fig:vera-workflow}
 \end{figure}
@@ -5234,7 +5221,7 @@ In this work, we explore using GraphRAG to improve on LLM Q\&A capabilities by l
     \label{fig:chemunity}
 \end{figure}
 
-GraphRAG differs from traditional RAG in that it identifies multiple levels of communities within the knowledge graph \cite{edge2025graphrag}. For each community, the text is passed to an LLM to generate a summary of all text associated with its member nodes. This enables information retrieval from local information to global summaries and trends. Figure \ref{fig:chemunity} demonstrates the GraphRAG methodology and its implementation with the MOF-ChemUnity knowledge graph using GPT-4o. The key result is that all explanations and justifications that the agent provides are grounded in the knowledge graph rather than the pre-trained weights. These explanations are generated from various community summaries that explain trends in the knowledge graphs. Therefore, the answers generated by the agent are less prone to hallucination and are grounded in scientific research.
+GraphRAG differs from traditional RAG in that it identifies multiple levels of communities within the knowledge graph \cite{edge2025graphrag}. For each community, the text is passed to an LLM to generate a summary of all text associated with its member nodes. This enables information retrieval from local information to global summaries and trends. Figure~\ref{fig:chemunity} demonstrates the GraphRAG methodology and its implementation with the MOF-ChemUnity knowledge graph using GPT-4o. The key result is that all explanations and justifications that the agent provides are grounded in the knowledge graph rather than the pre-trained weights. These explanations are generated from various community summaries that explain trends in the knowledge graphs. Therefore, the answers generated by the agent are less prone to hallucination and are grounded in scientific research.
 
 \section*{Future Work}
 This work demonstrates that providing agents with domain-specific knowledge enhances the agent’s ability to use tools and answer research questions. This opens up the path to building domain-specific agents that use long-term knowledge to perform actions and draw conclusions. Additionally, using a knowledge graph enables a wide variety of techniques that improve the knowledge synthesis. We envision this AI agent can be implementing tools that determine whether the long-term knowledge available is sufficient to answer user queries. Later, it can discover new information through research tools to gather necessary information to address user questions.
@@ -5288,7 +5275,7 @@ The workflow begins with user interaction, where a researcher consults a general
 
 
 \section*{Results}
-To demonstrate AESOP, we considered a classic problem: modeling the diffusivity of a small organic molecule in water (Figure \ref{fig:AESOP-workflow}). The literature-trained LLM evaluates available machine-learned interatomic potentials in the context of recent advances (e.g., MACE-OFF force field\cite{kovacs2025}) and recommends appropriate methodology. Then the code gen LLM draws on its repository knowledge to write executable Python scripts using appropriate libraries (e.g. ASE, GPAW, etc.), enabling automated or semi-automated deployment to compute clusters.
+To demonstrate AESOP, we considered a classic problem: modeling the diffusivity of a small organic molecule in water (Figure~\ref{fig:AESOP-workflow}). The literature-trained LLM evaluates available machine-learned interatomic potentials in the context of recent advances (e.g., MACE-OFF force field\cite{kovacs2025}) and recommends appropriate methodology. Then the code gen LLM draws on its repository knowledge to write executable Python scripts using appropriate libraries (e.g. ASE, GPAW, etc.), enabling automated or semi-automated deployment to compute clusters.
 This initial deployment validates the protocol’s potential to guide users from research question to computational result with minimal obstacles. 
 
 \section*{Future Work}
@@ -5327,7 +5314,7 @@ Researchers in chemical engineering and materials science increasingly rely on c
 The system enables researchers to execute advanced molecular modeling, compound generation, and spectroscopic analysis workflows directly from the MATLAB environment without the need for extensive scripting or specialized programming expertise. By providing an intuitive text-driven interface to modern AI-driven scientific toolchains, the plugin enhances accessibility, accelerates experimental iteration, and establishes a seamless bridge between MATLAB and state-of-the-art computational chemistry and materials-informatics frameworks.
 
 \section*{Results}
-As illustrated in Figure \ref{fig:MatGen}, our plugin integrates MATLAB with an agentic LLM capable of executing RDKit-driven cheminformatics operations, including molecular property prediction, structural manipulation, and elementary reaction analysis. Users can issue natural-language instructions (e.g., “What is the charge of benzene? What is its SMILES representation and how can we visualize it”) and receive computed outputs, molecular visualizations, and workflow results directly within MATLAB.
+As illustrated in Figure~\ref{fig:MatGen}, our plugin integrates MATLAB with an agentic LLM capable of executing RDKit-driven cheminformatics operations, including molecular property prediction, structural manipulation, and elementary reaction analysis. Users can issue natural-language instructions (e.g., “What is the charge of benzene? What is its SMILES representation and how can we visualize it”) and receive computed outputs, molecular visualizations, and workflow results directly within MATLAB.
 
 The system supports a complete end-to-end workflow consisting of natural-language input parsing, RDKit tool invocation via the LLM agent, post-processing and result packaging, and final rendering within MATLAB. This architecture enables robust AI-assisted compound analysis and visualization that integrates seamlessly into material-science and spectroscopy research pipelines.
 
@@ -5466,7 +5453,7 @@ Subnano $Al_2O_3$ Coatings~\cite{li2025subnano} & 0.80 & 0.84 & \textbf{0.83} & 
 
 
 \section*{Results}
-The \texttt{AIssistant} framework integrates specialized tools like MC-NEST~\cite{rabby2024mc} for hypothesis generation and ChemCrow~\cite{bran2023chemcrow} for interactive refinement, enabling iterative cycles of AI-suggested hypotheses and human validation. Quantitative evaluation metrics were utilized to assess the alignment of AI-assisted outcomes with human reasoning. The high-level \textbf{average performance is summarized in Table~\ref{tab:average_performance}}, which details the average model score across various reference types for different papers. A more granular look at the performance of premium models (O3, O4-mini, and GPT-5) is presented in Table~\ref{tab:premium_model_performance}, comparing their scores against the Base LLM and Original Papers references. The workflow is summarized in \autoref{fig:tib_ass_pipeline}.
+The \texttt{AIssistant} framework integrates specialized tools like MC-NEST~\cite{rabby2024mc} for hypothesis generation and ChemCrow~\cite{bran2023chemcrow} for interactive refinement, enabling iterative cycles of AI-suggested hypotheses and human validation. Quantitative evaluation metrics were utilized to assess the alignment of AI-assisted outcomes with human reasoning. The high-level \textbf{average performance is summarized in Table~\ref{tab:average_performance}}, which details the average model score across various reference types for different papers. A more granular look at the performance of premium models (O3, O4-mini, and GPT-5) is presented in Table~\ref{tab:premium_model_performance}, comparing their scores against the Base LLM and Original Papers references. The workflow is summarized in Figure~\ref{fig:tib_ass_pipeline}.
 
 
 \section*{Future Work}
