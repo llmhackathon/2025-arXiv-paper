@@ -21,9 +21,6 @@ We therefore introduce a benchmark of PySCF density-functional theory (DFT) task
 To keep the scope clear, we focus on total electronic ground-state energies for small molecules. As references, we use tabulated energies from NIST Computational Chemistry Comparison and Benchmark Database (CCCBDB); unless noted, our reference level corresponds to CCSD(T) with a cc-pVDZ basis.
 
 \section*{Results}
-Across recent models, few models generated PySCF code that both \emph{runs} and meets our accuracy criteria of $10^{-2}$ hartree. Llama 3.1-8b performs the best in terms of generating code and picking DFT settings that work and are quick. This may be due to larger models generating more accurate code than is needed. 
-
-% Among the problems solved, \textsc{GPT-4o} achieved $|E - E_{\mathrm{ref}}| \le 0.01\,E_h$ in the shortest mean time.
 
 \begin{figure}[h!]
     \centering
@@ -32,8 +29,21 @@ Across recent models, few models generated PySCF code that both \emph{runs} and 
     \label{fig:time-to-threshold}
 \end{figure}
 
+% Across recent models, few models generated PySCF code that both \emph{runs} and meets our accuracy criteria of $10^{-2}$ hartree. Llama 3.1-8b, rather than larger models like llama-3.3 70b, performs the best in terms of generating code and picking DFT settings that both work and are faster than other models for most cases. This may be due to larger models generating more accurate code than is needed. However, GPT-4o mini had the lowest average execution time for successful runs and had the same criteria success rate. Qwen-3-32b performed the worst and was unable to solve any of the problems, despite it general-purpose coding abilites. Finally, model performance is overall quite low given the elementary natureure of the task. Models are able to meet our standards for at most 22\% of the molecules we measured. Our benchmark points to the necessity of chemistry-specific coding training as well as more holistic coding benchmarks in the sciences.  
+
+
+Across the models we evaluated, few were able to generate PySCF code that both runs and meets our accuracy criterion of $10^{-2}$ hartree. Llama 3.1-8B, rather than larger models such as Llama 3.3-70B, performed best overall at producing executable code and selecting DFT settings that satisfy our accuracy target while also being faster than other models in most cases. One possible explanation is that larger models tend to generate higher-fidelity (and often more computationally expensive) setups than this task requires. GPT-4o mini achieved the lowest mean execution time among successful runs while matching Llama 3.1-8B’s success rate under our criterion. Qwen-3-32B performed worst, failing to solve any problems despite its general-purpose coding ability. 
+Overall performance is low given the elementary nature of the task: at best, models meet our standard on only $22\%$ of the molecules tested. These results suggest a need for chemistry-specific code training, as well as more holistic scientific coding benchmarks.
+
+% Among the problems solved, \textsc{GPT-4o} achieved $|E - E_{\mathrm{ref}}| \le 0.01\,E_h$ in the shortest mean time.
+
+% Overall performance is low given the elementary nature of the task: at best, models meet our standard on only $22\%$ of the molecules tested.
+
+
+
+
 \section*{Future Work}
-We plan to broaden molecule diversity, include additional electronic-structure methods beyond DFT, and evaluate more models (including longer reasoning budgets). 
+We plan to broaden molecule diversity, include additional electronic-structure methods beyond DFT, and evaluate more models (including longer reasoning budgets). In addition, we would like to expand the benchmark to other problems in scientific computing like molecular dynamics.
 
 \section*{Open-Source Materials}
 Code and data: \github{https://github.com/hansgundlach/ChemCodeBench}\,; Demo video: \youtube{https://youtu.be/cLGeocfd8VM}
@@ -578,7 +588,7 @@ We then performed cross model comparison. Gemini-2.5-Pro produced the longest re
 Future work can be focused on introducing chemistry knowledge judging and developing more efficient reasoning-trace metrics to quantify reasoning quality. Another promising direction is to locate where chemistry knowledge is represented within model structures. Such insights could guide to develop advanced reasoning LLM. 
 
 \section*{Open-source Materials}
-Code available on GitHub: \github{https://github.com/BaosenZ/mach-interp-LLM-hackathon-2025.git}\,; Demo video: \youtube{https://youtu.be/tW3ArrFU4_Y}
+Code available on GitHub: \github{https://github.com/BaosenZ/mach-interp-LLM-hackathon-2025.git}\,; Demo video: \youtube{https://youtu.be/tW3ArrFU4_Y}\,;
 
 \section*{Author Contributions}
 B.Z.: Conceptualization, Code writing, Draft writing; H.L.: Code writing, Draft writing.
@@ -2916,7 +2926,8 @@ Code available on GitHub: \github{https://github.com/zakidotai/MuMMIE}
 
 \begin{teamsubmission}{JH\_sqr}{Towards an automated system for smarter electrolyte design via machine learning (ML) methods}
 \authorsblock{
-    Jeonghwan Lee\textsuperscript{1}\orcidlink{0000-0002-3223-2573} and Jaehee Park\textsuperscript{2}\orcidlink{0000-0001-6956-7441}
+    Jeonghwan Lee\textsuperscript{1}\orcidlink{0000-0002-3223-2573},
+    Jaehee Park\textsuperscript{2}\orcidlink{0000-0001-6956-7441}
 }
 \affiliationsblock{
     \textsuperscript{1}Department of Statistics, The University of Chicago, Chicago, IL, USA\\
@@ -3428,17 +3439,24 @@ A.H.: Conceptualization, Methodology, Software, Writing – original draft, Visu
 }
 
 \section*{Introduction}
-Titanarium is a virtual arena where material-scientist-inspired personas and humans engage in autonomous, topic-driven debate. Instead of treating large language models purely as tools for performance optimization or problem solving, Titanarium focuses on turning AI-to-AI interaction itself into an experience. Multiple LLM nodes, each with a distinct character profile (for example, personas modeled after Mendeleev, Curie, and Pauling), communicate as equal participants alongside optional human chat nodes. Users can either join the discussion or simply observe it, much like watching an ecosystem in an aquarium or terrarium.
+Titanarium is a virtual arena in which materials-scientist-inspired personas and humans engage in autonomous, topic-driven debates. Rather than treating large language models purely as tools for performance optimization or problem-solving, Titanarium frames AI-to-AI interaction itself as an interactive experience. Multiple LLM nodes, each with a distinct character profile (for example, personas modeled after Mendeleev, Curie, and Pauling), interact as participants alongside optional human chat nodes. Users can either join the discussion or observe it, much like watching an ecosystem in an aquarium or terrarium.
 
-Architecturally, Titanarium is composed of multiple MCP servers, each hosting a persona or a human node, a central LLM backend (served via llama.cpp and Docker), and a Streamlit-based UI that orchestrates and visualizes the rounds of debate. Once the required persona servers are running and the UI is launched, a user can trigger an automated round of discussion or step in through a “Human Chat” panel. While the current system is restricted to a local demo environment and explicitly not intended for real research use, it proves that multi-agent, character-driven conversations can be made concrete, repeatable, and interactively explorable with modest infrastructure.
+In terms of architecture, Titanarium consists of multiple MCP servers, each hosting a persona or a human node; a central LLM backend (served via llama.cpp and Docker); and a Streamlit-based UI that orchestrates and visualizes debate rounds. Once the required persona servers are running and the UI is launched, a user can trigger an automated discussion round or participate via a ``Human Chat'' panel. Although the current system is restricted to a local demo environment and is not intended for production or research-grade use, it demonstrates the feasibility of making multi-agent, character-driven conversations concrete, repeatable, and interactively explorable with modest infrastructure.
 
 \section*{Results}
-We implemented a working prototype that successfully runs multi-round autonomous debates among three scientist personas and an optional human node. Once the llama.cpp-backed LLM server is started and the persona MCP servers are launched, the Streamlit UI allows a user to start an “Auto Round” and observe natural-language exchanges among the personas in real time. We utilized GPT-oss 20B GGUF \cite{gpt_oss_20b_gguf} as the base model. These agents are not just generic chatbots; each operates with its own configuration and seed persona data, creating distinguishable styles and tendencies in their contributions. The system also supports direct human interaction via “Human Chat,” enabling a user to message an individual persona and immediately see a context-aware response routed through the same LLM backend. The system is still very much a hackathon-grade demo: it assumes a local environment with GPUs, manual setup of virtual environments and Docker, and offers no real guardrails beyond basic isolation via ports and configuration files.
+We implemented a working prototype (Figure~\ref{fig:titanarium}) that can run multi-round autonomous debates among three scientist personas and an optional human node. Once the llama.cpp-backed LLM server is started and the persona MCP servers are launched, the Streamlit UI allows a user to start an ``Auto Round'' and observe real-time natural-language exchanges among the personas. We used GPT-oss 20B in GGUF format \cite{gpt_oss_20b_gguf} as the base model. Each agent operates with its own configuration and seed persona data, resulting in distinguishable styles and tendencies in its contributions. The system also supports direct human interaction via ``Human Chat,'' allowing a user to message an individual persona and receive a context-aware response routed through the same LLM backend. This prototype was developed under hackathon constraints and assumes a local execution environment.
 
-\section*{Future works}
-There is a long list of improvements needed before Titanarium becomes more than a polished demo. On the interaction side, a clear next step is integrating real social networking and communication platforms so that AI debates can be surfaced directly into existing user environments (e.g., channels, threads, or group chats), not just a local Streamlit dashboard. This would require proper authentication, rate limiting, and message routing, as well as more sophisticated controls for when and how personas are allowed to post. We also need richer persona modeling: instead of simple seeds and patches, personas should be defined by structured belief graphs, long-term memory, and configurable reasoning styles that can evolve over multiple sessions rather than resetting each run.
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/titanarium.png}
+    \caption{Titanarium working prototype.}
+    \label{fig:titanarium}
+\end{figure}
 
-From a technical and safety standpoint, several gaps are obvious. The project currently depends on a single local LLM endpoint; scaling to multiple models, fallback strategies, or remote inference services would improve robustness. Debate topics and methods are only lightly constrained; adding policy layers, safety filters, and topic-specific tooling (e.g., retrieval over vetted scientific corpora) would make the environment more useful and less risky, especially if it ever moves beyond toy data. Finally, we have almost no quantitative evaluation: there is no measurement of debate quality, diversity of viewpoints, or user engagement. Future work should include instrumentation for logging and analytics, experiments on how different persona configurations affect discussion dynamics, and user studies that test whether this “digital terrarium” format actually delivers a distinct and valuable experience compared to conventional chat with a single model.
+\section*{Future Work}
+Several improvements are needed before Titanarium can move beyond a demo. On the interaction side, a key next step is integration with existing social networking and communication platforms so that AI debates can be surfaced directly within user environments (e.g., channels, threads, or group chats), rather than only through a local Streamlit dashboard. This would require proper authentication, rate limiting, and message routing, as well as more sophisticated controls over when and how personas are allowed to post. Richer persona modeling is also needed: instead of simple seeds and patches, personas should be defined by structured belief graphs, long-term memory, and configurable reasoning styles that can evolve over multiple sessions rather than resetting each run.
+
+From a technical and safety standpoint, several limitations remain. The project currently depends on a single local LLM endpoint; supporting multiple models, fallback strategies, or remote inference services would improve robustness. Debate topics and methods are only lightly constrained; adding policy layers, safety filters, and topic-specific tooling (e.g., retrieval over scientific corpora) would make the environment more useful and reduce risk, especially if it is extended beyond a controlled demo setting. Finally, the system currently lacks quantitative evaluation: we do not measure debate quality, viewpoint diversity, or user engagement. Future work should include instrumentation for logging and analytics, experiments on how different persona configurations affect discussion dynamics, and user studies evaluating whether this ``digital terrarium'' format provides a distinct and valuable experience relative to conventional single-model chat.
 
 \section*{Open-source Materials}
 https://github.com/JSR-ISM-Smart-Chemistry-Lab/Titanarium \github{https://github.com/JSR-ISM-Smart-Chemistry-Lab/Titanarium}
@@ -5541,4 +5559,47 @@ Code available on GitHub: \github{https://github.com/hspark1212/sky}
 
 \section*{Author Contributions}
 R.N., K.O.M., and H.P. conceived the approach to implement the SKY agent. R.N. developed the LLM-based agentic workflow and implemented the recursive graph search. K.O.M. engineered the synthesis recipe summarization and chemical viability verification. H.P. supervised the project and developed the materials similarity search and structural embedding protocols.
+\end{teamsubmission}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Team: RAGyMaterials %
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{teamsubmission}{RAGyMaterials}{RAGyMaterials: }
+\authorsblock{
+    Tajah Trapier\textsuperscript{1}\orcidlink{},
+    Aum Pandya\textsuperscript{2}\orcidlink{},
+    Oluwatimilenhin Oluwajire\textsuperscript{3}\orcidlink{},
+    Rujuta Palimkar\textsuperscript{2}\orcidlink{},
+    Laila Belpalme\textsuperscript{4}\orcidlink{}
+}
+\affiliationsblock{
+    \textsuperscript{1}Department of Materials Science and Engineering, North Carolina State University, Raleigh, NC, USA\\
+    \textsuperscript{2}Department of Computer Science, North Carolina State University, Raleigh, NC, USA\\
+    \textsuperscript{3}Department of Mechanical and Aerospace Engineering, North Carolina State University, Raleigh, NC, USA\\
+    \textsuperscript{4}Department of Chemistry, North Carolina State University, Raleigh, NC, USA
+}
+
+\section*{Introduction}
+
+
+\section*{Results}
+
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=1\linewidth]{}
+%     \caption{}
+%     \label{}
+% \end{figure}
+
+\section*{Future Work}
+
+
+\section*{Open-source Materials}
+Code available on GitHub: \github{}
+
+\section*{Author Contributions}
+
 \end{teamsubmission}
