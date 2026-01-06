@@ -71,7 +71,7 @@ We wrote original docking code to dock molecules in protein binding sites using 
 The code can be run from an AI agent, built using langgraph. The Phi-4-mini-instruct model was used to drive the agent. 
 
 \section*{Results}
-Docking poses and electronic binding energies were calculated for several ligands with the DRD2, MCR(see~\ref{fig:CC_UMADock}) and HMCGR proteins. 
+Docking poses and electronic binding energies were calculated for several ligands with the DRD2, MCR(see~\ref{fig:CC_UMADock}) and HMCGR proteins. These tests were conducted using 20 conformations of each ligand and 50-100 random poses for each conformation.  In all cases, UMADock was able to place ligands in realistic poses in the protein binding sites. The overall electronic binding energies calculated were in the range of ~-20 kcal/mol to ~+10 kcal/mol, roughly in line with values produced by conventional docking codes. 
 
 \begin{figure}[h]
     \centering
@@ -320,7 +320,7 @@ Luigi Genovese\textsuperscript{1}\orcidlink{0000-0003-1747-0247},
 Giuseppe Fisicaro\textsuperscript{2}\orcidlink{0000-0003-4502-3882}, 
 Louis Beal\textsuperscript{3}\orcidlink{0009-0000-6474-2722}, 
 Étienne Polack\textsuperscript{1}\orcidlink{0000-0003-0543-2008}, 
-Yoann Curè\textsuperscript{1}, %, 
+Yoann Cur\'e\textsuperscript{1}, %, 
 Damien Caliste\textsuperscript{1}\orcidlink{0000-0002-4967-9275}, 
 William Dawson\textsuperscript{4}\orcidlink{0000-0003-4480-8565}, 
 Jan Janssen\textsuperscript{5}\orcidlink{0000-0001-9948-7119}, 
@@ -332,7 +332,7 @@ Leonid Didukh\textsuperscript{7}\orcidlink{0000-0003-4900-5227}%,
 
 
 \affiliationsblock{
-    \textsuperscript{1}Université de Grenoble Alpes, CEA, IRIG-MEM-L\_SIM, Grenoble, France\\
+    \textsuperscript{1}Université de Grenoble Alpes, CEA, IRIG-MEM, Grenoble, France\\
     \textsuperscript{2}CNR Institute for Microelectronics and Microsystems, Catania, Italy\\
     \textsuperscript{3}INRIA, France\\
     \textsuperscript{4}RIKEN Center for Computational Science, Kobe, Japan\\
@@ -606,7 +606,7 @@ B.Z.: Conceptualization, Code writing, Draft writing; H.L.: Code writing, Draft 
     Seham Salem Abyah\textsuperscript{2},
     Fatima Abdullah Almahri\textsuperscript{2},
     Muhammad Sabih\textsuperscript{2},
-    Umair Mansoor\textsuperscript{4}
+    Umair Mansoor\textsuperscript{3}
 }
 \affiliationsblock{
     \textsuperscript{1}Department of Information \& Computer Science, King Fahd University of Petroleum \& Minerals, Dhahran, Saudi Arabia\\
@@ -626,37 +626,19 @@ recursive text splitter to preserve scientific coherence across sections.
 Each chunk is transformed into a vector representation using the \texttt{sentence-transformers/all-MiniLM-L6-v2}
 embedding model and stored in a FAISS vector database, enabling efficient semantic search over the
 collection of scientific documents. This allows ChemBot to retrieve the most contextually relevant excerpts
-for any given user query.
-
-When a query is submitted, ChemBot performs a similarity search to obtain the top-$k$ relevant chunks and
-constructs a structured prompt that provides BioGPT with both the question and the retrieved scientific
-context. BioGPT (\texttt{microsoft/biogpt}) then generates a domain-aware response that is grounded in the
+for any given user query. BioGPT (\texttt{microsoft/biogpt}) then generates a domain-aware response that is grounded in the
 retrieved material, improving factual accuracy and reducing hallucinations.
-
-The entire system is deployed through a Gradio interface, allowing users to interact with ChemBot in real
-time and obtain chemically informed explanations, summaries, and clarifications. Figure~15 illustrates the
-high-level workflow, from document ingestion and embedding to vector retrieval and BioGPT-driven
-reasoning.
-
-
 
 Figure~\ref{fig:chembot-architecture} illustrates the high-level conceptual flow of the ChemBot system, from document ingestion to vector retrieval and BioGPT-driven reasoning.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\linewidth]{figures/ChemBot_Diagram.jpg}
+    \includegraphics[width=0.2\linewidth]{figures/ChemBot_Diagram.jpg}
     \caption{High-level conceptual architecture of the ChemBot system, showing the sequential stages from document processing and vector indexing to retrieval-augmented reasoning using BioGPT.}
     \label{fig:chembot-architecture}
 \end{figure}
 
-Prompt engineering played a critical role in reliability. Constraining prompts, adding domain-specific instructions, and iteratively refining context reduced hallucination rates and improved factual consistency across chemistry subdomains. Below is the Interface for ChemBot created through Gradio.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\linewidth]{figures/ChemBot_Interface.jpg}
-    \caption{ChemBot Interface implemented through Gradio.}
-    \label{fig:chembot-interface}
-\end{figure}
+Prompt engineering played a critical role in reliability. Constraining prompts, adding domain-specific instructions, and iteratively refining context reduced hallucination rates and improved factual consistency across chemistry subdomains. 
 
 \section*{Results}
 ChemBot successfully retrieves chemistry-specific information from research papers and generates context-aware answers using BioGPT. By using a sample of 50 Q\& A's, the accuracy was found to be 67\%. The RAG setup significantly reduces hallucinations compared to using BioGPT alone, and the system performs well on tasks such as summarizing reactions, explaining material properties, and clarifying scientific concepts. User testing during the hackathon showed that ChemBot provides faster and more reliable explanations than manual document search, making it useful for both students and researchers. Below are graphs displaying the accuracy of the ChemBot LLM.
@@ -664,7 +646,7 @@ ChemBot successfully retrieves chemistry-specific information from research pape
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{figures/ChemBot_Graphs.jpg}
+    \includegraphics[width=0.6\linewidth]{figures/ChemBot_Graphs.jpg}
     \caption{Graphs displaying the accuracy of the ChemBot LLM.}
     \label{fig:chembot-accuracy}
 \end{figure}
@@ -2797,126 +2779,273 @@ I.A. and P.K.: Conceptualization and Data generation; I.A., P.K., and A.P.: Data
 }
 
 \affiliationsblock{
-    \textsuperscript{1}Department of Mechanical Engineering and Materials Science, Duke University, Durham, NC, USA\\
-    \textsuperscript{2}Department of Civil and Environmental Engineering, UCLA, Los Angeles, CA, USA\\
-    \textsuperscript{3}Department of Mechanical Science and Engineering, University of Illinois Urbana-Champaign, Urbana, IL, USA\\
+    \textsuperscript{1}Dept. of Mechanical Engineering and Materials Science, Duke University, Durham, NC, USA\\
+    \textsuperscript{2}Dept. of Civil and Environmental Engineering, UCLA, Los Angeles, CA, USA\\
+    \textsuperscript{3}Dept. of Mechanical Science and Engineering, UIUC, Urbana, IL, USA\\
     \textsuperscript{4}Hopkins Extreme Materials Institute, Johns Hopkins University, Baltimore, MD, USA
 }
-
+\vspace{-15pt}
 \section*{Introduction}
-Information extraction (IE) is an important part of materials discovery pipeline. The global research efforts towards materials discovery are documented across text, tables, and figures inside patents, handbooks, and research papers in different languages\cite{puccetti2021simple}. Due to absence of internationally agreed convention for reporting materials composition and properties in scientific documents, it becomes challenging to compile the information in structured databases\cite{hira2025matskraft, circi2024well}. To address this problem, we present a curated benchmark of patent PDFs from 6 countries/languages (EN, RS, CN, JP, KR, FR) and corresponding composition and properties. We also propose the composition, property, and combined metric for evaluating the performance of IE tools on this challenging dataset. Our proposed framework, MuMMIE (Multilingual Multimodal Materials Information) 
-
-MuMMIE focuses on streamlining materials data extraction and rediscovery by tackling the challenges posed by multilingual scientific literature. Researchers in this domain often face a major barrier: critical information on materials is dispersed across documents  and patents written in different languages. Similarly, the CheF dataset highlights the potential of large-scale patent information extraction to uncover structure–function relationships, demonstrating how textual data in patents can be systematically leveraged to guide molecular discovery \cite{kosonocky2024mining}.
-
-
-\section*{Results}
-In our patent corpus-spanning Chinese, Russian, French, Japanese, and English, we observed that while chemical compound names tend to remain consistent across languages, the associated property terms vary widely. This inconsistency makes it difficult to build unified, machine-readable datasets. The primary objective of MuMMIE is to leverage LLMs to accurately extract composition and property information from multilingual documents and represent it in a structured, interoperable format. Our current workflow centers on patent data processing. We begin by converting patent PDFs into Markdown format using the marker library, ensuring cleaner text for downstream analysis. For information extraction, we tested four LLMs to identify and link composition elements or compounds with their associated material properties. The extracted data was analysed and visualised to highlight the top 20 compositions and their corresponding property distributions within the corpus.
-
-\begin{figure}[h]
+\vspace{-8pt}
+\begin{wrapfigure}{r}{0.7\textwidth}
+    \vspace{-15pt}
     \centering
-    \includegraphics[width=0.9\linewidth]{figures/mummie.png}
-        \caption{Workflow of MuMMIE model pipeline.}
+    \includegraphics[width=0.8\textwidth]{figures/mummie.pdf}
+    \vspace{-5pt}
+    \caption{Workflow of MuMMIE model pipeline.}
     \label{fig:mummie}
-\end{figure}
+    \vspace{-15pt}
+\end{wrapfigure}
+Information extraction (IE) is an important part of materials discovery pipeline. The global research efforts towards materials discovery are documented across text, tables, and figures inside patents, handbooks, and research papers in different languages\cite{puccetti2021simple}. Due to absence of conventions for reporting materials composition and properties in scientific documents, it becomes challenging to extract and compile the data into structured databases\cite{hira2025matskraft, circi2024well, kosonocky2024mining}. To address this problem, we present \textsc{MuMMIE}, a curated benchmark of patent PDFs in six languages (EN, RS, CN, JP, KR, FR) and corresponding composition and properties. We also propose the composition, property, and combined metric for evaluating the performance of IE tools on this challenging dataset.
 
+\vspace{-12pt}
+\section*{Results}
+\vspace{-8pt}
+In our patent corpus-spanning Chinese, Russian, French, Japanese, and English, we observed that while chemical compound names tend to remain consistent across languages, the associated property labels vary widely. This inconsistency makes it difficult to build unified, machine-readable datasets. The primary objective of MuMMIE is to leverage LLMs to accurately extract materials composition and property from documents written in different languages. Our current workflow focuses on patent data processing. We begin by converting patent PDFs into Markdown format using the marker library, preparing text for downstream analysis. For IE, we tested four LLMs to identify and link composition elements or compounds with their associated material properties. The extracted data was analysed and visualised to highlight the top 20 compositions and their corresponding property distributions within the corpus (Fig.~\ref{fig:mummie}).
+
+\vspace{-12pt}
 \section*{Evaluation}
-\label{sec:evaluation}
-
+\vspace{-8pt}
 \subsection*{Metrics}
-\label{subsec:metrics}
-We evaluate composition extraction per patent by converting both reference and predictions into sets of tuples $(c,v,u)$ where $c$ is the component name, $v$ the numeric value rounded to two decimals, and $u$ the unit. Two families of metrics are computed. Let $S_g$ denote the number of gold-labelled patents (evaluation targets) and $S_p$ the number of patents for which the system produced any prediction (i.e., non-empty $P_i$).
-
-\paragraph{Exact (patent-level).} For patent $i$, with gold or ground truth $G_i$ and predicted $P_i$:
+\vspace{-5pt}
+We evaluate composition extraction per patent by converting both reference and predictions into sets of tuples $(c,v,u)$ where $c$ is the component name, $v$ the numeric value rounded to two decimals, and $u$ the unit. Two families of metrics are computed. Let $S_g$ denote the number of gold-labelled patents and $S_p$ the number of patents for which the system produced any prediction.
+For patent $i$, with gold $G_i$ and predicted $P_i$:
+\vspace{-5pt}
 \begin{align}
 \mathrm{Prec}_{\text{exact}} &= \frac{\#\{i:\,P_i = G_i\}}{S_p},\quad
-\mathrm{Rec}_{\text{exact}}  = \frac{\#\{i:\,P_i = G_i\}}{S_g},\\
-\mathrm{F1}_{\text{exact}}   &= \frac{2\,\mathrm{Prec}_{\text{exact}}\,\mathrm{Rec}_{\text{exact}}}{\mathrm{Prec}_{\text{exact}}+\mathrm{Rec}_{\text{exact}}}.
+\mathrm{Rec}_{\text{exact}}  = \frac{\#\{i:\,P_i = G_i\}}{S_g},\quad
+\mathrm{F1}_{\text{exact}}   = \frac{2\,\mathrm{Prec}_{\text{exact}}\,\mathrm{Rec}_{\text{exact}}}{\mathrm{Prec}_{\text{exact}}+\mathrm{Rec}_{\text{exact}}}.
 \end{align}
+\vspace{-10pt}
 
-\noindent\textit{Note.} For exact-match at the patent level, we report precision over predicted patents ($S_p$) and recall over gold patents ($S_g$). This generalizes the common exact-match accuracy $\#\{i:P_i=G_i\}/S_g$ and makes the effect of missing or empty predictions explicit.
-
-\noindent\textbf{Macro (Exact)} reports the mean of per-patent exact scores.
-
-\paragraph{Pairwise (tuple-level).} Let $G=\bigcup_i G_i$ and $P=\bigcup_i P_i$ after rounding values to two decimals. Define $\mathrm{TP}=|P\cap G|$, $\mathrm{FP}=|P\setminus G|$, and $\mathrm{FN}=|G\setminus P|$:
+\noindent\textbf{Macro (Exact)} reports the mean of per-patent exact scores. \textbf{Pairwise (tuple-level):} Let $G=\bigcup_i G_i$ and $P=\bigcup_i P_i$. Define $\mathrm{TP}=|P\cap G|$, $\mathrm{FP}=|P\setminus G|$, and $\mathrm{FN}=|G\setminus P|$:
+\vspace{-5pt}
 \begin{align}
 \mathrm{Prec}_{\text{pairs}} &= \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FP}},\quad
 \mathrm{Rec}_{\text{pairs}}  = \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FN}},\quad
 \mathrm{F1}_{\text{pairs}}   = \frac{2\,\mathrm{Prec}_{\text{pairs}}\,\mathrm{Rec}_{\text{pairs}}}{\mathrm{Prec}_{\text{pairs}}+\mathrm{Rec}_{\text{pairs}}}.
 \end{align}
-\noindent\textbf{Macro (Pairs)} averages pairwise scores over patents, whereas \textbf{Micro (Pairs)} computes them over corpus-level $\mathrm{TP}/\mathrm{FP}/\mathrm{FN}$. Per-language summaries group patents by language code and repeat the same computations.
+\vspace{-10pt}
 
+\noindent\textbf{Macro (Pairs)} averages pairwise scores over patents; \textbf{Micro (Pairs)} computes them over corpus-level TP/FP/FN.
+
+\vspace{-10pt}
 \subsection*{Overall Summary}
-\label{subsec:overall_results}
+\vspace{-5pt}
+\begin{wraptable}{r}{0.52\textwidth}
+    \vspace{-12pt}
+    \centering
+    \caption{Overall evaluation across all languages.}
+    \label{tab:overall}
+    \footnotesize
+    \setlength{\tabcolsep}{2.5pt}
+    \begin{tabular}{lccccc}
+    \toprule
+    \textbf{Model} & \textbf{F1 (Exact)} & \textbf{F1 (Pairs)} & \textbf{P} & \textbf{R} & \textbf{F1} \\
+    & (\%) & (\%) & (\%) & (\%) & (\%) \\
+    \midrule
+    Llama-4 17B & 19.68 & 32.29 & 74.74 & 17.56 & 28.43 \\
+    Qwen-3 32B  &  8.16 & 27.43 & 67.99 & 20.26 & 31.22 \\
+    Qwen-3 235B (I) & \textbf{26.63} & \textbf{62.56} & \textbf{71.38} & \textbf{62.56} & \textbf{66.68} \\
+    Qwen-3 235B (T) & 22.35 & 41.95 & 88.48 & 30.56 & 45.43 \\
+    \bottomrule
+    \end{tabular}
+    \vspace{-10pt}
+\end{wraptable}
+Table~\ref{tab:overall} summarizes corpus-level outcomes for all 53 patents.
 
-Table~\ref{tab:overall} summarizes the corpus-level outcomes for all 53 patents.
-
-\begin{table}[h]
-\centering
-\caption{Overall evaluation across all languages.}
-\label{tab:overall}
-\begin{tabular}{lcccccc}
-\toprule
-\textbf{Model} & \textbf{Macro F1 (Exact)} & \textbf{Macro F1 (Pairs)} & \multicolumn{3}{c}{\textbf{Micro (Pairs)}} \\
-\cmidrule(lr){4-6}
-& (\%) & (\%) & \(\mathrm{P}\) (\%) & \(\mathrm{R}\) (\%) & \(\mathrm{F1}\) (\%) \\
-\midrule
-Llama-4 Maverick 17B & 19.68 & 32.29 & 74.74 & 17.56 & 28.43 \\
-Qwen-3 32B          &  8.16 & 27.43 & 67.99 & 20.26 & 31.22 \\
-Qwen-3 235B (Instruct) & \textbf{26.63} & \textbf{62.56} & \textbf{71.38} & \textbf{62.56} & \textbf{66.68} \\
-Qwen-3 235B (Thinking) & 22.35 & 41.95 & 88.48 & 30.56 & 45.43 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
+\vspace{-10pt}
 \subsection*{Per-Language Results}
-\label{subsec:language_results}
-Table~\ref{tab:lang} reports Micro (Pairs) F1 per language.
+\vspace{-5pt}
+\begin{wraptable}{r}{0.48\textwidth}
+    \vspace{-12pt}
+    \centering
+    \caption{Per-language Micro (Pairs) F1 (\%).}
+    \label{tab:lang}
+    \footnotesize
+    \setlength{\tabcolsep}{3pt}
+    \begin{tabular}{lcccc}
+    \toprule
+    & \textbf{Llama-4} & \textbf{Qwen-3} & \multicolumn{2}{c}{\textbf{Qwen-3 235B}} \\
+    \cmidrule(lr){4-5}
+    & \textbf{17B} & \textbf{32B} & \textbf{Instr.} & \textbf{Think.} \\
+    \midrule
+    CN & 6.90 & 21.28 & \textbf{68.86} & 63.81 \\
+    FR & 28.57 & 66.76 & \textbf{76.24} & 44.93 \\
+    JP & 8.26 & 4.69 & \textbf{63.17} & 32.07 \\
+    KR & 12.61 & 85.58 & 54.17 & \textbf{95.52}$^\dagger$ \\
+    RU & 83.94 & 23.24 & \textbf{85.97} & 57.47 \\
+    US & 9.29 & 29.50 & \textbf{47.33} & 23.86 \\
+    \bottomrule
+    \end{tabular}
+    \vspace{-10pt}
+\end{wraptable}
+Table~\ref{tab:lang} reports Micro (Pairs) F1 per language. \textsuperscript{$\dagger$}The Qwen-3 235B (Thinking) run missed 13 JSON files, reducing KR coverage.
 
-\begin{table}[h]
-\centering
-\caption{Per-language Micro (Pairs) F1 (\%).}
-\label{tab:lang}
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Language} & \textbf{Llama-4 17B} & \textbf{Qwen-3 32B} & \textbf{Qwen-3 235B Instr.} & \textbf{Qwen-3 235B Think.} \\
-\midrule
-CN & 6.90 & 21.28 & \textbf{68.86} & 63.81 \\
-FR & 28.57 & 66.76 & \textbf{76.24} & 44.93 \\
-JP & 8.26 & 4.69 & \textbf{63.17} & 32.07 \\
-KR & 12.61 & 85.58 & 54.17 & \textbf{95.52}\textsuperscript{$\dagger$} \\
-RU & 83.94 & 23.24 & \textbf{85.97} & 57.47 \\
-US & 9.29 & 29.50 & \textbf{47.33} & 23.86 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\noindent\textit{Note.} \textsuperscript{$\dagger$} The Qwen-3 235B (Thinking) run missed 13 JSON files, reducing KR coverage (2 files total).
-
+\vspace{-10pt}
 \subsection*{Model Comparison}
-\label{subsec:model_comparison}
-\textbf{Best overall.} \;Qwen-3 235B (Instruct) achieves the highest Macro F1 (Exact and Pairs) and the best Micro (Pairs) F1 (66.68\%). \\
-\textbf{Language strengths.} \;Qwen-3 235B (Instruct) leads in CN (68.86\%), FR (76.24\%), JP (63.17\%), RU (85.97\%), and US (47.33\%). KR peaks with Qwen-3 235B (Thinking) at 95.52\% (very small $n$); Qwen-3 32B is strong in KR (85.58\%). \\
-\textbf{Underperformers.} \;Qwen-3 32B shows low Macro F1 (Exact 8.16\%) despite a modest Micro (Pairs) F1 (31.22\%); Llama-4 underperforms in CN/JP/US but is competitive in RU (83.94\%).
+\vspace{-5pt}
+\textbf{Best overall:} Qwen-3 235B (Instruct) achieves the highest Macro F1 (Exact and Pairs) and the best Micro (Pairs) F1 (66.68\%).
+\textbf{Language strengths:} Qwen-3 235B (Instruct) leads in CN (68.86\%), FR (76.24\%), JP (63.17\%), RU (85.97\%), and US (47.33\%). KR peaks with Qwen-3 235B (Thinking) at 95.52\% (very small $n$); Qwen-3 32B is strong in KR (85.58\%).
+\textbf{Underperformers:} Qwen-3 32B shows low Macro F1 (Exact 8.16\%) despite modest Micro (Pairs) F1 (31.22\%); Llama-4 underperforms in CN/JP/US but is competitive in RU (83.94\%).
 
-
-
+% \vspace{-12pt}
 \section*{Future Work}
-Looking ahead, we aim to:
-\begin{itemize}
-    \item Expand data modalities: Incorporate figures and schematic images beyond text to capture richer scientific information.
-    \item Broaden model testing: Evaluate additional multilingual and domain-adapted LLMs to enhance robustness and cross-lingual accuracy.
-\end{itemize}
+\vspace{-8pt}
+We aim to: (1) Expand data modalities by incorporating figures and schematic images beyond text to capture richer scientific information; (2) Broaden model testing by evaluating additional multilingual and domain-adapted LLMs to enhance robustness and cross-lingual accuracy.
 
+\vspace{-12pt}
 \section*{Open-source Materials}
+\vspace{-8pt}
 Code available on GitHub: \github{https://github.com/zakidotai/MuMMIE}
 
+\vspace{-12pt}
 \section*{Author Contributions}
- \textbf{Defne Circi.}: Conceptualization, LLM API calls, Visualization, and Writing - Original Draft \\
- \textbf{Abhijeet Gangan.}: Software \\
- \textbf{Shashank Kushwaha.}: Formal analysis, Software, Visualization, and Writing - Original Draft  \\
- \textbf{Mohd Zaki.}: Conceptualization, Data Curation, and Writing - Original Draft
+\vspace{-8pt}
+\textbf{D. Circi:} Conceptualization, LLM API calls, Visualization, Writing - Original Draft.
+\textbf{A. Gangan:} Software.
+\textbf{S. Kushwaha:} Formal analysis, Software, Visualization, Writing - Original Draft.
+\textbf{M. Zaki:} Conceptualization, Data Curation, Writing - Original Draft.
 
 \end{teamsubmission}
+% \begin{teamsubmission}{\textsc{MuMMIE}}{Multilingual Multimodal Materials Information Extraction}
+% \authorsblock{
+%     Defne Circi\textsuperscript{2}\orcidlink{0000-0002-5761-0198},
+%     Abhijeet Gangan\textsuperscript{1}\orcidlink{0000-0002-8937-7984},
+%     Shashank Kushwaha\textsuperscript{3}\orcidlink{0000-0001-6295-1328},
+%     Mohd Zaki\textsuperscript{4}\orcidlink{0000-0002-4551-3470}
+% }
+
+% \affiliationsblock{
+%     \textsuperscript{1}Department of Mechanical Engineering and Materials Science, Duke University, Durham, NC, USA\\
+%     \textsuperscript{2}Department of Civil and Environmental Engineering, UCLA, Los Angeles, CA, USA\\
+%     \textsuperscript{3}Department of Mechanical Science and Engineering, University of Illinois Urbana-Champaign, Urbana, IL, USA\\
+%     \textsuperscript{4}Hopkins Extreme Materials Institute, Johns Hopkins University, Baltimore, MD, USA
+% }
+% \vspace{-10pt}
+% \section*{Introduction}
+% \vspace{-5pt}
+% Information extraction (IE) is an important part of materials discovery pipeline. The global research efforts towards materials discovery are documented across text, tables, and figures inside patents, handbooks, and research papers in different languages\cite{puccetti2021simple}. Due to absence of conventions for reporting materials composition and properties in scientific documents, it becomes challenging to extract and compile the data into structured databases\cite{hira2025matskraft, circi2024well, kosonocky2024mining}. To address this problem, we present a curated benchmark of patent PDFs in six languages (EN, RS, CN, JP, KR, FR) and corresponding composition and properties. We also propose the composition, property, and combined metric for evaluating the performance of IE tools on this challenging dataset. 
+% \vspace{-10pt}
+% \section*{Results}
+% \vspace{-5pt}
+% In our patent corpus-spanning Chinese, Russian, French, Japanese, and English, we observed that while chemical compound names tend to remain consistent across languages, the associated property labels vary widely. This inconsistency makes it difficult to build unified, machine-readable datasets. The primary objective of MuMMIE is to leverage LLMs to accurately extract materials composition and property from documents written in different languages. 
+% \begin{wrapfigure}{R}{0.5\textwidth}
+%     \centering
+%     \includegraphics[width=0.43\textwidth]{figures/mummie.png}
+%     \caption{Workflow of MuMMIE model pipeline.}
+%     \label{fig:mummie}
+% \end{wrapfigure}
+% Our current workflow focuses on patent data processing. We begin by converting patent PDFs into Markdown format using the marker library, preparing text for downstream analysis. For IE, we tested four LLMs to identify and link composition elements or compounds with their associated material properties. The extracted data was analysed and visualised to highlight the top 20 compositions and their corresponding property distributions within the corpus \ref{fig:mummie}.
+
+% \vspace{-5pt}
+% \section*{Evaluation}
+% \label{sec:evaluation}
+% \vspace{-5pt}
+% \subsection*{Metrics}
+% \label{subsec:metrics}
+% \vspace{-5pt}
+% We evaluate composition extraction per patent by converting both reference and predictions into sets of tuples $(c,v,u)$ where $c$ is the component name, $v$ the numeric value rounded to two decimals, and $u$ the unit. Two families of metrics are computed. Let $S_g$ denote the number of gold-labelled patents (evaluation targets) and $S_p$ the number of patents for which the system produced any prediction (i.e., non-empty $P_i$).
+
+% For patent $i$, with gold or ground truth $G_i$ and predicted $P_i$:
+% \begin{align}
+% \mathrm{Prec}_{\text{exact}} &= \frac{\#\{i:\,P_i = G_i\}}{S_p},\quad
+% \mathrm{Rec}_{\text{exact}}  = \frac{\#\{i:\,P_i = G_i\}}{S_g},\\
+% \mathrm{F1}_{\text{exact}}   &= \frac{2\,\mathrm{Prec}_{\text{exact}}\,\mathrm{Rec}_{\text{exact}}}{\mathrm{Prec}_{\text{exact}}+\mathrm{Rec}_{\text{exact}}}.
+% \end{align}
+
+% \noindent\textit{Note.} For exact-match at the patent level, we report precision over predicted patents ($S_p$) and recall over gold patents ($S_g$). This generalizes the common exact-match accuracy $\#\{i:P_i=G_i\}/S_g$ and makes the effect of missing or empty predictions explicit.
+
+% \noindent\textbf{Macro (Exact)} reports the mean of per-patent exact scores.
+
+% \paragraph{Pairwise (tuple-level).} Let $G=\bigcup_i G_i$ and $P=\bigcup_i P_i$ after rounding values to two decimals. Define $\mathrm{TP}=|P\cap G|$, $\mathrm{FP}=|P\setminus G|$, and $\mathrm{FN}=|G\setminus P|$:
+% \begin{align}
+% \mathrm{Prec}_{\text{pairs}} &= \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FP}},\quad
+% \mathrm{Rec}_{\text{pairs}}  = \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FN}},\quad
+% \mathrm{F1}_{\text{pairs}}   = \frac{2\,\mathrm{Prec}_{\text{pairs}}\,\mathrm{Rec}_{\text{pairs}}}{\mathrm{Prec}_{\text{pairs}}+\mathrm{Rec}_{\text{pairs}}}.
+% \end{align}
+% \noindent\textbf{Macro (Pairs)} averages pairwise scores over patents, whereas \textbf{Micro (Pairs)} computes them over corpus-level $\mathrm{TP}/\mathrm{FP}/\mathrm{FN}$. Per-language summaries group patents by language code and repeat the same computations.
+
+% \subsection*{Overall Summary}
+% \label{subsec:overall_results}
+
+% Table~\ref{tab:overall} summarizes the corpus-level outcomes for all 53 patents.
+
+% \begin{wraptable}{r}{0.55\textwidth}
+%     \centering
+%     \vspace{-10pt}
+%     \caption{Overall evaluation across all languages.}
+%     \label{tab:overall}
+%     \footnotesize  % even smaller font
+%     \setlength{\tabcolsep}{3pt}  % reduce column padding
+%     \begin{tabular}{lccccc}
+%     \toprule
+%     \textbf{Model} & \textbf{F1 (Exact)} & \textbf{F1 (Pairs)} & \textbf{P} & \textbf{R} & \textbf{F1} \\
+%     & (\%) & (\%) & (\%) & (\%) & (\%) \\
+%     \midrule
+%     Llama-4 17B & 19.68 & 32.29 & 74.74 & 17.56 & 28.43 \\
+%     Qwen-3 32B  &  8.16 & 27.43 & 67.99 & 20.26 & 31.22 \\
+%     Qwen-3 235B (I) & \textbf{26.63} & \textbf{62.56} & \textbf{71.38} & \textbf{62.56} & \textbf{66.68} \\
+%     Qwen-3 235B (T) & 22.35 & 41.95 & 88.48 & 30.56 & 45.43 \\
+%     \bottomrule
+%     \end{tabular}
+%     \vspace{-5pt}
+% \end{wraptable}
+
+% \subsection*{Per-Language Results}
+% \label{subsec:language_results}
+% Table~\ref{tab:lang} reports Micro (Pairs) F1 per language.
+
+% \begin{wraptable}{l}{0.5\textwidth}
+%     \centering
+%     \vspace{-10pt}
+%     \caption{Per-language Micro (Pairs) F1 (\%).}
+%     \label{tab:lang}
+%     \footnotesize
+%     \setlength{\tabcolsep}{4pt}
+%     \begin{tabular}{lcccc}
+%     \toprule
+%     & \textbf{Llama-4} & \textbf{Qwen-3} & \multicolumn{2}{c}{\textbf{Qwen-3 235B}} \\
+%     \cmidrule(lr){4-5}
+%     & \textbf{17B} & \textbf{32B} & \textbf{Instr.} & \textbf{Think.} \\
+%     \midrule
+%     CN & 6.90 & 21.28 & \textbf{68.86} & 63.81 \\
+%     FR & 28.57 & 66.76 & \textbf{76.24} & 44.93 \\
+%     JP & 8.26 & 4.69 & \textbf{63.17} & 32.07 \\
+%     KR & 12.61 & 85.58 & 54.17 & \textbf{95.52}$^\dagger$ \\
+%     RU & 83.94 & 23.24 & \textbf{85.97} & 57.47 \\
+%     US & 9.29 & 29.50 & \textbf{47.33} & 23.86 \\
+%     \bottomrule
+%     \end{tabular}
+%     \vspace{-5pt}
+% \end{wraptable}
+% \noindent\textit{Note.} \textsuperscript{$\dagger$} The Qwen-3 235B (Thinking) run missed 13 JSON files, reducing KR coverage (2 files total).
+
+% \subsection*{Model Comparison}
+% \label{subsec:model_comparison}
+% \textbf{Best overall.} \;Qwen-3 235B (Instruct) achieves the highest Macro F1 (Exact and Pairs) and the best Micro (Pairs) F1 (66.68\%). \\
+% \textbf{Language strengths.} \;Qwen-3 235B (Instruct) leads in CN (68.86\%), FR (76.24\%), JP (63.17\%), RU (85.97\%), and US (47.33\%). KR peaks with Qwen-3 235B (Thinking) at 95.52\% (very small $n$); Qwen-3 32B is strong in KR (85.58\%). \\
+% \textbf{Underperformers.} \;Qwen-3 32B shows low Macro F1 (Exact 8.16\%) despite a modest Micro (Pairs) F1 (31.22\%); Llama-4 underperforms in CN/JP/US but is competitive in RU (83.94\%).
+
+
+
+% \section*{Future Work}
+% Looking ahead, we aim to:
+% \begin{itemize}
+%     \item Expand data modalities: Incorporate figures and schematic images beyond text to capture richer scientific information.
+%     \item Broaden model testing: Evaluate additional multilingual and domain-adapted LLMs to enhance robustness and cross-lingual accuracy.
+% \end{itemize}
+
+% \section*{Open-source Materials}
+% Code available on GitHub: \github{https://github.com/zakidotai/MuMMIE}
+
+% \section*{Author Contributions}
+%  \textbf{Defne Circi.}: Conceptualization, LLM API calls, Visualization, and Writing - Original Draft \\
+%  \textbf{Abhijeet Gangan.}: Software \\
+%  \textbf{Shashank Kushwaha.}: Formal analysis, Software, Visualization, and Writing - Original Draft  \\
+%  \textbf{Mohd Zaki.}: Conceptualization, Data Curation, and Writing - Original Draft
+
+% \end{teamsubmission}
 
 
 
@@ -4241,221 +4370,93 @@ Hawra Hussain Tuhaifa\textsuperscript{3}
 }
 \begin{abstract}
 \noindent
-\textbf{MaterialMind} is a general-purpose \emph{materials selection recommender}. Given an application context 
-(environment, temperature, mechanical limits, processing or budget constraints), it retrieves evidence from a 
-technical corpus, proposes candidate materials, and produces a \emph{ranked shortlist} with clear trade-off 
-cards and page-level citations. The system integrates Retrieval-Augmented Generation (RAG) with Large Language 
-Model (LLM) reasoning to ensure that every recommendation is grounded in verifiable evidence. Users assign 
-independent 0--100\% weights to four criteria—Performance, Stability, Cost, and Availability—without requiring 
-normalization. As a result, composite scores range from 0 to 400. This paper presents the goals, design, 
-architecture, and scoring methodology of MaterialMind, demonstrating how RAG and LLMs combine to provide 
-auditable engineering decisions.
+\textbf{MaterialMind} is a RAG-based materials selection system that retrieves
+evidence from technical literature, generates candidate materials, and
+produces ranked recommendations with explicit trade-offs and page-level
+citations. By combining constrained LLM reasoning with an independent-weight
+scoring model over performance, stability, cost, and availability, the system
+enables transparent and auditable engineering decisions.
 \end{abstract}
 
 % -----------------------------------------------------------
 \section*{Introduction}
-Selecting the right material for engineering applications requires balancing mechanical performance, chemical 
-stability, processing constraints, economic feasibility, and supply-chain considerations. Engineers typically 
-consult large amounts of literature, manuals, and technical documents—a workflow that is time-consuming, 
-difficult to audit, and prone to human variability. As the amount of scientific literature grows, manual 
-workflows alone can no longer deliver the speed or transparency required in modern engineering practice.
-
-Advances in Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) have enabled new 
-evidence-grounded decision-support systems. RAG combines semantic retrieval with LLM reasoning, allowing 
-models to generate contextually accurate answers based on cited scientific sources. However, existing tools in 
-materials science mainly perform summarization or property extraction—they do not produce transparent, 
-ranked material recommendations with explicit trade-offs and citations.
-
-MaterialMind addresses these limitations by converting unstructured technical literature into structured, 
-explainable materials recommendations. The system integrates:  
-(i) FastEmbed-powered semantic retrieval for extracting the most relevant passages from the corpus,  
-(ii) a structured RAG pipeline that constrains the LLM to retrieved evidence only, and  
-(iii) an independent-weight scoring model allowing engineers to set priorities without normalization.  
-This results in a defensible, traceable, and auditable material-selection workflow.
-
-The following sections describe MaterialMind’s capabilities, objectives, RAG pipeline, architecture, scoring 
-framework, and ranking algorithm.
+Selecting materials for engineering applications requires balancing performance, stability, processing constraints, cost, and availability, a process traditionally reliant on extensive technical literature and expert judgment. As the volume of materials science publications grows, manual workflows become increasingly time-consuming, difficult to audit, and inconsistent. Recent advances in Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) enable evidence-grounded decision support by combining semantic retrieval with citation-aware reasoning; however, existing tools largely focus on summarization or property extraction rather than transparent, ranked recommendations. MaterialMind addresses this gap by converting unstructured materials literature into structured, explainable recommendations using RAG-constrained LLM reasoning and an independent-weight scoring model that preserves engineer intent without normalization, resulting in an auditable and defensible material-selection workflow.
  
 % -----------------------------------------------------------
 \section*{System Overview}
 
-\subsection*{What MaterialMind Does}
-MaterialMind converts a high-level engineering query (e.g.,  
-\emph{``seawater at \SI{25}{\celsius}, UTS $\ge$ \SI{700}{MPa}, wrought''}) 
-into a decision-ready shortlist. The system:
+MaterialMind is an AI-assisted materials selection system that combines
+Retrieval-Augmented Generation (RAG) with Large Language Models (LLMs) to
+produce evidence-grounded and auditable material recommendations. Given
+application constraints (e.g., environment, temperature, and mechanical
+limits), the system retrieves relevant technical literature using semantic
+vector search \cite{gao2023ragsurvey,yuan2024lamp}, extracts candidate
+materials grounded in scientific evidence
+\cite{cheng2025aidriven,zhou2025smalldata}, and generates ranked
+recommendations with transparent trade-offs and page-level citations.
 
-\begin{itemize}[noitemsep,topsep=2pt]
-  \item Retrieves relevant literature using high-efficiency vector similarity search 
-        \cite{gao2023ragsurvey,yuan2024lamp}.
-  \item Extracts a structured list of candidate materials grounded in scientific evidence 
-        \cite{cheng2025aidriven,zhou2025smalldata}.
-  \item Computes a composite score via independently weighted MCDM criteria 
-        \cite{kes2023mcdmreview,liao2023datadrivenMCDM}.
-  \item Presents trade-off cards and citation maps for transparent engineering decisions.
-\end{itemize}
+The system follows a structured RAG pipeline in which documents are chunked,
+embedded, and indexed, and relevant passages are fused with user constraints
+to form a grounded prompt that constrains LLM reasoning
+\cite{gao2023ragsurvey,yuan2024lamp,xie2024darwin}. This design reduces
+hallucination and ensures scientifically valid outputs adapted for materials
+science applications \cite{cheng2025aidriven}.
 
-\subsection*{Goals and Objectives}
-\begin{itemize}[noitemsep,topsep=2pt]
-  \item \textbf{Speed to decision}: accelerate evidence retrieval for engineers.
-  \item \textbf{Explainability}: provide grounded reasoning with interpretable scoring 
-        \cite{liao2023datadrivenMCDM}.
-  \item \textbf{Engineer control}: independently configurable weights without normalization.
-  \item \textbf{Generality}: applicable to metals, polymers, ceramics, and composites
-        \cite{zhou2025smalldata,cheng2025aidriven}.
-\end{itemize}
-
-% ------------------------------------
-% RAG + LLM PIPELINE
-% ------------------------------------
-\section*{RAG + LLM Pipeline}
-
-\subsection*{Three-Stage Workflow}
-\begin{enumerate}[noitemsep,topsep=2pt]
-  \item \textbf{Evidence Retrieval}:  
-        Documents are chunked, embedded, and retrieved using modern RAG systems 
-        \cite{gao2023ragsurvey,yuan2024lamp}.
-  \item \textbf{RAG Prompt Construction}:  
-        Retrieved passages, constraints, and citations are fused to form a grounded context.
-  \item \textbf{LLM Reasoning}:  
-        The model produces structured, evidence-grounded recommendations using LLMs adapted 
-        for materials science \cite{xie2024darwin,cheng2025aidriven}.
-\end{enumerate}
-
-% ------------------------------------
-% SYSTEM ARCHITECTURE
-% ------------------------------------
-\section*{System Architecture}
-
-MaterialMind is implemented as a RAG-driven assistant combining semantic retrieval and structured LLM reasoning. 
-The full architecture appears in Fig.~\ref{fig:materialmind_architecture}.
-
-\subsection*{Architecture Components}
-\begin{enumerate}[noitemsep, topsep=4pt]
-    \item \textbf{User Inquiry and Constraints}  
-    Users specify environmental, thermal, mechanical, or chemical requirements.
-    \item \textbf{Semantic Retrieval (RAG)}  
-    PDFs are chunked and embedded; relevant evidence is retrieved using modern vector search 
-    \cite{gao2023ragsurvey,yuan2024lamp}.
-    \item \textbf{RAG Prompt Construction}  
-    Prompts include the question, the retrieved evidence, and page-level citations.
-    \item \textbf{LLM Reasoning and Output}  
-    Output includes shortlisted materials, reasons, trade-offs, and numeric scores informed by
-    current LLM capabilities in materials research \cite{xie2024darwin,cheng2025aidriven}.
-\end{enumerate}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\linewidth]{figures/materialmind.png}
-    \caption{MaterialMind system architecture combining retrieval, reasoning, and scoring components.}
-    \label{fig:materialmind_architecture}
-\end{figure}
-
-% ------------------------------------
-% EVIDENCE RETRIEVAL
-% ------------------------------------
-\section*{Evidence Retrieval (RAG)}
-All documents are chunked, embedded, and indexed. Relevant text is retrieved through vector similarity search 
-using modern RAG frameworks \cite{gao2023ragsurvey}. Retrieved evidence forms the grounding context for LLM reasoning 
-\cite{yuan2024lamp}.
-
-% ------------------------------------
-% LLM OUTPUT
-% ------------------------------------
-\section*{LLM Reasoning to Structured Output}
-The LLM produces:
-
-\begin{itemize}[noitemsep,topsep=2pt]
-  \item material \texttt{name},
-  \item preliminary \texttt{score},
-  \item \texttt{reasons},
-  \item \texttt{tradeoffs},
-  \item \texttt{citations}.
-\end{itemize}
-
-These follow best practices in LLM-assisted materials analysis
-\cite{xie2024darwin,cheng2025aidriven}.
-
-% ------------------------------------
-% SCORING MODEL
-% ------------------------------------
-\section*{Scoring Model (Independent 0--100\% Weights)}
-
-The four criteria are:
-\[
-\text{Performance},\quad 
-\text{Stability},\quad 
-\text{Cost},\quad 
-\text{Availability}.
-\]
-
-Weights operate independently, following modern MCDM formulations 
-\cite{kes2023mcdmreview,liao2023datadrivenMCDM}.  
-Utility values are derived from materials-design heuristics grounded in recent materials science research  
-\cite{zhou2025smalldata}.
-
-The composite ranking is:
+Candidate materials are evaluated using four criteria—performance, stability,
+cost, and availability—with independently assigned weights in the range
+0--100\%, without normalization, following modern multi-criteria
+decision-making formulations
+\cite{kes2023mcdmreview,liao2023datadrivenMCDM}. Utility values are derived
+from materials-design heuristics \cite{zhou2025smalldata}, and the composite
+ranking is defined as
 \[
 R(m) = \sum_i w_i \cdot u_i(m), \qquad R(m)\in[0,400].
 \]
 
-% ------------------------------------
-% ALGORITHM
-% ------------------------------------
-\section*{Algorithm}
-%%%%%%% I commented it out as it was throwing so many errors. Please uncomment and fix the errors. - Aritra %%%%%%%
 
-% \begin{algorithm}[h]
-% \caption{MaterialMind Ranking with Independent Weights}
-% \begin{algpseudocode}[1]
-% \Require Query constraints $\mathcal{C}$; corpus index; user weights $w$.
-% \State $\mathcal{K} \gets \textsc{RetrieveTopK}(\mathcal{C})$
-% \State $\mathcal{M} \gets \textsc{LLMShortlist}(\mathcal{K}, \mathcal{C})$
-% \State $\mathcal{M} \gets \textsc{ApplyHardConstraints}(\mathcal{M}, \mathcal{C})$
-% \For{\textbf{each} $m \in \mathcal{M}$}
-%   \State Compute utilities $u_i(m)$ and composite score $R(m)$
-% \EndFor
-% \State Sort by $R(m)$; break ties by stability, availability, then cost
-% \State \Return ranked list
-% \end{algpseudocode}
-% \end{algorithm}
+\section*{System Architecture}
 
-% ------------------------------------
-% WHY DIFFERENT
-% ------------------------------------
-\section*{Why MaterialMind Is Different}
-MaterialMind is not merely a summarization engine. It integrates:
+MaterialMind is implemented as a RAG-driven assistant combining semantic
+retrieval and structured LLM reasoning. Users specify environmental,
+thermal, mechanical, or chemical constraints, which guide evidence retrieval
+from embedded technical documents. Retrieved passages and page-level
+citations are injected into the RAG prompt, ensuring that generated outputs
+remain auditable. The system outputs shortlisted materials, supporting
+reasons, trade-offs, and numeric scores informed by current LLM capabilities
+in materials research \cite{xie2024darwin,cheng2025aidriven}. The overall
+architecture of MaterialMind is illustrated in
+Fig.~\ref{fig:materialmind_architecture}.
 
-\begin{itemize}[noitemsep,topsep=2pt]
-  \item \textbf{RAG for scientific grounding} \cite{yuan2024lamp,gao2023ragsurvey},
-  \item \textbf{LLM reasoning adapted for materials science} \cite{xie2024darwin,cheng2025aidriven},
-  \item \textbf{Transparent multi-criteria decision-making} \cite{kes2023mcdmreview},
-  \item \textbf{Data-driven MCDM methods} \cite{liao2023datadrivenMCDM}.
-\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.70\linewidth]{figures/MaterialMind.png}
+    \caption{MaterialMind system architecture combining retrieval, reasoning,
+    and scoring components.}
+    \label{fig:materialmind_architecture}
+\end{figure}
 
-Together, these create an auditable and defensible pipeline for materials selection.
+To support transparency, reproducibility, and community collaboration, all code, model configurations, and supplementary resources for \textit{MaterialMind} are publicly available:
 
-\section*{Open-Source Materials}
-
-To support transparency, reproducibility, and community collaboration, all code, model configurations, 
-and supplementary resources for \textbf{MaterialMind} are publicly available:
-
-\begin{itemize}[noitemsep, topsep=4pt]
-    \item \textbf{GitHub Repository (Source Code)}  
+\begin{itemize}
+    \item \textbf{GitHub Repository (Source Code):}  
     \url{https://github.com/AzizahAlq/MaterialMind}
 
-    \item \textbf{Google Drive Folder (Datasets, PDFs, Docs)}  
+    \item \textbf{Google Drive Folder (Datasets, PDFs, Documentation):}  
     \url{https://drive.google.com/drive/folders/1IgP_zhMtMGHpANE5ZVRZzQUlVWQy-ufD}
 \end{itemize}
 
-These resources include the full implementation of the RAG pipeline, vector database setup, prompt templates, 
-evaluation scripts, and annotated materials-science corpus used during development.
-% -----------------------------------------------------------
+
 \section*{Conclusion}
-MaterialMind transforms unstructured scientific literature into transparent, ranked materials recommendations by 
-combining modern RAG retrieval \cite{gao2023ragsurvey}, large-scale LLM reasoning tailored to materials science 
-\cite{xie2024darwin,cheng2025aidriven}, and updated multi-criteria decision-making frameworks 
-\cite{kes2023mcdmreview,liao2023datadrivenMCDM}. The system produces defensible, evidence-grounded decisions 
-supported by trade-off analysis and citations, offering a reliable AI assistant for material selection.
+
+MaterialMind transforms unstructured scientific literature into transparent,
+ranked material recommendations by combining RAG-based retrieval
+\cite{gao2023ragsurvey}, LLM reasoning tailored to materials science
+\cite{xie2024darwin,cheng2025aidriven}, and modern multi-criteria
+decision-making frameworks
+\cite{kes2023mcdmreview,liao2023datadrivenMCDM}. The system provides a
+reliable, auditable AI assistant for materials selection under real-world
+engineering constraints.
+
 
 
 \end{teamsubmission}
@@ -4605,13 +4606,7 @@ M.J.R.: Design, coding, and testing.
 }
 
 \section*{Introduction}
-
-Autonomous laboratories aim to connect molecular design, simulation, and experiment in a single closed loop. In this  project, we built a small prototype of such a system focused on molecular discovery for  critical materials extraction using electrochemical methods.\cite{shukla2025alizarin}
-
-Our workflow (shown in Figure~\ref{fig:wf_acme} combines several AI and simulation components in one agentic framework. Reasoning LLMs interpret a user prompt, retrieve domain knowledge, and define chemically meaningful design rules. Generative models use these rules to propose candidate molecules, while predictive AI models and quantum chemical tools evaluate their properties. Experimental procedures enter the loop through modular plug-ins that translate the agent’s plans into stepwise protocols and measurements.
-
-The full system operates as a feedback loop with multiple iterations. Computational and experimental results are analyzed by the reasoning agent, which updates the design rules, refines the search space, and proposes improved candidates. This structure illustrates how autonomous laboratories can couple generative, pre
-dictive, and experimental modules to accelerate molecular discovery.
+Autonomous laboratories aim to connect molecular design, simulation, and experiment in a single closed loop. In this  project, we built a small prototype of such a system focused on molecular discovery for  critical materials extraction using electrochemical methods \cite{shukla2025alizarin}. Our workflow, shown in Figure \ref{fig:wf_acme}, combines several AI and simulation components in one agentic framework. Reasoning LLMs interpret a user prompt, retrieve domain knowledge, and define chemically meaningful design rules. Generative models use these rules to propose candidate molecules, while predictive AI models and quantum chemical tools evaluate their properties. Experimental procedures enter the loop through modular plug-ins that translate the agent’s plans into stepwise protocols and measurements. The full system operates as a feedback loop with multiple iterations. Computational and experimental results are analyzed by the reasoning agent, which updates the design rules, refines the search space, and proposes improved candidates. This structure illustrates how autonomous laboratories can couple generative, predictive, and experimental modules to accelerate molecular discovery.
 
 \begin{figure}[!h]
     \centering
@@ -4621,38 +4616,9 @@ dictive, and experimental modules to accelerate molecular discovery.
 \end{figure}
 \section*{Results}
 
-\subsection*{Domain Knowledge and Scientific Reasoning}
-
-In the first phase, candidate generation relies on domain knowledge and an in-house scientific reasoning model (Socratic AI reasoning model \cite{harb2025towards,harb2025hitchhiker}). We use a Retrieval-Augmented Generation (RAG) module to access patterns, structural motifs, and property data from a curated knowledge base of protocol documents and peer-reviewed publications. The RAG module extracts known ligands, functional group motifs, and design rules for metal-ion binding, including constraints on charge balance, donor atoms, and coordination geometry.
-
-These rules constrain the generator so that it proposes chemically valid candidates instead of arbitrary structures. Given the retrieved context and user-defined target properties, our Socratic AI model constructs ligands or molecules that satisfy these design rules. It decomposes the problem into clear objectives such as donor type, charge balance, and coordination environment, then assembles prototype molecules that meet these criteria. The model further screens the prototypes for chemical validity, plausible synthetic routes, and relevance to the target ion. Molecules that pass this reasoning stage are forwarded to the computational downselection phase.
-
-\subsection*{Computational Screening}
-
-The second phase reads in chemically valid molecules generated in phase one and scores them using metal ion binding affinity scores from quantum mechanical (QM) calculations. The workflow reads a table of candidate molecules and target ions, builds 3D structures, and assembles each ligand–ion complex using conformational sampling at the semi-empirical extended tight-binding level GFN-xTB\cite{bannwarth2019gfn2}, as implemented in CREST\cite{pracht2020automated}. The metal ion binding affinity score is then defined as the energy differential of the assembled complex and its separated constituents, all in implicit water solvent. These binding affinity values are used to rank candidates. Finally, the workflow with the help of a context aware RAG-MCP server architecture that has access to selection rules and conformer search features provided by the user, prints the top candidates for handoff to the next phase.
-
-This QM calculation stack is linked to the agent through a Model Context Protocol (MCP) interface that enables seamless invocation of available computational tools. The agent also facilitates input and output between different simulations using chemistry-based tools to downselect candidate pools. Using a locally run MCP server is key here since it provides the LLM agent access to third-party software which is seamlessly integrated into the model architecture. The RAG part of this framework incorporates meta prompts for sequential task execution based on predefined chemistry rules, especially since the input is a simple pool of candidate molecules. 
-
-\subsection*{Experimental Characterization \& Feedback Loop}
-
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=1\linewidth]{figures/exp_Workflow.png}
-    \caption{Overview of the workflow for autonomous experimentation }
-    \label{fig:exp_Workflow}
-\end{figure}
-
-As shown schematically in Figure~\ref{fig:exp_Workflow}, this phase comprises an agentic workflow that integrates a suite of relevant synthesis and structure–property characterization techniques to further down‑select viable molecules for the application through a series of experiments. In this setup, we envision a series of automated, co-located bench top experimental platforms for comprehensive characterization of selected molecules. Instructions for experiments are built on domain-expert designed system prompts and SoPs, whereas knowledge gained from the experiments will be passed downstream the pipeline for final verdicts. 
-
-After the molecule options are made available to the automated instrumentation facility, the series of experiments will begin. The LLM, supported by a system prompt as the experiment pipeline designer, will have access to step‑by‑step instructions and decision‑making guidelines in standard operating procedures (SOPs) for each technique and will generate an application‑specific workflow based on the user's initial inputs. In this case, we envision coating the computationally down‑selected molecules onto an electrode surface using automated spin coating, followed by characterization via X‑ray fluorescence (XRF) and inductively coupled plasma mass spectrometry (ICP‑MS), where the electrolyte is analyzed for initial and spent metal‑ion concentrations. Each molecule placed for the experiment will be given a unique ID for identification throughout the experiment. 
-
-For spin coating, the recipe of control parameters such as time, rotations per minute, amount of organic solution to take (using robotic pipette system) will be mentioned in the SOP, and will be executed based on the user's initial input under the guidance of the domain-expert built system prompt. Further, the relevant measurement parameters for a specific characterization technique and material of interest, like x-ray energy for XRF, are selected automatically based on the literature values, and the concentration threshold is provided by the user. Measurements are performed before and after the electrode coating to (1) account for the signatures of used electrodes, and (2) prevent the measurement of contaminated samples. 
-
-After the X-ray fluorescence spectrum is collected on the coated electrodes, the agent ranks the candidates based on detected metal concentration. Similarly, with the use of  ICP-MS, metal concentration will be quantified before and after exposure to organic ligands and reduction reaction. The concentration of metal ions will be compared across the selected candidates, and will be ranked. 
-
-In an automated electrochemistry platform modeled after ElectroLab from the Rodríguez-López laboratory at UIUC \cite{OH2023100103}, electrode/electrolyte combinations are fed through a high-throughput system. Cyclic voltammograms will be collected for different electrode/electrolyte combinations, and reduction and oxidation peaks will be identified and compared across electrode/electrolyte combinations to determine how easily two metals can be separated from each other. 
-
-At the end of the experimental workflow, the selectivity/separation rankings determined from the automated platform will be compared across different molecule candidates and an optimum solution will be presented based on the criteria set by the user. With simple prompt engineering, we have established a pipeline to demonstrate general concepts on how the verdicts from different measurement techniques can be processed with agentic autonomous exploration systems, and combined with the physics-aware fitting for annotating the raw measurement data.
+Candidate generation begins with domain knowledge encoded through an in-house scientific reasoning model (Socratic AI reasoning model \cite{harb2025towards,harb2025hitchhiker}).
+We use a Retrieval-Augmented Generation (RAG) module to access patterns, structural motifs, and property data from a curated knowledge base of protocol documents and peer-reviewed publications. The RAG module extracts known ligands, functional group motifs, and design rules for metal-ion binding, including constraints on charge balance, donor atoms, and coordination geometry. Given the retrieved context and user-defined target properties, our Socratic AI model constructs ligands or molecules that satisfy these design rules. Molecules that pass this reasoning stage are forwarded to computational downselection. Computational screening evaluates the resulting molecules using metal–ion binding affinity scores from quantum mechanical calculations. The workflow reads a table of candidate molecules and target ions, builds 3D structures, and assembles each ligand–ion complex using conformational sampling at the semi-empirical extended tight-binding level GFN-xTB \cite{bannwarth2019gfn2}, as implemented in CREST \cite{pracht2020automated}. The metal ion binding affinity score is defined as the energy differential between the assembled complex and its separated constituents in implicit water solvent. These values are used to rank candidates. The QM stack is accessed through a Model Context Protocol (MCP) interface that enables the agent to invoke computational tools and downselect candidate pools. Selected candidates are then evaluated through an agentic experimental workflow integrating synthesis, characterization, and electrochemical testing.
+Automated bench top platforms characterize molecules following domain-expert designed prompts and SOPs. The LLM acts as an experiment pipeline designer, generating executable workflows from user inputs. Molecules are coated onto electrodes using automated spin coating, followed by X-ray fluorescence (XRF) and inductively coupled plasma mass spectrometry (ICP-MS) to quantify metal-ion concentrations. The agent ranks candidates based on metal concentration detected by XRF and ICP-MS. An automated electrochemistry platform modeled after ElectroLab from the Rodríguez-López laboratory at UIUC collects cyclic voltammograms for different electrode and electrolyte combinations to assess metal separation performance. The selectivity rankings are compared across candidates, and an optimal solution is identified based on user-defined criteria. 
 
 \section*{Future Work}
 
@@ -4662,16 +4628,10 @@ The prototype presented here is a first step toward an autonomous workflow for c
 Code available on GitHub: \github{https://github.com/HassanHarb92/ACME}
 
 \section*{Author Contributions}
-\begin{itemize}
-    \item Domain Knowledge and Scientific Reasoning: Hassan Harb, Mustafa Unal.
-    \item Computational Screening:  Sungil Hong, Shi Li, Hossam Farag, Adwaith Ravichandran.
-    \item Experimental Characterization: Cailin Buchanan, Tugba Isik, Suman Kumari, Rakesh Kamath, Yunkai Sun.
-\end{itemize}
-We note that all authors contributed equally to the write-up.
+    Domain Knowledge and Scientific Reasoning: Hassan Harb, Mustafa Unal. Computational Screening: Hossam Farag,  Sungil Hong, Shi Li, Adwaith Ravichandran. Experimental Characterization: Cailin Buchanan, Tugba Isik, Suman Kumari, Rakesh R. Kamath, Yunkai Sun.
 \section*{Acknowledgments}
-
-This work was supported by U.S. Department of Energy (DOE), Office of Science, Office of Basic Energy Sciences, Chemical Sciences, Geosciences, and Biosciences Division, Separation Science Program, under Contract DE-AC02-06CH11357 to UChicago Argonne, LLC, Operator of Argonne National Laboratory. This material is based upon work that was supported by Laboratory Directed Research and Development (LDRD) funding from Argonne National Laboratory and by the U.S. Department of Energy, Office of Science Energy Earthshot Initiative as part of the Center for Steel Electrification by Electrosynthesis (C-STEEL) at Argonne National Laboratory under Contract Number DE-AC02-06CH11357. LLM agents were built on Argo, Argonne National Laboratory’s internal generative AI chatbot. Argo service is being provided by Argonne’s Business and Information Services (BIS). ChatGPT v5 was used in editing this section.
-
+This work was supported by the U.S. Department of Energy, Office of Science, Office of Basic Energy Sciences, Chemical Sciences, Geosciences, and Biosciences Division, Separation Science Program, under Contract DE-AC02-06CH11357.
+Additional support was provided by Argonne National Laboratory LDRD funding and the DOE Office of Science Energy Earthshot Initiative through the Center for Steel Electrification by Electrosynthesis (C-STEEL).
 \end{teamsubmission}
 
 
