@@ -25,6 +25,7 @@
 % \captionsetup{width=\textwidth}
 \usepackage{orcidlink}
 \usepackage{placeins}
+\usepackage{bibunits}
 \usepackage{hyperref}
 \usepackage{siunitx}
 \usepackage{float}
@@ -37,9 +38,10 @@
 \usepackage{algpseudocode}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{tgadventor}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{tcolorbox}
+\usepackage[most]{tcolorbox}
 
 \usepackage[version=3]{mhchem}
 
@@ -47,6 +49,7 @@
 % COLORS & CODE STYLE
 %--------------------------------------------------
 \definecolor{myblue}{rgb}{0.1, 0.2, 0.6}
+\definecolor{mytheme}{RGB}{242, 246, 255}
 \definecolor{mygray}{gray}{0.35}
 \definecolor{mygreen}{RGB}{0,120,0}
 \definecolor{codebg}{RGB}{248,248,248}
@@ -150,49 +153,100 @@
 %--------------------------------------------------
 % TITLE
 %--------------------------------------------------
-\begin{center}
-\parbox{\textwidth}{%
-\centering
-\LARGE
-\setlength{\baselineskip}{1.1\baselineskip}
-\textbf{From Knowledge to Action: Outcomes of the 2025 Large Language Model (LLM) Hackathon for Applications in Materials Science and Chemistry}
-}
-\end{center}
+% \begin{center}
+% \parbox{\textwidth}{%
+% \centering
+% \LARGE
+% \setlength{\baselineskip}{1.1\baselineskip}
+% \textbf{From Knowledge to Action: Outcomes of the 2025 Large Language Model (LLM) Hackathon for Applications in Materials Science and Chemistry}
+% }
+% \end{center}
 
 
-\vspace{0.25em}
+% \vspace{0.25em}
 
+
+% % ---------- Global Authors ----------
+% \input{authors}
+
+% \begin{center}
+% \small
+% Author names and ORCID identifiers are listed above; institutional affiliations appear in the respective team contributions. Institutional affiliations for authors not associated with a specific team are listed below:\\
+% Andrew MacBride$^\dagger$ — University of California, Berkeley, California, US.\\
+% Ben Blaiszik$^*$ — Argonne National Laboratory, Lemont, IL, USA.
+% \end{center}
+% \begin{center}
+% \small
+% $^*$Corresponding author: Ben Bliaszik (\href{blaiszik@uchicago.edu}{blaiszik@uchicago.edu}).\\$^\dagger$These authors also contributed substantially to compiling team results and other paper writing tasks.
+% \end{center}
+
+%--------------------------------------------------
+% MAIN PAPER CONTENT
+%--------------------------------------------------
+\begin{tcolorbox}[
+    enhanced,
+    colback=mytheme,    % Background color
+    colframe=mytheme,   % Match frame to background to hide border
+    arc=3mm,            % Adjust this for more/less roundness
+    boxrule=0pt,        % Explicitly remove border thickness
+    left=15pt,          % Internal padding
+    right=15pt,
+    top=12pt,
+    bottom=12pt
+]
+    \begin{minipage}{\linewidth}
+    \centering
+    {\par
+    \fontsize{20pt}{22pt}\selectfont
+    \fontseries{eb}\selectfont
+    From Knowledge to Action: Outcomes of the 2025 Large Language Models (LLM) Hackathon for Applications in Materials Science and Chemistry
+    \par}
+
+    \vspace{15pt}
+
+    {\large\textbf{
+    2025 LLM Hackathon for Applications in Materials Science and Chemistry Participants$^1$}}\\
+    {\normalsize $^1$A detailed contributor list can be found in the appendix of this paper.}
+    
+\end{minipage}
+
+\vspace{10pt}
+    In this article, we showcase 88 diverse applications of LLMs in materials science and chemistry as the outcomes from the third Large Language Model (LLM) Hackathon for Applications in Materials Science and Chemistry, engaging more than 275 participants across global hybrid locations. These diverse applications can be generally divided into two high-level categories: i) Knowledge Infrastructure (New ways to know things) and ii) Action Systems (New ways to do things). The appendix contains brief papers for each team submission, with accompanying links to code repositories, video demonstrations, and datasets where applicable. In addition to these team results, we provide a discussion of the hackathon event and its hybrid format, featuring 16 physical hubs distributed across four continents—North America, Europe, Asia, and Australia—complemented by a global online hub that enabled both local and virtual collaboration. Overall, the event revealed substantial advancements in LLM capabilities compared to last two years' hackathons, indicating ongoing expansion of LLM applications in materials science and chemistry research towards the realization of self-driving laboratories. The outcomes illustrate the dual utility of LLMs, serving both as multipurpose models for diverse machine learning tasks and as platforms enabling rapid prototyping of custom scientific applications, while also facilitating the deployment of fully automated workflows across computational and experimental environments. 
+\end{tcolorbox}
+
+
+\begin{bibunit}[ieeetr]
+\section*{Introduction}
+Science hackathons have proven to be a compelling tool for encouraging rapid problem-solving in a friendly competitive manner while fostering new collaborations and innovations within the scientific community~\cite{pe2019understanding, nolte2020support, heller2023hack}. Such hackathons can be organized cost-effectively while maximizing both their impact and reach through the utilization of social media, virtual platforms, and hybrid event structures. Our previous hackathons on Large Language Models (LLMs) for Applications in Materials Science and Chemistry in 2023~\cite{jablonka202314} and 2024~\cite{llm2024} have already demonstrated the potential for future exploration of LLM applications in diverse areas of materials science and chemistry. In this article ...
+
+\section*{Overview}
+This is the main paper \textbf{Overview} content. 
+
+\section*{Conclusion}
+This is the main paper \textbf{Conclusion} content.
+
+\section*{Contributors and Acknowledgements}
+This paper is the result of contributions from all enthusiastic participants in the 2025 LLM Hackathon for Applications in Materials Science and Chemistry. Below, we list all contributors in alphabetical order by last name, apart from lead and corresponding authors. Only author names and ORCID identifiers are listed for all participants except the corresponding author. Individual authors can be contacted using their ORCID details or by contacting the corresponding author.
+\vspace{5pt}
 
 % ---------- Global Authors ----------
 \input{authors}
 
 \begin{center}
 \small
-Author names and ORCID identifiers are listed above; institutional affiliations appear in the respective team contributions. Institutional affiliations for authors not associated with a specific team are listed below:\\
-Andrew MacBride$^\dagger$ — University of California, Berkeley, California, US.\\
-Ben Blaiszik$^*$ — Argonne National Laboratory, Lemont, IL, USA.
-\end{center}
-\begin{center}
-\small
+$^1$ Data Science \& Learning Division, Argonne National Laboratory, Lemont, IL, USA.\\
+$^2$ University of Chicago, Chicago, IL, USA\\
+\vspace{5pt}
 $^*$Corresponding author: Ben Bliaszik (\href{blaiszik@uchicago.edu}{blaiszik@uchicago.edu}).\\$^\dagger$These authors also contributed substantially to compiling team results and other paper writing tasks.
 \end{center}
 
 
-%--------------------------------------------------
-% MAIN PAPER CONTENT
-%--------------------------------------------------
-\begin{abstract}
-    In this article, we showcase 88 diverse applications of LLMs in materials science and chemistry as the outcomes from the third Large Language Model (LLM) Hackathon for Applications in Materials Science and Chemistry, engaging more than 275 participants across global hybrid locations. These diverse applications can be generally divided into two high-level categories: i) Knowledge Infrastructure (New ways to know things) and ii) Action Systems (New ways to do things). The appendix contains brief papers for each team submission, with accompanying links to code repositories, video demonstrations, and datasets where applicable. In addition to these team results, we provide a discussion of the hackathon event and its hybrid format, featuring 16 physical hubs distributed across four continents—North America, Europe, Asia, and Australia—complemented by a global online hub that enabled both local and virtual collaboration. Overall, the event revealed substantial advancements in LLM capabilities compared to last two years' hackathons, indicating ongoing expansion of LLM applications in materials science and chemistry research towards the realization of self-driving laboratories. The outcomes illustrate the dual utility of LLMs, serving both as multipurpose models for diverse machine learning tasks and as platforms enabling rapid prototyping of custom scientific applications, while also facilitating the deployment of fully automated workflows across computational and experimental environments. 
-\end{abstract}
+% \FloatBarrier
+% \bibliographystyle{ieeetr}
+% \bibliography{ref}
+\putbib[ref]
 
-\section*{Introduction}
-Science hackathons have proven to be a compelling tool for encouraging rapid problem-solving in a friendly competitive manner while fostering new collaborations and innovations within the scientific community~\cite{pe2019understanding, nolte2020support, heller2023hack}. Such hackathons can be organized cost-effectively while maximizing both their impact and reach through the utilization of social media, virtual platforms, and hybrid event structures. Our previous hackathons on Large Language Models (LLMs) for Applications in Materials Science and Chemistry in 2023~\cite{jablonka202314} and 2024~\cite{llm2024} have already demonstrated the potential for future exploration of LLM applications in diverse areas of materials science and chemistry. In this article ...
-
-\section*{Overview}
-This is the main paper \textbf{Overview} content.
-
-\section*{Conclusion}
-This is the main paper \textbf{Conclusion} content.
+\end{bibunit}
 
 %--------------------------------------------------
 % TABLE OF CONTENTS (AFTER MAIN PAPER)
@@ -204,10 +258,19 @@ This is the main paper \textbf{Conclusion} content.
 %--------------------------------------------------
 % TEAM SUBMISSIONS (ALL IN ONE FILE)
 %--------------------------------------------------
+\clearpage
+\begin{bibunit}[ieeetr]
+
 \input{teamsubmissions}
 
-\FloatBarrier
-\bibliographystyle{ieeetr}
-\bibliography{ref}
+\putbib[submissionref]
+
+\end{bibunit}
+
+% \input{teamsubmissions}
+
+% \FloatBarrier
+% \bibliographystyle{ieeetr}
+% \bibliography{submissionref}
 
 \end{document}
