@@ -25,7 +25,7 @@
 % \captionsetup{width=\textwidth}
 \usepackage{orcidlink}
 \usepackage{placeins}
-\usepackage{bibunits}
+% \usepackage{bibunits}
 \usepackage{hyperref}
 \usepackage{siunitx}
 \usepackage{float}
@@ -213,36 +213,142 @@
 \end{minipage}
 
 \vspace{10pt}
-    In this article, we showcase 88 diverse applications of LLMs in materials science and chemistry as the outcomes from the third Large Language Model (LLM) Hackathon for Applications in Materials Science and Chemistry, engaging more than 350 participants across global hybrid locations. These diverse applications can be generally divided into two high-level categories: i) Knowledge Infrastructure (New ways to know things) and ii) Action Systems (New ways to do things). The appendix contains brief papers for each team submission, with accompanying links to code repositories, video demonstrations, and datasets where applicable. In addition to these team results, we provide a discussion of the hackathon event and its hybrid format, featuring 16 physical hubs distributed across four continents—North America, Europe, Asia, and Australia—complemented by a global online hub that enabled both local and virtual collaboration. Overall, the event revealed substantial advancements in LLM capabilities compared to last two years' hackathons, indicating ongoing expansion of LLM applications in materials science and chemistry research towards the realization of self-driving laboratories. The outcomes illustrate the dual utility of LLMs, serving both as multipurpose models for diverse machine learning tasks and as platforms enabling rapid prototyping of custom scientific applications, while also facilitating the deployment of fully automated workflows across computational and experimental environments. 
+    In this article, we showcase 89 diverse applications of LLMs in materials science and chemistry as the outcomes from the third Large Language Model (LLM) Hackathon for Applications in Materials Science and Chemistry, engaging more than 350 participants across global hybrid locations. These diverse applications can be generally divided into two high-level categories: i) Knowledge Infrastructure (New ways to know things) and ii) Action Systems (New ways to do things). The appendix contains brief papers for each team submission, with accompanying links to code repositories, video demonstrations, and datasets where applicable. In addition to these team results, we provide a discussion of the hackathon event and its hybrid format, featuring 16 physical hubs distributed across four continents—North America, Europe, Asia, and Australia—complemented by a global online hub that enabled both local and virtual collaboration. Overall, the event revealed substantial advancements in LLM capabilities compared to last two years' hackathons, indicating ongoing expansion of LLM applications in materials science and chemistry research towards the realization of self-driving laboratories. The outcomes illustrate the dual utility of LLMs, serving both as multipurpose models for diverse machine learning tasks and as platforms enabling rapid prototyping of custom scientific applications, while also facilitating the deployment of fully automated workflows across computational and experimental environments. 
 \end{tcolorbox}
 
 
-\begin{bibunit}[ieeetr]
+% \begin{bibunit}[ieeetr]
 \section*{Introduction}
 The integration of large language models (LLMs) into scientific workflows is rapidly reshaping how researchers perform knowledge discovery, automate routine tasks, and orchestrate end-to-end computational and experimental pipelines.
-In chemistry and materials science, where progress is often constrained by heterogeneous data modalities, fragmented tooling, and rapidly evolving literature, LLMs have emerged as general-purpose interfaces that can bridge natural-language with domain knowledge, code, and laboratory procedures \cite{llm_science_1,llm_science_2,llm_matchem_1,llm_matchem_2}.
-Early efforts have demonstrated promise across a wide spectrum of applications---from literature understanding and information extraction,
-to code synthesis and simulation setup, to agentic systems that connect planning, execution, and reporting \cite{early_apps_1,early_apps_2}.
+In chemistry and materials science, where progress is often constrained by heterogeneous data modalities, fragmented tooling, and rapidly evolving literature, LLMs have emerged as general-purpose interfaces that can bridge natural-language with domain knowledge, code, and laboratory procedures \cite{miret2025enabling,ruan2024automatic,choudhary2023chemnlp,prein2025language}.
+Early efforts have demonstrated promise across a wide spectrum of applications, from literature understanding and information extraction,
+to code synthesis and simulation setup, to agentic systems that connect planning, execution, and reporting \cite{zheng2025large,lee2023towards}.
 
 However, the pace of change in foundation models, tool ecosystems (\textit{e.g.}, retrieval-augmented generation and agentic frameworks), and deployment platforms make it difficult for individual research groups to continuously track capabilities, identify high-impact use cases, and validate what works in practice.
 Community-driven, time-bounded innovation formats such as science hackathons offer a complementary mechanism: they have proven to be an effective tool for rapid prototyping in a friendly, competitive manner, while fostering interdisciplinary collaborations and innovations within the scientific community~\cite{pe2019understanding, nolte2020support, heller2023hack}.
 Such hackathons can be organized cost-effectively while maximizing both their impact and reach through the use of social media, virtual platforms, and hybrid event structures.
 Our previous hackathons on LLMs for Applications in Materials Science and Chemistry in 2023~\cite{jablonka202314} and 2024~\cite{llm2024} have already demonstrated the potential of LLM applications in diverse areas of materials science and chemistry, while also revealing persistent limitations and open challenges that motivate further work.
 
-In this article, we discuss the results of the third LLM Hackathon for Applications in Materials Science and Chemistry, which engaged a large global community in a hybrid format.
+In this paper, we discuss the results of the third LLM Hackathon for Applications in Materials Science and Chemistry, which engaged a large global community in a hybrid format.
 The event produced a broad portfolio of submissions that collectively illustrate how LLMs are being used not only as multipurpose models for scientific machine-learning tasks, but also as enabling platforms for rapid prototyping of domain-specific applications.
 We begin by detailing and analyzing the project submissions, organizing the results into two broad categories with in-depth sub-classifications, \emph{Knowledge Infrastructure} (new ways to know things) and \emph{Action Systems} (new ways to do things), reflecting the complementary roles of LLMs in (i) structuring, retrieving, and synthesizing scientific knowledge and (ii) executing or coordinating scientific work across computational and experimental environments.
 We then briefly discuss the organisation of the 48-hour long event via one central virtual hub and 16 in-person sites, engaging more than 350 participants all over the world.
-Finally, we conclude by suggesting future directions of LLM applications in materials science and chemistry, including increasingly autonomous and integrated research workflows aligned with the longer-term vision of self-driving laboratories \cite{self_driving_labs_1,self_driving_labs_2}.
+Finally, we conclude by suggesting future directions of LLM applications in materials science and chemistry, including increasingly autonomous and integrated research workflows aligned with the longer-term vision of self-driving laboratories \cite{yoshikawa2023large,duo2025autonomous,cao2024agents}.
 
-\section*{Overview}
-The third LLM Hackathon for Applications in Materials Science and Chemistry received 88 submissions from more than 350 participants across the world.
-We broadly grouped submissions into Knowledge Infrastructure (\textit{New ways to know things}) and Action Systems (\textit{New ways to do things}) (Figure XX).
-Knowledge Infrastructure describes submissions related to data curation and analysis, reproducible workflows, as well as educational and collaborative tools.
-Action Systems are submissions describing new generative or inverse design models, and agentic systems that orchestrate computational chemistry tools.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{main-figures/groups-classification-venn-diagram.png}
+    \caption{Venn diagram representing a broad classification of 89 submitted hackathon projects in the third LLM Hackathon for Applications in Materials Science and Chemistry along with their sub-classes: Knowledge Infrastructure (\textit{New ways to know things}) and Action Systems (\textit{New ways to do things}).}
+    \label{fig:groups-classification}
+\end{figure}
 
-\section*{Conclusion}
-This is the main paper \textbf{Conclusion} content.
+\section*{Submissions Overview}
+The third LLM Hackathon for Applications in Materials Science and Chemistry received 89 submissions from
+more than 350 participants across the world. The appendix contains brief papers for each team submission,
+with accompanying links to code repositories, video demonstrations, and datasets where applicable. We
+categorized submissions based on their primary objectives, clustering them into two broad categories, a
+portfolio of complementary capabilities spanning the materials and chemistry research lifecycle including \emph{Knowledge Infrastructure} (new ways to know things) and \emph{Action Systems} (new ways to do
+things) (\autoref{fig:groups-classification}):
+\begin{enumerate}
+    \item \textbf{Knowledge Infrastructure (New ways to know things):} Submissions focused on structuring,
+    retrieving, and synthesizing scientific knowledge, including tools for data curation and analysis, reproducible AI4Science workflows and trust, and educational and collaborative AI tools.
+    
+    \item \textbf{Action Systems (New ways to do things):} Submissions focused on executing or coordinating
+    scientific work across computational and experimental environments, including automated workflows, generative and inverse design, and LLM agents and lab-oriented systems that orchestrate
+    domain tools.
+\end{enumerate}
+Notably, simulations occupy the intersection of these categories (\autoref{fig:groups-classification}), reflecting how LLM-based
+systems increasingly couple knowledge-centric capabilities (e.g., retrieval, synthesis, and verification) with
+action-centric execution (e.g., running or steering computational workflows). Collectively, this portfolio of
+submissions forms a coherent know-to-do constellation where knowledge infrastructure enables reliable context
+and scientific grounding, while action systems convert intent into measurable progress via tool use and
+workflow automation, together accelerating the longer-term vision of integrated, increasingly autonomous
+research workflows toward self-driving laboratories.
+
+\section*{Overview of Hackathon Event}
+The third LLM hackathon for Applications in Materials Science and Chemistry spanned two days, 11th and 12th September 2025, across 16 in-person sites on four continents and one central online hub for worldwide access. Unlike the previous two hackathons, this hackathon not only united students, postdocs, researchers from industry, and citizen scientists from AI for chemistry and materials science fields, but also brought together participants from other backgrounds with cross-domain knowledge, with the goal of advancing self-driving laboratories by integrating LLMs in both computational and experimental workflows. This year's hackathon was a feedback-enhanced version from the previous two year hackathons held in 2023~\cite{jablonka202314} and 2024~\cite{llm2024}, keeping the kick-off event for only one hour, and posting interviews on YouTube from experts over weeks prior to the hackathon to maximize the use of the hackathon competing time. The hackathon adopted a deliberately broad scope, inviting participants to harness open-source datasets and best-in-class multimodal models for addressing diverse challenges across materials science and chemistry. Projects spanned the entire spectrum from educational tools designed to teach fundamental concepts to autonomous LLM agents enabling synthesis automation in self-driving laboratories, with the goal of generating innovative, impactful, and scalable demonstrations within the time constraints. Official website \href{https://llmhackathon.github.io}{https://llmhackathon.github.io/} listed a curated list of various resources, FAQ section along with the agenda. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{main-figures/on-site-images.png}
+    \caption{Participants collaborating at various physical hub locations during the 2025 LLM Hackathon for Applications in Materials Science and Chemistry.}
+    \label{fig:on-site-images}
+\end{figure}
+
+Over 1200 participants registered for the event, and 89 projects were ultimately submitted by a total of 351 researchers which had been featured in Science News~\cite{savitsky2025researchers}. The hybrid format enabled researchers from geographically inaccessible areas to form teams online, connecting the entire globe. The physical hub locations facilitated networking through informal discussions and refreshments throughout the hackathon period (\autoref{fig:on-site-images}). Sixteen on-site locations spanned four continents including North America, Europe, Asia, and Australia, with North America hosting the most sites at 10 (Boston, Binghamton, Baltimore, Champaign, Durham, Knoxville, Lemont, Raleigh, West Lafayette, and Toronto). Europe hosted four locations (London, Oxford, Berlin, Leipzig), while Asia and Australia each had one site in Dhahran and Sydney, respectively. The hybrid nature created an inclusive environment that transcended international and institutional boundaries, fostering diverse team collaborations, welcoming multiple sponsors (\autoref{fig:locations-and-sponsors}). This approach yielded the projects documented in this paper and catalyzed the formation of a persistent online community of more than 1450 researchers connected through Slack.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{main-figures/locations-and-sponsors.png}
+    \caption{Hybrid nature and the sponsors of 2025 LLM Hackathon for Applications in Materials Science and Chemistry. The markers in the map represents the on-site locations spanning over four continents.}
+    \label{fig:locations-and-sponsors}
+\end{figure}
+
+\section*{Conclusion and Future Directions}
+The 2025 Large Language Models (LLM) Hackathon for Applications in Materials Science and Chemistry
+demonstrated how quickly the community is moving from \emph{LLMs as assistants} toward \emph{LLMs as
+interfaces and orchestrators} of scientific work. Across 89 submissions produced by a globally distributed,
+hybrid community, teams showcased practical prototypes that span the full research lifecycle, from
+knowledge discovery and evidence synthesis to tool use, workflow automation, and early-stage design loops.
+A key takeaway is that the most compelling systems did not treat the LLM as a standalone predictor; instead,
+they combined LLM reasoning with structured retrieval, domain tools, and lightweight evaluation to create
+end-to-end workflows that are usable by researchers under real constraints (time, compute, data
+fragmentation, and heterogeneous modalities). The broad division of projects into Knowledge
+Infrastructure and Action Systems further highlights a central pattern: progress accelerates when
+reliable scientific context (data, literature, provenance, and reproducibility) is tightly coupled with execution
+capabilities (planning, tool calling, simulation, and experiment coordination). Notably, simulation-oriented
+submissions frequently sat at the intersection of these two categories, underscoring simulations as both a
+knowledge substrate (generating mechanistic insight and labeled data) and an action substrate (enabling
+closed-loop optimization and design).
+
+Beyond the technical artifacts, the hackathon format itself served as an effective pressure test for what is
+currently feasible. The two-day, hybrid structure (a central online hub combined with multiple in-person
+sites) enabled interdisciplinary teaming, rapid prototyping, and immediate peer feedback at global scale.
+This model lowers the barrier to entry for meaningful contributions while helping the community converge
+on shared patterns for building robust, tool-augmented scientific AI.
+
+\paragraph{Future directions.} While the submissions highlight impressive momentum, they also point to several concrete directions needed
+to translate prototypes into reliable, field-deployable systems and to advance the longer-term vision of
+integrated, increasingly autonomous research workflows and self-driving laboratories:
+
+\begin{enumerate}
+    \item \textbf{From demos to defensible evaluation.}
+    The next generation of systems should be accompanied by standardized, domain-relevant benchmarks that
+    measure not only fluency, but also scientific correctness, uncertainty calibration, robustness to distribution
+    shift, and tool-execution reliability. In particular, agentic workflows need evaluation protocols that test
+    multi-step planning, tool chaining, failure recovery, and reproducibility of outcomes.
+
+    \item \textbf{Reproducibility-by-design for LLM-enabled science.}
+    Many high-performing prototypes depend on rapidly evolving proprietary APIs and opaque model versions.
+    Future work should emphasize reproducible pipelines including explicit model/version logging, deterministic
+    configurations where possible, dataset and prompt provenance, containerized toolchains, and artifact
+    packaging (e.g., structured run manifests and trace logs) so that scientific claims remain verifiable as
+    models and platforms change.
+
+    \item \textbf{Tool interoperability and scientific operating systems.}
+    A recurring need is a unifying layer that standardizes how LLM agents interact with chemistry and
+    materials tooling (databases, simulation engines, electronic lab notebooks, and synthesis/planning
+    software). Common schemas for inputs/outputs, error reporting, and metadata would make workflows more
+    composable and reduce brittle, one-off integrations.
+
+    \item \textbf{Multimodal, experiment-in-the-loop autonomy with human oversight.}
+    Moving toward self-driving laboratories will require robust multimodal grounding (text, tables, spectra,
+    microscopy images, structures, and time-series), plus tight coupling between computational suggestions
+    and experimental execution. A practical near-term direction is human-in-the-loop autonomy where systems
+    that propose actions, justify them with evidence, and defer critical decisions to experts while learning from feedback.
+
+    \item \textbf{Safety and governance for scientific agents.}
+    As LLM agents gain execution power, the community needs shared practices for safe tool use, access
+    control, guardrails for laboratory operations, and clear responsibility boundaries. This includes
+    transparent reporting of failure modes (hallucinations, invalid chemistry constraints, or unsafe actions)
+    and mechanisms for auditing agent decisions.
+\end{enumerate}
+
+In summary, the submissions collectively indicate that the field is entering a phase where the core question is
+no longer whether LLMs can contribute to materials science and chemistry, but how to engineer systems that are reliable, reproducible, and interoperable at scale. Future hackathons can accelerate this
+trajectory by pairing rapid prototyping with shared evaluation tasks, reusable tooling standards, and
+reproducibility requirements, thereby turning a growing portfolio of promising prototypes into a coherent
+ecosystem for trustworthy, AI-enabled scientific discovery.
 
 \section*{Contributors and Acknowledgements}
 This paper is the result of contributions from all enthusiastic participants in the 2025 LLM Hackathon for Applications in Materials Science and Chemistry. Below, we list all contributors in alphabetical order by last name, apart from lead and corresponding authors. Only author names and ORCID identifiers are listed for all participants except the corresponding author. Individual authors can be contacted using their ORCID details or by contacting the corresponding author.
@@ -260,12 +366,9 @@ $^*$Corresponding author: Ben Bliaszik (\href{blaiszik@uchicago.edu}{blaiszik@uc
 \end{center}
 
 
-% \FloatBarrier
-% \bibliographystyle{ieeetr}
-% \bibliography{ref}
-\putbib[ref]
+% \putbib[ref]
 
-\end{bibunit}
+% \end{bibunit}
 
 %--------------------------------------------------
 % TABLE OF CONTENTS (AFTER MAIN PAPER)
@@ -277,19 +380,19 @@ $^*$Corresponding author: Ben Bliaszik (\href{blaiszik@uchicago.edu}{blaiszik@uc
 %--------------------------------------------------
 % TEAM SUBMISSIONS (ALL IN ONE FILE)
 %--------------------------------------------------
-\clearpage
-\begin{bibunit}[ieeetr]
-
-\input{teamsubmissions}
-
-\putbib[submissionref]
-
-\end{bibunit}
+% \clearpage
+% \begin{bibunit}[ieeetr]
 
 % \input{teamsubmissions}
 
-% \FloatBarrier
-% \bibliographystyle{ieeetr}
-% \bibliography{submissionref}
+% \putbib[submissionref]
+
+% \end{bibunit}
+
+\input{teamsubmissions}
+
+\FloatBarrier
+\bibliographystyle{ieeetr}
+\bibliography{ref}
 
 \end{document}
